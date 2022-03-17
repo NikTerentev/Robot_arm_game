@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Sprites/scene3/Уровни.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/scene2/Group 24.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/scene2/Group 23.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/levels_sprites/Уровни.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/game_mode_sprites/Group 24.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/game_mode_sprites/Group 23.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Levels.gd" type="Script" id=4]
 
 [node name="Levels" type="CanvasLayer"]

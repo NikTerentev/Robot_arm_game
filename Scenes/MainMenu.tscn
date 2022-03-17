@@ -1,19 +1,19 @@
 [gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Fonts/RubikOne-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Sprites/screen1/robot.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/screen1/start_gm.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/screen1/my_ach_p.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/screen1/exit_p.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/screen1/my_ach.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/screen1/start_gm_p.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/screen1/exit.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/screen1/list.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/screen1/bakground.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/screen1/question.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/screen1/question p.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/main_menu_sprites/robot.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/main_menu_sprites/start_gm.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/main_menu_sprites/my_ach_p.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/main_menu_sprites/exit_p.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/main_menu_sprites/my_ach.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/main_menu_sprites/start_gm_p.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/main_menu_sprites/exit.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/main_menu_sprites/list.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/main_menu_sprites/bakground.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/main_menu_sprites/question.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/main_menu_sprites/question p.png" type="Texture" id=12]
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=13]
-[ext_resource path="res://Sprites/screen1/about.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/main_menu_sprites/about.png" type="Texture" id=14]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=15]
 
 [sub_resource type="DynamicFont" id=1]
@@ -35,11 +35,9 @@ font_data = ExtResource( 15 )
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource( 13 )
 
-[node name="Bakground" type="TextureRect" parent="."]
-margin_left = -2.00002
-margin_top = 0.999992
-margin_right = 1699.0
-margin_bottom = 910.0
+[node name="Baсkground" type="TextureRect" parent="."]
+margin_right = 1701.0
+margin_bottom = 909.0
 rect_rotation = -0.118061
 texture = ExtResource( 10 )
 
@@ -75,6 +73,8 @@ anchor_left = 0.56
 anchor_top = 0.202
 anchor_right = 0.606
 anchor_bottom = 0.239
+margin_right = 327.592
+margin_bottom = 194.394
 
 [node name="StartGame" type="TextureButton" parent="Card/VBoxContainer"]
 margin_right = 385.0
@@ -82,19 +82,19 @@ margin_bottom = 70.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 7 )
 
-[node name="Exit" type="TextureButton" parent="Card/VBoxContainer"]
+[node name="MyAchievs" type="TextureButton" parent="Card/VBoxContainer"]
 margin_top = 74.0
 margin_right = 385.0
 margin_bottom = 144.0
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 5 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 4 )
 
-[node name="MyAchievs" type="TextureButton" parent="Card/VBoxContainer"]
+[node name="Exit" type="TextureButton" parent="Card/VBoxContainer"]
 margin_top = 148.0
 margin_right = 385.0
 margin_bottom = 218.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 4 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 5 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
 anchor_left = 1.0
@@ -147,4 +147,5 @@ autowrap = true
 
 [connection signal="pressed" from="Card/VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
 [connection signal="pressed" from="Card/VBoxContainer/MyAchievs" to="." method="_on_MyAchievs_pressed"]
+[connection signal="pressed" from="Card/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

@@ -6,12 +6,6 @@ func _ready():
 	# print(Stars.a)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-
 func _on_TextureButton_pressed():
 	$WindowDialog.popup()
 
@@ -24,3 +18,8 @@ func _on_StartGame_pressed():
 func _on_MyAchievs_pressed():
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Scenes/Levels.tscn")
+
+
+func _on_Exit_pressed():
+# warning-ignore:return_value_discarded
+	get_tree().exit()
