@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Sprites/screen1/bakground.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/scene2/card 2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/scene2/card 1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/scene2/control.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/scene2/Component 13.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/scene2/Component 10.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/scene2/explore.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Sprites/scene2/Group 23.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/scene2/Group 24.png" type="Texture" id=10]
+[ext_resource path="res://Scripts/GameMode.gd" type="Script" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 8 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 11 )
+
+[node name="bacground" type="TextureRect" parent="."]
+margin_left = 2.0
+margin_top = -2.0
+margin_right = 1703.0
+margin_bottom = 907.0
+texture = ExtResource( 1 )
+
+[node name="rect1" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -593.0
+margin_top = -237.0
+margin_right = 52.0
+margin_bottom = 503.0
+texture = ExtResource( 3 )
+
+[node name="TextureButton" type="TextureButton" parent="rect1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -186.5
+margin_top = -104.0
+margin_right = 103.5
+margin_bottom = -9.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="rect1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -179.5
+margin_top = -360.0
+margin_right = 103.5
+margin_bottom = -235.0
+custom_fonts/font = SubResource( 1 )
+text = "Изменяй положение суставов робота, чтобы выполнить задание и получить награду "
+align = 1
+autowrap = true
+
+[node name="rect2" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 54.0
+margin_top = -239.0
+margin_right = 681.0
+margin_bottom = 505.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureButton2" type="TextureButton" parent="rect2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -181.5
+margin_top = -98.0
+margin_right = 108.5
+margin_bottom = -3.0
+keep_pressed_outside = true
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+
+[node name="Label2" type="Label" parent="rect2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -179.5
+margin_top = -360.0
+margin_right = 103.5
+margin_bottom = -235.0
+custom_fonts/font = SubResource( 1 )
+text = "Обучай робота, ставя ему цели и следя за их выполнением"
+align = 1
+autowrap = true
+
+[node name="back" type="TextureButton" parent="."]
+margin_left = 41.0
+margin_top = 51.0
+margin_right = 347.0
+margin_bottom = 346.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
