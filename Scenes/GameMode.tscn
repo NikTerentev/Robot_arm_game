@@ -20,11 +20,10 @@ font_data = ExtResource( 8 )
 script = ExtResource( 11 )
 
 [node name="bacground" type="TextureRect" parent="."]
-margin_left = 2.0
-margin_top = -2.0
-margin_right = 1703.0
-margin_bottom = 907.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource( 1 )
+expand = true
 
 [node name="rect1" type="TextureRect" parent="."]
 anchor_left = 0.5
