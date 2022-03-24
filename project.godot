@@ -14,6 +14,11 @@ config/name="Robot level"
 run/main_scene="res://Scenes/RobotSprite.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1700
+window/size/height=900
+
 [input]
 
 one={
