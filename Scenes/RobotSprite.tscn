@@ -11,114 +11,168 @@
 [ext_resource path="res://robot/плечо 3.png" type="Texture" id=9]
 [ext_resource path="res://robot/шарнир 1.png" type="Texture" id=10]
 [ext_resource path="res://robot/плечо 4.png" type="Texture" id=11]
-[ext_resource path="res://shoulder_4.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/RigidBody2D.gd" type="Script" id=12]
 [ext_resource path="res://Scripts/Shoulder_2.gd" type="Script" id=13]
-[ext_resource path="res://Scripts/shoulder_3.gd" type="Script" id=14]
 [ext_resource path="res://Scripts/shoulder_1.gd" type="Script" id=15]
-[ext_resource path="res://Scripts/RobotSprite.gd" type="Script" id=16]
-[ext_resource path="res://Scenes/RigidBody2D2.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/Ground.gd" type="Script" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 79.6667, 14.6875 )
-
-[sub_resource type="PhysicsMaterial" id=6]
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 31.9072
 height = 70.5727
 
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 29.5486
+height = 95.5446
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 25.0972
+height = 145.156
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 14.0553
+height = 82.6666
+
 [node name="Node2D" type="Node2D"]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 65, 33 )
 script = ExtResource( 16 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-scale = Vector2( 1.5, 1.5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 479.667, 340.688 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 719.5, 511.032 )
 rotation = 7.45058e-09
+scale = Vector2( 1.5, 1.5 )
 shape = SubResource( 1 )
 
-[node name="ground" type="Sprite" parent="KinematicBody2D"]
-position = Vector2( 479, 336 )
+[node name="ground" type="Sprite" parent="Ground"]
+position = Vector2( 719, 511 )
 rotation = -0.0149286
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 3 )
 
-[node name="RigidBody2D2" type="RigidBody2D" parent="KinematicBody2D/ground"]
-position = Vector2( -947.862, -686.226 )
-rotation = 0.0149286
-scale = Vector2( 2, 2 )
-physics_material_override = SubResource( 6 )
-contacts_reported = 1
-contact_monitor = true
-script = ExtResource( 17 )
+[node name="PinJoint2D" type="PinJoint2D" parent="Ground"]
+position = Vector2( 726, 481 )
+scale = Vector2( 1.5, 1.5 )
+node_a = NodePath("..")
+node_b = NodePath("shoulder_4")
+disable_collision = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/ground/RigidBody2D2"]
-position = Vector2( 518, 269 )
+[node name="shoulder_4" type="RigidBody2D" parent="Ground/PinJoint2D"]
+position = Vector2( 1.33334, 7.3334 )
+mode = 1
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/PinJoint2D/shoulder_4"]
+position = Vector2( 29.3333, -63.3334 )
 rotation = 0.802337
+scale = Vector2( 1, 1 )
 shape = SubResource( 3 )
 
-[node name="shoulder_4" type="Sprite" parent="KinematicBody2D/ground/RigidBody2D2"]
-position = Vector2( 478, 313 )
+[node name="shoulder_4" type="Sprite" parent="Ground/PinJoint2D/shoulder_4"]
+position = Vector2( -6.66663, -19.3334 )
 rotation = -0.0928326
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 11 )
 offset = Vector2( 88.8152, -84.0266 )
-script = ExtResource( 12 )
 
-[node name="shoulder_3" type="Sprite" parent="KinematicBody2D/ground/RigidBody2D2/shoulder_4"]
-position = Vector2( 133.966, -119.238 )
-rotation = 0.215276
+[node name="shoulder_3" type="RigidBody2D" parent="Ground/PinJoint2D/shoulder_4"]
+position = Vector2( 2.66669, -9.15527e-05 )
+mode = 1
+
+[node name="shoulder_3" type="Sprite" parent="Ground/PinJoint2D/shoulder_4/shoulder_3"]
+position = Vector2( 53.3334, -84.6667 )
+rotation = 0.122443
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 9 )
 offset = Vector2( -56.9269, -90.138 )
-script = ExtResource( 14 )
 
-[node name="ring_3" type="Sprite" parent="KinematicBody2D/ground/RigidBody2D2/shoulder_4/shoulder_3"]
+[node name="ring_3" type="Sprite" parent="Ground/PinJoint2D/shoulder_4/shoulder_3/shoulder_3"]
 position = Vector2( -4.76465, -8.27451 )
 rotation = -0.164272
 texture = ExtResource( 6 )
 
-[node name="Shoulder_2" type="Sprite" parent="KinematicBody2D/ground/RigidBody2D2/shoulder_4/shoulder_3"]
-position = Vector2( -135.242, -202.878 )
-rotation = 0.184953
+[node name="ring_2" type="Sprite" parent="Ground/PinJoint2D/shoulder_4/shoulder_3/shoulder_3"]
+position = Vector2( -136.327, -203.731 )
+rotation = 0.890476
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/PinJoint2D/shoulder_4/shoulder_3"]
+position = Vector2( 30.6667, -132.667 )
+rotation = -0.418879
+shape = SubResource( 4 )
+
+[node name="shoulder_2" type="RigidBody2D" parent="Ground/PinJoint2D/shoulder_4/shoulder_3"]
+mode = 1
+
+[node name="Shoulder_2" type="Sprite" parent="Ground/PinJoint2D/shoulder_4/shoulder_3/shoulder_2"]
+position = Vector2( -1.39185, -193.605 )
+rotation = 0.307396
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 offset = Vector2( 114.718, -101.769 )
 script = ExtResource( 13 )
 
-[node name="shoulder_1" type="Sprite" parent="KinematicBody2D/ground/RigidBody2D2/shoulder_4/shoulder_3/Shoulder_2"]
-position = Vector2( 236.254, -203.791 )
-rotation = -0.506191
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/PinJoint2D/shoulder_4/shoulder_3/shoulder_2"]
+position = Vector2( 68.6666, -225.333 )
+rotation = 1.15192
+shape = SubResource( 5 )
+one_way_collision_margin = 0.0
+
+[node name="shoulder_1" type="RigidBody2D" parent="Ground/PinJoint2D/shoulder_4/shoulder_3/shoulder_2"]
+mode = 1
+
+[node name="shoulder_1" type="Sprite" parent="Ground/PinJoint2D/shoulder_4/shoulder_3/shoulder_2/shoulder_1"]
+position = Vector2( 142.029, -254.982 )
+rotation = -0.198795
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 8 )
 offset = Vector2( 68.5918, 66.3203 )
 script = ExtResource( 15 )
 
-[node name="arm_1" type="Sprite" parent="KinematicBody2D/ground/RigidBody2D2/shoulder_4/shoulder_3/Shoulder_2/shoulder_1"]
+[node name="arm_1" type="Sprite" parent="Ground/PinJoint2D/shoulder_4/shoulder_3/shoulder_2/shoulder_1/shoulder_1"]
 position = Vector2( 100.758, 142.219 )
 rotation = 0.616114
 texture = ExtResource( 2 )
 offset = Vector2( 31.9015, 6.98267 )
 
-[node name="arm_2" type="Sprite" parent="KinematicBody2D/ground/RigidBody2D2/shoulder_4/shoulder_3/Shoulder_2/shoulder_1"]
+[node name="arm_2" type="Sprite" parent="Ground/PinJoint2D/shoulder_4/shoulder_3/shoulder_2/shoulder_1/shoulder_1"]
 position = Vector2( 137.438, 112.491 )
 rotation = -0.58002
 texture = ExtResource( 7 )
 offset = Vector2( 17.9675, 26.7192 )
 
-[node name="circle_1" type="Sprite" parent="KinematicBody2D/ground/RigidBody2D2/shoulder_4/shoulder_3/Shoulder_2/shoulder_1"]
+[node name="circle_1" type="Sprite" parent="Ground/PinJoint2D/shoulder_4/shoulder_3/shoulder_2/shoulder_1/shoulder_1"]
 position = Vector2( 134.651, 109.302 )
 texture = ExtResource( 10 )
 
-[node name="circle_2" type="Sprite" parent="KinematicBody2D/ground/RigidBody2D2/shoulder_4/shoulder_3/Shoulder_2/shoulder_1"]
+[node name="circle_2" type="Sprite" parent="Ground/PinJoint2D/shoulder_4/shoulder_3/shoulder_2/shoulder_1/shoulder_1"]
 position = Vector2( 99.1278, 141.147 )
 texture = ExtResource( 10 )
 
-[node name="ring_1" type="Sprite" parent="KinematicBody2D/ground/RigidBody2D2/shoulder_4/shoulder_3/Shoulder_2"]
-position = Vector2( 236.24, -203.269 )
-rotation = -1.15663
-scale = Vector2( 1.2, 1.2 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/PinJoint2D/shoulder_4/shoulder_3/shoulder_2/shoulder_1"]
+position = Vector2( 180, -230 )
+rotation = 2.18515
+shape = SubResource( 6 )
+
+[node name="ring_1" type="Sprite" parent="Ground/PinJoint2D/shoulder_4/shoulder_3/shoulder_2/shoulder_1"]
+position = Vector2( 141.944, -254.735 )
+rotation = -0.849234
+scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 5 )
 
-[node name="ring_2" type="Sprite" parent="KinematicBody2D/ground/RigidBody2D2/shoulder_4/shoulder_3"]
-position = Vector2( -136.327, -203.731 )
-rotation = 0.890476
-texture = ExtResource( 4 )
+[node name="PinJoint2D" type="PinJoint2D" parent="Ground/PinJoint2D/shoulder_4/shoulder_3/shoulder_2"]
+node_a = NodePath("..")
+node_b = NodePath("../shoulder_1")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Ground/PinJoint2D/shoulder_4/shoulder_3"]
+position = Vector2( 1.33331, -194.667 )
+node_a = NodePath("..")
+node_b = NodePath("../shoulder_2")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Ground/PinJoint2D/shoulder_4"]
+position = Vector2( 53.3333, -89.3334 )
+node_a = NodePath("..")
+node_b = NodePath("../shoulder_3")

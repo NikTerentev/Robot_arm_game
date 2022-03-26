@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://arts/tire.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/arts/tire.png" type="Texture" id=1]
 [ext_resource path="res://robot/кольцо 1.png" type="Texture" id=2]
-[ext_resource path="res://arts/car 1.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/car.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/arts/car 1.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/car.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 128.016
