@@ -1,16 +1,14 @@
 extends StaticBody2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var shoulders = []
+var velocity = Vector2()
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	shoulders = get_tree().get_nodes_in_group("shoulder")
 
 
 func _process(delta):
-	# print(position, get_local_mouse_position())
 	pass
+

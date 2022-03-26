@@ -3,6 +3,7 @@ extends RigidBody2D
 
 var velocity = Vector2()
 var pos = Vector2()
+var key = "four"
 
 func get_input():
 	look_at(pos)

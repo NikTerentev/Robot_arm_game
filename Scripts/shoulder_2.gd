@@ -14,7 +14,7 @@ func get_input():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_pressed("three"):
+	if Input.is_action_pressed("two"):
 		pos = get_global_mouse_position()
 		if pos.y < 700:
 			get_input()
