@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Robot level"
-run/main_scene="res://Scenes/RobotSprite.tscn"
+run/main_scene="res://Scenes/MainScene.tscn"
 config/icon="res://icon.png"
 
 [display]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/подъёмник.png-9aecd9342c8f9136269bb16de1dbb128.stex"
+path="res://.import/Игра в режиме управления.png-e3d6e40e8cd05cbf9ecf2359c5c64288.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/arts/подъёмник.png"
-dest_files=[ "res://.import/подъёмник.png-9aecd9342c8f9136269bb16de1dbb128.stex" ]
+source_file="res://arts/Игра в режиме управления.png"
+dest_files=[ "res://.import/Игра в режиме управления.png-e3d6e40e8cd05cbf9ecf2359c5c64288.stex" ]
 
 [params]
 
