@@ -8,8 +8,8 @@
 radius = 52.1536
 
 [node name="wheel" type="RigidBody2D"]
-mass = 171.398
 physics_material_override = SubResource( 2 )
+gravity_scale = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 529, 477 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sprites/LevelUI/ground.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/LevelUI/menu.png" type="Texture" id=2]
@@ -8,20 +8,25 @@
 [ext_resource path="res://Sprites/LevelUI/task p.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/LevelUI/Group 26.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/UiSmart.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Level7/MainScene.tscn" type="PackedScene" id=9]
 
 [node name="UiSmart" type="CanvasLayer"]
 script = ExtResource( 8 )
 
+[node name="MainScene" parent="." instance=ExtResource( 9 )]
+position = Vector2( -2, -26 )
+
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1701.0
-margin_bottom = 67.0
+margin_left = 3.0
+margin_top = -48.0
+margin_right = 1704.0
+margin_bottom = 19.0
 color = Color( 0.0823529, 0.145098, 0.333333, 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 3.0
-margin_top = 780.0
-margin_right = 1705.0
-margin_bottom = 900.0
+margin_top = 794.0
+margin_right = 1702.0
+margin_bottom = 914.0
 texture = ExtResource( 1 )
 expand = true
 

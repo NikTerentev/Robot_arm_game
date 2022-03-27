@@ -30,3 +30,7 @@ func _process(delta):
 
 func _on_back_pressed():
 	get_tree().change_scene("res://Scenes/Menu/GameMode.tscn")
+
+
+func _on_level7_pressed():
+	get_tree().change_scene("res://Scenes/UiSmart.tscn")
