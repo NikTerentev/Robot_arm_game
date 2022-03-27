@@ -1,0 +1,188 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://robot/плечо 2.png" type="Texture" id=1]
+[ext_resource path="res://robot/1 рука.png" type="Texture" id=2]
+[ext_resource path="res://robot/основание.png" type="Texture" id=3]
+[ext_resource path="res://robot/кольцо 2.png" type="Texture" id=4]
+[ext_resource path="res://robot/кольцо 1.png" type="Texture" id=5]
+[ext_resource path="res://robot/кольцо 3.png" type="Texture" id=6]
+[ext_resource path="res://robot/2 рука.png" type="Texture" id=7]
+[ext_resource path="res://robot/плечо 1.png" type="Texture" id=8]
+[ext_resource path="res://robot/плечо 3.png" type="Texture" id=9]
+[ext_resource path="res://robot/шарнир 1.png" type="Texture" id=10]
+[ext_resource path="res://robot/плечо 4.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/RigidBody2D.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/shoulder_3.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/shoulder_1.gd" type="Script" id=14]
+[ext_resource path="res://Scripts/shoulder_2.gd" type="Script" id=15]
+[ext_resource path="res://Scripts/Ground.gd" type="Script" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 79.6667, 14.6875 )
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 25.0972
+height = 145.156
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 14.0553
+height = 82.6666
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 29.5486
+height = 95.5446
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 31.9072
+height = 70.5727
+
+[node name="RobotSprite" type="Node2D"]
+position = Vector2( -7, 16 )
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 69, 54 )
+script = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 732, 503.032 )
+rotation = 7.45058e-09
+scale = Vector2( 1.5, 1.5 )
+shape = SubResource( 1 )
+
+[node name="ground" type="Sprite" parent="Ground"]
+position = Vector2( 719, 511 )
+rotation = -0.0149286
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 3 )
+
+[node name="g-4" type="PinJoint2D" parent="Ground"]
+position = Vector2( 720, 490 )
+scale = Vector2( 1.5, 1.5 )
+node_a = NodePath("..")
+node_b = NodePath("shoulder_4")
+disable_collision = false
+
+[node name="shoulder_4" type="RigidBody2D" parent="Ground/g-4" groups=["shoulder"]]
+position = Vector2( 1.33334, 7.3334 )
+mode = 3
+script = ExtResource( 12 )
+
+[node name="4-3" type="PinJoint2D" parent="Ground/g-4/shoulder_4"]
+position = Vector2( 62.6667, -59.3334 )
+node_a = NodePath("..")
+node_b = NodePath("shoulder_3")
+
+[node name="shoulder_3" type="RigidBody2D" parent="Ground/g-4/shoulder_4/4-3" groups=["shoulder"]]
+position = Vector2( 2.86102e-06, -1.33334 )
+mode = 3
+script = ExtResource( 13 )
+
+[node name="shoulder_3" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3"]
+position = Vector2( -10, -19.3333 )
+rotation = 0.122443
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
+offset = Vector2( -56.9269, -90.138 )
+
+[node name="3-2" type="PinJoint2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3"]
+position = Vector2( -62, -123.333 )
+node_a = NodePath("..")
+node_b = NodePath("shoulder_2")
+disable_collision = false
+
+[node name="shoulder_2" type="RigidBody2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2" groups=["shoulder"]]
+position = Vector2( 0, 4.57764e-05 )
+mode = 3
+script = ExtResource( 15 )
+
+[node name="Shoulder_2" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2"]
+position = Vector2( 0.666626, -0.666672 )
+rotation = 0.307396
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+offset = Vector2( 114.718, -101.769 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2"]
+position = Vector2( 68.6667, -32.6666 )
+rotation = 1.15192
+shape = SubResource( 5 )
+one_way_collision_margin = 0.0
+
+[node name="2-1" type="PinJoint2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2"]
+position = Vector2( 143.333, -65.3333 )
+rotation = -0.014904
+node_a = NodePath("..")
+node_b = NodePath("shoulder_1")
+disable_collision = false
+
+[node name="shoulder_1" type="RigidBody2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1" groups=["shoulder"]]
+position = Vector2( 1.27362, 4.01936 )
+mode = 3
+script = ExtResource( 14 )
+
+[node name="shoulder_1" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1"]
+position = Vector2( -1.30347, -2.01965 )
+rotation = -0.198795
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+offset = Vector2( 68.5918, 66.3203 )
+
+[node name="arm_1" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1/shoulder_1"]
+position = Vector2( 100.758, 142.219 )
+rotation = 0.616114
+texture = ExtResource( 2 )
+offset = Vector2( 31.9015, 6.98267 )
+
+[node name="arm_2" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1/shoulder_1"]
+position = Vector2( 137.438, 112.491 )
+rotation = -0.58002
+texture = ExtResource( 7 )
+offset = Vector2( 17.9675, 26.7192 )
+
+[node name="circle_1" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1/shoulder_1"]
+position = Vector2( 134.651, 109.302 )
+texture = ExtResource( 10 )
+
+[node name="circle_2" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1/shoulder_1"]
+position = Vector2( 99.1278, 141.147 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1"]
+position = Vector2( 38.2948, 25.2402 )
+rotation = 2.18515
+shape = SubResource( 6 )
+
+[node name="ring_1" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1"]
+position = Vector2( 0.686371, -1.32324 )
+rotation = -0.849234
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3"]
+position = Vector2( -35.9999, -72 )
+rotation = -0.418879
+shape = SubResource( 4 )
+
+[node name="ring_2" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3"]
+position = Vector2( -62.6667, -122.667 )
+rotation = 1.01292
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/g-4/shoulder_4"]
+position = Vector2( 34, -36.0001 )
+rotation = 0.802337
+shape = SubResource( 3 )
+
+[node name="shoulder_4" type="Sprite" parent="Ground/g-4/shoulder_4"]
+position = Vector2( -4.00006, 5.99991 )
+rotation = -0.0928326
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+offset = Vector2( 88.8152, -84.0266 )
+
+[node name="ring_3" type="Sprite" parent="Ground/g-4/shoulder_4"]
+position = Vector2( 60.6667, -60.6667 )
+rotation = -0.0418285
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
