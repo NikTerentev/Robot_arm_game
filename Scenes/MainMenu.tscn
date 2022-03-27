@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Fonts/RubikOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Sprites/main_menu_sprites/robot.png" type="Texture" id=2]
@@ -20,6 +20,34 @@
 size = 110
 font_data = ExtResource( 1 )
 
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/start_gm_p.png-c3bbd64e2a09fcf4d4740ecc13e42b65.stex"
+
+[sub_resource type="GDScript" id=9]
+script/source = "extends TextureButton
+
+func _ready():
+	Input
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+load_path = "res://.import/my_ach_p.png-5727bbc8597482b2ec0f5488c1401b0f.stex"
+
+[sub_resource type="StreamTexture" id=7]
+flags = 4
+load_path = "res://.import/exit_p.png-86c6598e5bab1032948719ab1defac10.stex"
+
+[sub_resource type="StreamTexture" id=8]
+flags = 4
+load_path = "res://.import/question p.png-0bbb77c8dac6a84d644aadb6036123d0.stex"
+
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 15 )
 
@@ -35,10 +63,9 @@ font_data = ExtResource( 15 )
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource( 13 )
 
-[node name="Baсkground" type="TextureRect" parent="."]
+[node name="bacground" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_rotation = -0.118061
 texture = ExtResource( 10 )
 expand = true
 
@@ -74,28 +101,34 @@ anchor_left = 0.56
 anchor_top = 0.202
 anchor_right = 0.606
 anchor_bottom = 0.239
-margin_right = 327.592
-margin_bottom = 194.394
+margin_left = -11.88
+margin_top = -58.876
+margin_right = 318.712
+margin_bottom = 162.518
 
 [node name="StartGame" type="TextureButton" parent="Card/VBoxContainer"]
-margin_right = 385.0
-margin_bottom = 70.0
+margin_right = 398.0
+margin_bottom = 104.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 7 )
+texture_hover = SubResource( 5 )
+script = SubResource( 9 )
 
 [node name="MyAchievs" type="TextureButton" parent="Card/VBoxContainer"]
-margin_top = 74.0
-margin_right = 385.0
-margin_bottom = 144.0
+margin_top = 108.0
+margin_right = 398.0
+margin_bottom = 204.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 4 )
+texture_hover = SubResource( 6 )
 
 [node name="Exit" type="TextureButton" parent="Card/VBoxContainer"]
-margin_top = 148.0
-margin_right = 385.0
-margin_bottom = 218.0
+margin_top = 208.0
+margin_right = 398.0
+margin_bottom = 304.0
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 5 )
+texture_hover = SubResource( 7 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
 anchor_left = 1.0
@@ -106,6 +139,7 @@ margin_right = -23.0
 margin_bottom = 310.0
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 12 )
+texture_hover = SubResource( 8 )
 
 [node name="WindowDialog" type="WindowDialog" parent="."]
 self_modulate = Color( 0.0823529, 0.145098, 0.333333, 1 )
