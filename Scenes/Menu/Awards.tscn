@@ -1,0 +1,172 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Sprites/game_mode_sprites/Group 24.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/game_mode_sprites/Group 23.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/awards_sprites/ewards.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Menu/Awards.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/awards_sprites/eword.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/awards_sprites/money.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/awards_sprites/car card.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/awards_sprites/brain.png" type="Texture" id=8]
+[ext_resource path="res://fonts/RubikOne-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://fonts/Roboto-Regular.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 10 )
+
+[node name="Awards" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -7.0
+margin_top = -19.0
+margin_right = 1736.0
+margin_bottom = 920.0
+texture = ExtResource( 3 )
+
+[node name="Back" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 1 )
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -567.0
+margin_top = -316.0
+margin_right = 56.0
+margin_bottom = 66.0
+texture = ExtResource( 6 )
+
+[node name="Label2" type="Label" parent="TextureRect2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 15.5
+margin_top = 129.0
+margin_right = 223.5
+margin_bottom = 180.0
+custom_fonts/font = SubResource( 1 )
+text = "20.000 $"
+
+[node name="Label3" type="Label" parent="TextureRect2"]
+margin_left = 344.0
+margin_top = 183.0
+margin_right = 511.0
+margin_bottom = 244.0
+custom_fonts/font = SubResource( 2 )
+text = "прибыль производства"
+align = 1
+autowrap = true
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 45.0
+margin_top = -333.0
+margin_right = 665.0
+margin_bottom = 97.0
+texture = ExtResource( 7 )
+
+[node name="Label4" type="Label" parent="TextureRect3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 129.0
+margin_top = 154.0
+margin_right = 158.0
+margin_bottom = 205.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+
+[node name="Label5" type="Label" parent="TextureRect3"]
+margin_left = 377.0
+margin_top = 204.0
+margin_right = 544.0
+margin_bottom = 265.0
+custom_fonts/font = SubResource( 2 )
+text = "автомабилей собрано"
+align = 1
+autowrap = true
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -535.0
+margin_top = 54.0
+margin_right = 51.0
+margin_bottom = 363.0
+texture = ExtResource( 5 )
+
+[node name="Label3" type="Label" parent="TextureRect4"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 7.0
+margin_top = 108.0
+margin_right = 215.0
+margin_bottom = 159.0
+custom_fonts/font = SubResource( 1 )
+text = "2,51 мин."
+
+[node name="Label6" type="Label" parent="TextureRect4"]
+margin_left = 266.0
+margin_top = 163.0
+margin_right = 509.0
+margin_bottom = 256.0
+custom_fonts/font = SubResource( 2 )
+text = "рекорд прохождения уровня"
+align = 1
+autowrap = true
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 82.0
+margin_top = 54.0
+margin_right = 671.0
+margin_bottom = 364.0
+texture = ExtResource( 8 )
+
+[node name="Label5" type="Label" parent="TextureRect5"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 105.5
+margin_top = 97.0
+margin_right = 135.5
+margin_bottom = 148.0
+custom_fonts/font = SubResource( 1 )
+text = "3"
+
+[node name="Label7" type="Label" parent="TextureRect5"]
+margin_left = 298.0
+margin_top = 153.0
+margin_right = 514.0
+margin_bottom = 183.0
+custom_fonts/font = SubResource( 2 )
+text = "робота обучено"
+align = 1
+autowrap = true
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -73.0
+margin_top = 94.0
+margin_right = 210.0
+margin_bottom = 145.0
+custom_fonts/font = SubResource( 1 )
+text = "Достижения"
+
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

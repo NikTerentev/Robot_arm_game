@@ -1,0 +1,16 @@
+[gd_scene format=2]
+
+[node name="Levels" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1710.0
+margin_bottom = 899.0
+expand = true
+
+[node name="back" type="TextureButton" parent="."]
+margin_left = 48.0
+margin_top = 78.0
+margin_right = 354.0
+margin_bottom = 373.0
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
