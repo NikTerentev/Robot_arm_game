@@ -1,9 +1,28 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/Menu/Levels.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/levels_sprites/Уровни.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/game_mode_sprites/Group 24.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/game_mode_sprites/Group 23.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/levels_sprites/1 pressed.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/levels_sprites/1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/levels_sprites/Group 17.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/levels_sprites/4 pressed.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/levels_sprites/car.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/levels_sprites/3 pressed.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/levels_sprites/Group 20.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/levels_sprites/Group 22.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/levels_sprites/6 pressed.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/levels_sprites/Group 24.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/levels_sprites/5 pressed.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/levels_sprites/Group 23.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/levels_sprites/line.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/levels_sprites/2 pressed.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/levels_sprites/progress.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/levels_sprites/Group 21.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/levels_sprites/7 pressed.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/levels_sprites/Group 18.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/levels_sprites/8 pressed.png" type="Texture" id=23]
 
 [node name="Levels" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -21,5 +40,102 @@ margin_right = 354.0
 margin_bottom = 373.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+margin_right = 1705.0
+margin_bottom = 901.0
+
+[node name="TextureRect" type="TextureRect" parent="ReferenceRect"]
+margin_left = 484.0
+margin_top = 331.0
+margin_right = 1381.0
+margin_bottom = 741.0
+texture = ExtResource( 17 )
+
+[node name="level1" type="TextureButton" parent="ReferenceRect"]
+margin_left = 619.0
+margin_top = 276.0
+margin_right = 743.0
+margin_bottom = 400.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+expand = true
+
+[node name="level2" type="TextureButton" parent="ReferenceRect"]
+margin_left = 887.0
+margin_top = 281.0
+margin_right = 1001.0
+margin_bottom = 395.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 18 )
+expand = true
+
+[node name="level3" type="TextureButton" parent="ReferenceRect"]
+margin_left = 1130.0
+margin_top = 296.0
+margin_right = 1235.0
+margin_bottom = 399.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 10 )
+expand = true
+
+[node name="level4" type="TextureButton" parent="ReferenceRect"]
+margin_left = 1045.0
+margin_top = 479.0
+margin_right = 1167.0
+margin_bottom = 601.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+expand = true
+
+[node name="level5" type="TextureButton" parent="ReferenceRect"]
+margin_left = 827.0
+margin_top = 468.0
+margin_right = 962.0
+margin_bottom = 603.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 15 )
+expand = true
+
+[node name="level6" type="TextureButton" parent="ReferenceRect"]
+margin_left = 591.0
+margin_top = 471.0
+margin_right = 727.0
+margin_bottom = 607.0
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 8 )
+expand = true
+
+[node name="level7" type="TextureButton" parent="ReferenceRect"]
+margin_left = 606.0
+margin_top = 644.0
+margin_right = 766.0
+margin_bottom = 803.0
+texture_normal = ExtResource( 20 )
+texture_pressed = ExtResource( 21 )
+expand = true
+
+[node name="level8" type="TextureButton" parent="ReferenceRect"]
+margin_left = 872.0
+margin_top = 651.0
+margin_right = 1021.0
+margin_bottom = 805.0
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 23 )
+expand = true
+
+[node name="car" type="TextureRect" parent="ReferenceRect"]
+margin_left = 1218.0
+margin_top = 645.0
+margin_right = 1449.0
+margin_bottom = 844.0
+texture = ExtResource( 9 )
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 624.0
+margin_top = 22.0
+margin_right = 1226.0
+margin_bottom = 294.0
+texture = ExtResource( 19 )
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
