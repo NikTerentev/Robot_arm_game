@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Menu/Levels.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/levels_sprites/Уровни.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/game_mode_sprites/Group 24.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/game_mode_sprites/Group 23.png" type="Texture" id=4]
+
+[node name="Levels" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="back" type="TextureButton" parent="."]
+margin_left = 48.0
+margin_top = 78.0
+margin_right = 354.0
+margin_bottom = 373.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

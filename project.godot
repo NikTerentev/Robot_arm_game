@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Robot arm"
-run/main_scene="res://Scenes/MainMenu.tscn"
+run/main_scene="res://Scenes/Menu/MainMenu.tscn"
 config/icon="res://icon_game.png"
 
 [autoload]
@@ -23,6 +23,10 @@ Stars="*res://Stars.py"
 
 window/size/width=1700
 window/size/height=900
+
+[gdnative]
+
+singletons=[ "res://pythonscript.gdnlib" ]
 
 [input]
 
@@ -51,9 +55,6 @@ five={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":53,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
-[gdnative]
-
-singletons=[ "res://pythonscript.gdnlib" ]
 
 [physics]
 
