@@ -17,7 +17,7 @@ func _on_StartGame_pressed():
 
 func _on_MyAchievs_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Scenes/Menu/Levels.tscn")
+	get_tree().change_scene("res://Scenes/Menu/Awards.tscn")
 
 
 func _on_Exit_pressed():
