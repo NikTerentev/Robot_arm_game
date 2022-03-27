@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sci-fi-interface-robot-click.mp3-9fe1b1d1a6a5b2dfefa858515bf9f36e.mp3str"
+
+[deps]
+
+source_file="res://Sounds/sci-fi-interface-robot-click.mp3"
+dest_files=[ "res://.import/sci-fi-interface-robot-click.mp3-9fe1b1d1a6a5b2dfefa858515bf9f36e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

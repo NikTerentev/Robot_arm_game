@@ -7,4 +7,6 @@ func _ready():
 
 func _on_back_pressed():
 # warning-ignore:return_value_discarded
+	$ClickSound.play()
+	yield($ClickSound, "finished")
 	get_tree().change_scene("res://Scenes/MainMenu.tscn")
