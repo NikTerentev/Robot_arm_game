@@ -16,17 +16,12 @@
 [ext_resource path="res://Scripts/Robot/shoulder_1.gd" type="Script" id=14]
 [ext_resource path="res://Scripts/Robot/shoulder_2.gd" type="Script" id=15]
 [ext_resource path="res://Scripts/Robot/Ground.gd" type="Script" id=16]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 79.6667, 14.6875 )
+[ext_resource path="res://Scripts/Robot/arm_1.gd" type="Script" id=17]
+[ext_resource path="res://Scripts/Robot/arm_2.gd" type="Script" id=18]
 
 [sub_resource type="CapsuleShape2D" id=5]
 radius = 25.0972
 height = 145.156
-
-[sub_resource type="CapsuleShape2D" id=6]
-radius = 14.0553
-height = 82.6666
 
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 29.5486
@@ -42,12 +37,6 @@ position = Vector2( -7, 16 )
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 69, 54 )
 script = ExtResource( 16 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2( 732, 503.032 )
-rotation = 7.45058e-09
-scale = Vector2( 1.5, 1.5 )
-shape = SubResource( 1 )
 
 [node name="ground" type="Sprite" parent="Ground"]
 position = Vector2( 719, 511 )
@@ -103,7 +92,7 @@ texture = ExtResource( 1 )
 offset = Vector2( 114.718, -101.769 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2"]
-position = Vector2( 68.6667, -32.6666 )
+position = Vector2( 66.6666, -33.3337 )
 rotation = 1.15192
 shape = SubResource( 5 )
 one_way_collision_margin = 0.0
@@ -127,36 +116,71 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 8 )
 offset = Vector2( 68.5918, 66.3203 )
 
-[node name="arm_1" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1/shoulder_1"]
-position = Vector2( 100.758, 142.219 )
-rotation = 0.616114
-texture = ExtResource( 2 )
-offset = Vector2( 31.9015, 6.98267 )
-
-[node name="arm_2" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1/shoulder_1"]
-position = Vector2( 137.438, 112.491 )
-rotation = -0.58002
-texture = ExtResource( 7 )
-offset = Vector2( 17.9675, 26.7192 )
-
-[node name="circle_1" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1/shoulder_1"]
-position = Vector2( 134.651, 109.302 )
-texture = ExtResource( 10 )
-
-[node name="circle_2" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1/shoulder_1"]
-position = Vector2( 99.1278, 141.147 )
-texture = ExtResource( 10 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1"]
-position = Vector2( 38.2948, 25.2402 )
-rotation = 2.18515
-shape = SubResource( 6 )
-
 [node name="ring_1" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1"]
 position = Vector2( 0.686371, -1.32324 )
 rotation = -0.849234
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1"]
+visible = false
+polygon = PoolVector2Array( 0.218933, -14.6654, 12.148, -9.82043, 35.887, 7.86865, 40.6227, 3.27205, 45.9058, 6.68451, 47.9652, 2.71477, 53.9049, 6.80373, 51.1889, 10.097, 56.4719, 13.5094, 53.0594, 18.7925, 64.9389, 26.9704, 72.4403, 15.7476, 83.6631, 23.2491, 55.687, 66.1702, 44.4742, 58.0022, 50.6325, 47.4261, 40.0763, 39.9346, 36.0072, 44.5412, 30.7241, 41.1287, 28.6747, 44.4319, 24.0582, 41.0294, 25.4411, 37.7163, 20.158, 34.3038, 23.5704, 29.0208, -12.0878, 5.8201, -11.9487, -3.51219, -9.17297, -10.805 )
+
+[node name="n1_a1" type="PinJoint2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1"]
+position = Vector2( 59.8455, 55.5644 )
+node_a = NodePath("..")
+node_b = NodePath("arm_1")
+
+[node name="arm_1" type="RigidBody2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1/n1_a1"]
+position = Vector2( -3.30316, -2.04945 )
+rotation = 9.31323e-10
+mode = 3
+script = ExtResource( 17 )
+
+[node name="arm_1" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1/n1_a1/arm_1"]
+position = Vector2( 8.60602, 4.12874 )
+rotation = 0.417319
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+offset = Vector2( 31.9015, 6.98267 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1/n1_a1/arm_1"]
+position = Vector2( -54.5423, -53.4855 )
+polygon = PoolVector2Array( 55.8758, 53.505, 69.9637, 47.7143, 76.6097, 49.1468, 82.5396, 53.9024, 83.7733, 60.5882, 81.7534, 61.892, 81.694, 65.8911, 76.9584, 70.4877, 70.2725, 71.7215, 84.1518, 79.9293, 85.5148, 77.9494, 92.7877, 82.0582, 92.0912, 84.0481, 93.3748, 87.4009, 92.0118, 89.3808, 86.689, 88.6347, 52.215, 75.4528 )
+
+[node name="n1_a2" type="PinJoint2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1"]
+position = Vector2( 74.1917, 32.4423 )
+node_a = NodePath("..")
+node_b = NodePath("arm_2")
+
+[node name="arm_2" type="RigidBody2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1/n1_a2"]
+position = Vector2( -1.97998, -1.36299 )
+rotation = 9.31323e-10
+mode = 3
+script = ExtResource( 18 )
+
+[node name="arm_2" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1/n1_a2/arm_2"]
+position = Vector2( 5.84027, 10.7549 )
+rotation = -0.778815
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+offset = Vector2( 17.9675, 26.7192 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1/n1_a2/arm_2"]
+position = Vector2( -72.2414, -29.0799 )
+polygon = PoolVector2Array( 72.9083, 29.0894, 92.4083, 18.0455, 119.948, 49.126, 118.565, 52.4391, 114.576, 51.7129, 113.213, 53.6928, 106.616, 48.9273, 107.979, 46.9474, 94.8164, 35.4166, 93.9908, 46.0722, 90.5883, 50.6886, 84.5691, 51.9324, 77.2763, 49.1567, 72.6896, 43.7545, 72.1721, 33.7456 )
+
+[node name="circle_2" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1"]
+position = Vector2( 58.5322, 54.2113 )
+rotation = -0.198795
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="circle_1" type="Sprite" parent="Ground/g-4/shoulder_4/4-3/shoulder_3/3-2/shoulder_2/2-1/shoulder_1"]
+position = Vector2( 73.5251, 32.4323 )
+rotation = -0.198795
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/g-4/shoulder_4/4-3/shoulder_3"]
 position = Vector2( -35.9999, -72 )
@@ -186,3 +210,6 @@ position = Vector2( 60.6667, -60.6667 )
 rotation = -0.0418285
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 662, 486, 674, 482, 761, 480, 776, 485, 776, 499, 819, 499, 820, 524, 826, 524, 826, 519, 835, 519, 835, 524, 842, 524, 842, 537, 597, 541, 596, 528, 604, 527, 604, 523, 610, 522, 613, 523, 613, 528, 619, 527, 619, 503, 662, 501 )

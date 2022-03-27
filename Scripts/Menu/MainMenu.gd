@@ -12,12 +12,12 @@ func _on_TextureButton_pressed():
 
 func _on_StartGame_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Scenes/GameMode.tscn")
+	get_tree().change_scene("res://Scenes/Menu/GameMode.tscn")
 
 
 func _on_MyAchievs_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Scenes/Levels.tscn")
+	get_tree().change_scene("res://Scenes/Menu/Levels.tscn")
 
 
 func _on_Exit_pressed():
