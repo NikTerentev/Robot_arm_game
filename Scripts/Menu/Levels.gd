@@ -29,8 +29,12 @@ func _process(delta):
 
 
 func _on_back_pressed():
+	$ClickSound.play()
+	yield($ClickSound, "finished")
 	get_tree().change_scene("res://Scenes/Menu/GameMode.tscn")
 
 
 func _on_level7_pressed():
+	$ClickSound.play()
+	yield($ClickSound, "finished")
 	get_tree().change_scene("res://Scenes/UiSmart.tscn")

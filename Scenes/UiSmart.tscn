@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprites/LevelUI/ground.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/LevelUI/menu.png" type="Texture" id=2]
@@ -9,9 +9,14 @@
 [ext_resource path="res://Sprites/LevelUI/Group 26.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/UiSmart.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Level7/MainScene.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sounds/sci-fi-interface-robot-click.mp3" type="AudioStream" id=10]
 
 [node name="UiSmart" type="CanvasLayer"]
 script = ExtResource( 8 )
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -10.0
 
 [node name="MainScene" parent="." instance=ExtResource( 9 )]
 position = Vector2( -2, -26 )

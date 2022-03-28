@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/Menu/Levels.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/levels_sprites/Уровни.png" type="Texture" id=2]
@@ -23,9 +23,14 @@
 [ext_resource path="res://Sprites/levels_sprites/7 pressed.png" type="Texture" id=21]
 [ext_resource path="res://Sprites/levels_sprites/Group 18.png" type="Texture" id=22]
 [ext_resource path="res://Sprites/levels_sprites/8 pressed.png" type="Texture" id=23]
+[ext_resource path="res://Sounds/sci-fi-interface-robot-click.mp3" type="AudioStream" id=24]
 
 [node name="Levels" type="CanvasLayer"]
 script = ExtResource( 1 )
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+volume_db = -10.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0

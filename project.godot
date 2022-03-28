@@ -11,14 +11,14 @@ config_version=4
 [application]
 
 config/name="Robot arm"
-run/main_scene="res://Scenes/MainMenu.tscn"
+run/main_scene="res://Scenes/Menu/MainMenu.tscn"
 config/icon="res://icon_game.png"
 
 [autoload]
 
-StarsForLevels="*res://stars_for_levels.gd"
+StarsForLevels="*res://Scripts/Menu/stars_for_levels.gd"
 Stars="*res://Stars.py"
-BackgroundMusic="*res://Scenes/BackgroundMusic.tscn"
+BackgroundMusic="*res://Scenes/Menu/BackgroundMusic.tscn"
 
 [display]
 
@@ -56,9 +56,9 @@ five={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":53,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
-Left_Mouse={
+catch={
 "deadzone": 0.5,
-"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
