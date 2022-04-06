@@ -1,20 +1,17 @@
 extends CanvasLayer
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
+var time = 0
 func _ready():
-	pass # Replace with function body.
+	$Timer.start()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func _process(delta):
+	time += delta
+	var sec = fmod(time, 60)
+	var mins = fmod(time, 3600) / 60
+	var time_str = "%02d:%02d" % [mins, sec]
+	$time_counter/Label.text = time_str
+	
 
 func _on_Back_pressed():
 	get_tree().change_scene("res://Scenes/Menu/MainMenu.tscn")

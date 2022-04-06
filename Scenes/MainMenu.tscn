@@ -12,7 +12,7 @@
 [ext_resource path="res://Sprites/main_menu_sprites/bakground.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/main_menu_sprites/question.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/main_menu_sprites/question p.png" type="Texture" id=12]
-[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/Menu/MainMenu.gd" type="Script" id=13]
 [ext_resource path="res://Sprites/main_menu_sprites/about.png" type="Texture" id=14]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=15]
 
