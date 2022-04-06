@@ -35,10 +35,10 @@ margin_bottom = 924.0
 texture = ExtResource( 6 )
 expand = true
 
-[node name="wheel" parent="." instance=ExtResource( 1 )]
-position = Vector2( 888, 128 )
+[node name="wheel" parent="." groups=["wheel"] instance=ExtResource( 1 )]
+position = Vector2( 52, 140 )
 
-[node name="wheel2" parent="." instance=ExtResource( 1 )]
+[node name="wheel2" parent="." groups=["wheel"] instance=ExtResource( 1 )]
 position = Vector2( 352, 171 )
 
 [node name="ceiling" type="StaticBody2D" parent="."]
@@ -137,16 +137,16 @@ margin_top = 618.0
 margin_right = 154.0
 margin_bottom = 658.0
 
-[node name="wheel3" parent="." instance=ExtResource( 1 )]
+[node name="wheel3" parent="." groups=["wheel"] instance=ExtResource( 1 )]
 position = Vector2( 3, 22 )
 
-[node name="wheel4" parent="." instance=ExtResource( 1 )]
+[node name="wheel4" parent="." groups=["wheel"] instance=ExtResource( 1 )]
 position = Vector2( -73, 164 )
 
-[node name="wheel5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 623, -36 )
+[node name="wheel5" parent="." groups=["wheel"] instance=ExtResource( 1 )]
+position = Vector2( 4, -138 )
 
-[node name="wheel6" parent="." instance=ExtResource( 1 )]
+[node name="wheel6" parent="." groups=["wheel"] instance=ExtResource( 1 )]
 position = Vector2( 409, 56 )
 
 [node name="TextureRect2" type="TextureRect" parent="."]
