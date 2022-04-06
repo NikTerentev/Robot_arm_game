@@ -29,4 +29,5 @@ func _on_placeholder2_body_entered(body):
 
 func _process(delta):
 	if is_stand_1 and is_stand_2:
+		yield(get_tree().create_timer(1.5), "timeout")
 		get_tree().change_scene("res://Scenes/Menu/Winning.tscn")
