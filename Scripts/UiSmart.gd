@@ -15,3 +15,7 @@ func _process(delta):
 
 func _on_Back_pressed():
 	get_tree().change_scene("res://Scenes/Menu/MainMenu.tscn")
+
+
+func _on_Timer_timeout():
+	get_tree().change_scene("res://Scenes/Menu/Losing.tscn")
