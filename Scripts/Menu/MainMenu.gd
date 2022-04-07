@@ -9,7 +9,7 @@ func _ready():
 func _on_TextureButton_pressed():
 	$ClickSound.play()
 	yield($ClickSound, "finished")
-	$WindowDialog.popup()
+	$Popup.popup()
 
 
 func _on_StartGame_pressed():
