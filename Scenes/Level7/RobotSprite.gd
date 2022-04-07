@@ -17,9 +17,6 @@ func take_something():
 		empty.show()
 		get_wheel.show()
 		get_wheel.reset_state = true
-	else:
-		empty.hide()
-		taken.show()
 	is_taken = not is_taken
 
 
