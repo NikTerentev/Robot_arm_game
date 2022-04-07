@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 var time = 0
-const wait_time = 20 
 func _ready():
 	$Timer.start()
 	BackgroundMusic.stop()
@@ -27,9 +26,18 @@ func _on_Timer_timeout():
 func _on_pause_pressed():
 	$ClickSound.play()
 	yield($ClickSound, "finished")
-	if $Timer.is_stopped():
-		$Timer.wait_time = wait_time - fmod(time, 60)
-		$Timer.start()
-		
-	else:
-		$Timer.stop()
+	get_tree().paused = not get_tree().paused
+	
+func _on_task_pressed():
+	$ClickSound.play()
+	yield($ClickSound, "finished")
+	$Popup.popup()
+	$TextureButton/pause.pressed = true
+	get_tree().paused = true
+
+
+func _on_Popup_popup_hide():
+	$ClickSound.play()
+	yield($ClickSound, "finished")
+	get_tree().paused = false
+	$TextureButton/pause.pressed = false

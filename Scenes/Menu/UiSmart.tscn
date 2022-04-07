@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sprites/LevelUI/ground.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/LevelUI/menu.png" type="Texture" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://Fonts/RubikOne-Regular.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://Sounds/sci-fi-interface-robot-click.mp3" type="AudioStream" id=12]
 [ext_resource path="res://Sprites/LevelUI/play (1).png" type="Texture" id=13]
+[ext_resource path="res://Sprites/LevelUI/card (1).png" type="Texture" id=14]
+[ext_resource path="res://Sprites/LevelUI/accept.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/LevelUI/accept p (1).png" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -23,6 +26,7 @@ font_data = ExtResource( 11 )
 script = ExtResource( 8 )
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 12 )
 volume_db = -10.0
 
@@ -52,6 +56,7 @@ texture_hover = ExtResource( 3 )
 texture_disabled = ExtResource( 3 )
 
 [node name="Back_bt" type="TextureButton" parent="TextureButton"]
+pause_mode = 2
 margin_left = 64.0
 margin_top = 60.0
 margin_right = 126.0
@@ -59,6 +64,7 @@ margin_bottom = 121.0
 texture_normal = ExtResource( 7 )
 
 [node name="pause" type="TextureButton" parent="TextureButton"]
+pause_mode = 2
 margin_left = 155.0
 margin_top = 62.0
 margin_right = 210.0
@@ -68,7 +74,8 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 13 )
 expand = true
 
-[node name="TextureButton2" type="TextureButton" parent="."]
+[node name="task" type="TextureButton" parent="."]
+pause_mode = 2
 margin_left = 6.0
 margin_top = 127.0
 margin_right = 242.0
@@ -99,6 +106,30 @@ text = "00:00
 [node name="Timer" type="Timer" parent="."]
 wait_time = 20.0
 
+[node name="Popup" type="Popup" parent="."]
+margin_left = 47.0
+margin_top = -38.0
+margin_right = 1004.0
+margin_bottom = 589.0
+
+[node name="TextureRect" type="TextureRect" parent="Popup"]
+margin_left = 319.0
+margin_top = 114.0
+margin_right = 1344.0
+margin_bottom = 837.0
+texture = ExtResource( 14 )
+
+[node name="accept" type="TextureButton" parent="Popup/TextureRect"]
+margin_left = 362.0
+margin_top = 489.0
+margin_right = 689.0
+margin_bottom = 618.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 16 )
+expand = true
+
 [connection signal="pressed" from="TextureButton/Back_bt" to="." method="_on_Back_bt_pressed"]
 [connection signal="pressed" from="TextureButton/pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="task" to="." method="_on_task_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="popup_hide" from="Popup" to="." method="_on_Popup_popup_hide"]
