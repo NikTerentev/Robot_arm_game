@@ -39,17 +39,16 @@ volume_db = -10.0
 position = Vector2( -16, -43 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 1.0
+margin_left = -14.0
 margin_top = -48.0
-margin_right = 1702.0
+margin_right = 1703.0
 margin_bottom = 19.0
 color = Color( 0.0823529, 0.145098, 0.333333, 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -7.0
-margin_top = 751.0
-margin_right = 1695.0
-margin_bottom = 871.0
+margin_top = 792.0
+margin_right = 1703.0
+margin_bottom = 912.0
 texture = ExtResource( 1 )
 expand = true
 
