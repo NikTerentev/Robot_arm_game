@@ -5,6 +5,10 @@ var is_stand_2 = 0
 var wheels = []
 
 func _ready():
+	var wheel = load("res://Scenes/Level7/Wheel.tscn").instance()
+	print(wheel)
+	wheel.transform.origin = Vector2(100, 100)
+	wheel.show()
 	wheels = get_tree().get_nodes_in_group("wheel")
 
 

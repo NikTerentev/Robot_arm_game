@@ -12,15 +12,13 @@ func _ready():
 	wheels = get_tree().get_nodes_in_group("wheel")
 
 func take_something():
-	print($MainScene/wheel)
 	if is_taken and get_wheel:
+		var wheel = load("res://Scenes/Level7/Wheel.tscn").instance()
+		print(wheel)
+		wheel.transform.origin = Vector2(100, 100)
+		wheel.show()
 		taken.hide()
 		empty.show()
-		var cube = RigidBody.new()
-		
-		cube.transform.origin = Vector3(0, 0, 0)
-		get_wheel.show()
-		get_wheel.reset_state = true
 	is_taken = not is_taken
 
 

@@ -35,7 +35,6 @@ func _on_task_pressed():
 	$TextureButton/pause.pressed = true
 	get_tree().paused = true
 
-
 func _on_Popup_popup_hide():
 	$ClickSound.play()
 	yield($ClickSound, "finished")

@@ -38,3 +38,7 @@ func _on_level7_pressed():
 	$ClickSound.play()
 	yield($ClickSound, "finished")
 	get_tree().change_scene("res://Scenes/Menu/UiSmart.tscn")
+
+
+func _on_level2_pressed():
+	get_tree().change_scene("res://Scenes/LevelUI.tscn")

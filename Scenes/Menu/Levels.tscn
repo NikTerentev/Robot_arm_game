@@ -145,4 +145,5 @@ margin_bottom = 294.0
 texture = ExtResource( 19 )
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="ReferenceRect/level2" to="." method="_on_level2_pressed"]
 [connection signal="pressed" from="ReferenceRect/level7" to="." method="_on_level7_pressed"]
