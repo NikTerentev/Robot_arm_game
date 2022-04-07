@@ -17,6 +17,7 @@ func _process(delta):
 func _on_Back_bt_pressed():
 	$ClickSound.play()
 	yield($ClickSound, "finished")
+	GameMusic.stop()
 	BackgroundMusic.play()
 	get_tree().change_scene("res://Scenes/Menu/MainMenu.tscn")
 
