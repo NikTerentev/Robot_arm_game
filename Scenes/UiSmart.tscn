@@ -31,7 +31,7 @@ color = Color( 0.0823529, 0.145098, 0.333333, 1 )
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_top = 794.0
 margin_right = 1702.0
-margin_bottom = 914.0
+margin_bottom = 898.0
 texture = ExtResource( 1 )
 expand = true
 
