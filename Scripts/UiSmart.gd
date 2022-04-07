@@ -16,7 +16,6 @@ func _process(delta):
 		$time_counter/Label.text = time_str
 	
 func _on_Back_bt_pressed():
-	print("pressed")
 	$ClickSound.play()
 	yield($ClickSound, "finished")
 	BackgroundMusic.play()
@@ -26,6 +25,8 @@ func _on_Timer_timeout():
 	get_tree().change_scene("res://Scenes/Menu/Losing.tscn")
 
 func _on_pause_pressed():
+	$ClickSound.play()
+	yield($ClickSound, "finished")
 	if $Timer.is_stopped():
 		$Timer.wait_time = wait_time - fmod(time, 60)
 		$Timer.start()
