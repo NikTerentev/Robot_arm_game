@@ -3,6 +3,7 @@ extends CanvasLayer
 var time = 0
 func _ready():
 	$Timer.start()
+	BackgroundMusic.stop()
 
 
 func _process(delta):
@@ -11,9 +12,12 @@ func _process(delta):
 	var mins = fmod(time, 3600) / 60
 	var time_str = "%02d:%02d" % [mins, sec]
 	$time_counter/Label.text = time_str
-	
+
 
 func _on_Back_pressed():
+	$ClickSound.play()
+	yield($ClickSound, "finished")
+	BackgroundMusic.play()
 	get_tree().change_scene("res://Scenes/Menu/MainMenu.tscn")
 
 

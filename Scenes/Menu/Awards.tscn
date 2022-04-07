@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Sprites/game_mode_sprites/Group 24.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/game_mode_sprites/Group 23.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Sprites/awards_sprites/brain.png" type="Texture" id=8]
 [ext_resource path="res://fonts/RubikOne-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://fonts/Roboto-Regular.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Sounds/sci-fi-interface-robot-click.mp3" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -22,12 +23,15 @@ font_data = ExtResource( 10 )
 [node name="Awards" type="CanvasLayer"]
 script = ExtResource( 4 )
 
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -10.0
+
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -7.0
-margin_top = -19.0
-margin_right = 1736.0
-margin_bottom = 920.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource( 3 )
+stretch_mode = 1
 
 [node name="Back" type="TextureButton" parent="."]
 margin_right = 40.0

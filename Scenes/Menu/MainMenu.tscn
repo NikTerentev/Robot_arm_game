@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/Menu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/main_menu_sprites/exit.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://Fonts/RubikOne-Regular.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Sprites/main_menu_sprites/about.png" type="Texture" id=15]
+[ext_resource path="res://Sounds/sci-fi-interface-robot-click.mp3" type="AudioStream" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 110
@@ -35,10 +36,13 @@ font_data = ExtResource( 13 )
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource( 1 )
 
-[node name="Baсkground" type="TextureRect" parent="."]
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -10.0
+
+[node name="bacground" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_rotation = -0.118061
 texture = ExtResource( 9 )
 expand = true
 
@@ -74,26 +78,28 @@ anchor_left = 0.56
 anchor_top = 0.202
 anchor_right = 0.606
 anchor_bottom = 0.239
-margin_right = 327.592
-margin_bottom = 194.394
+margin_left = 4.12
+margin_top = -53.876
+margin_right = 344.712
+margin_bottom = 226.518
 
 [node name="StartGame" type="TextureButton" parent="Card/VBoxContainer"]
-margin_right = 385.0
-margin_bottom = 70.0
+margin_right = 398.0
+margin_bottom = 104.0
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 7 )
 
 [node name="MyAchievs" type="TextureButton" parent="Card/VBoxContainer"]
-margin_top = 74.0
-margin_right = 385.0
-margin_bottom = 144.0
+margin_top = 108.0
+margin_right = 398.0
+margin_bottom = 204.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 10 )
 
 [node name="Exit" type="TextureButton" parent="Card/VBoxContainer"]
-margin_top = 148.0
-margin_right = 385.0
-margin_bottom = 218.0
+margin_top = 208.0
+margin_right = 398.0
+margin_bottom = 304.0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 12 )
 
