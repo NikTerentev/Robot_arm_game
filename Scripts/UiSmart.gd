@@ -16,9 +16,9 @@ func _process(delta):
 		$time_counter/Label.text = time_str
 	
 func _on_Back_bt_pressed():
-	print("pessed")
+	print("pressed")
 	$ClickSound.play()
-	#yield($ClickSound, "finished")
+	yield($ClickSound, "finished")
 	BackgroundMusic.play()
 	get_tree().change_scene("res://Scenes/Menu/MainMenu.tscn")
 
