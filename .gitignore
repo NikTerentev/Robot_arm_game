@@ -130,5 +130,4 @@ dmypy.json
 
 # Ignoring directories
 # Both the directory itself and its contents will be ignored.
-.import/
 __pycache__/

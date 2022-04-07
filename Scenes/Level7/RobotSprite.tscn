@@ -154,7 +154,6 @@ texture = ExtResource( 19 )
 [node name="arm_1" type="RigidBody2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/take_wheel"]
 position = Vector2( 56.5425, 53.5149 )
 rotation = 0.273831
-scale = Vector2( 1, 1 )
 mode = 3
 script = ExtResource( 17 )
 
@@ -173,7 +172,6 @@ polygon = PoolVector2Array( 55.8758, 53.505, 69.9637, 47.7143, 76.6097, 49.1468,
 [node name="arm_4" type="RigidBody2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/take_wheel"]
 position = Vector2( 72.2117, 31.0793 )
 rotation = -0.31014
-scale = Vector2( 1, 1 )
 mode = 3
 script = ExtResource( 18 )
 
@@ -193,7 +191,6 @@ polygon = PoolVector2Array( 72.9083, 29.0894, 92.4083, 18.0455, 119.948, 49.126,
 [node name="arm_2" type="RigidBody2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty"]
 position = Vector2( 56.5425, 53.5149 )
 rotation = 3.72529e-09
-scale = Vector2( 1, 1 )
 mode = 3
 script = ExtResource( 17 )
 
@@ -211,7 +208,6 @@ polygon = PoolVector2Array( 55.8758, 53.505, 69.9637, 47.7143, 76.6097, 49.1468,
 [node name="arm_3" type="RigidBody2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty"]
 position = Vector2( 72.2117, 31.0793 )
 rotation = 3.72529e-09
-scale = Vector2( 1, 1 )
 mode = 3
 script = ExtResource( 18 )
 

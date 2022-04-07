@@ -12,9 +12,13 @@ func _ready():
 	wheels = get_tree().get_nodes_in_group("wheel")
 
 func take_something():
-	if is_taken:
+	print($MainScene/wheel)
+	if is_taken and get_wheel:
 		taken.hide()
 		empty.show()
+		var cube = RigidBody.new()
+		
+		cube.transform.origin = Vector3(0, 0, 0)
 		get_wheel.show()
 		get_wheel.reset_state = true
 	is_taken = not is_taken
@@ -23,7 +27,7 @@ func take_something():
 func _on_Area2D_body_entered(body):
 	if not is_taken and body in wheels:
 		get_wheel = body
-		body.hide()
+		body.queue_free()
 		empty.hide()
 		taken.show()
 		is_taken = not is_taken
