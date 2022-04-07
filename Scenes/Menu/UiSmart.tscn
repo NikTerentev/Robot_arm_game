@@ -9,7 +9,6 @@
 [ext_resource path="res://Sprites/LevelUI/Group 26.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/UiSmart.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Level7/MainScene.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Sounds/sci-fi-interface-robot-click.mp3" type="AudioStream" id=10]
 [ext_resource path="res://Sprites/LevelUI/time.png" type="Texture" id=10]
 [ext_resource path="res://Fonts/RubikOne-Regular.ttf" type="DynamicFontData" id=11]
 
@@ -22,7 +21,6 @@ font_data = ExtResource( 11 )
 script = ExtResource( 8 )
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
 volume_db = -10.0
 
 [node name="MainScene" parent="." instance=ExtResource( 9 )]
@@ -50,10 +48,10 @@ texture_normal = ExtResource( 2 )
 texture_hover = ExtResource( 3 )
 texture_disabled = ExtResource( 3 )
 
-[node name="Back" type="TextureButton" parent="TextureButton"]
-margin_left = 59.0
+[node name="Back_bt" type="TextureButton" parent="TextureButton"]
+margin_left = 64.0
 margin_top = 60.0
-margin_right = 121.0
+margin_right = 126.0
 margin_bottom = 121.0
 texture_normal = ExtResource( 7 )
 
@@ -96,5 +94,6 @@ text = "00:00
 [node name="Timer" type="Timer" parent="."]
 wait_time = 20.0
 
-[connection signal="pressed" from="TextureButton/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="TextureButton/Back_bt" to="." method="_on_Back_bt_pressed"]
+[connection signal="pressed" from="TextureButton/menu" to="." method="_on_menu_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
