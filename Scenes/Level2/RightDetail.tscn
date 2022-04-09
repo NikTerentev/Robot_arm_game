@@ -5,8 +5,9 @@
 [node name="RightDetail" type="KinematicBody2D"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -105, -139 )
 polygon = PoolVector2Array( 85, 54, 123, 53, 124, 61, 132, 66, 134, 70, 146, 80, 147, 95, 140, 100, 146, 101, 157, 114, 134, 140, 118, 133, 120, 126, 109, 114, 102, 114, 90, 126, 92, 132, 78, 140, 53, 116, 63, 101, 66, 105, 70, 101, 63, 91, 66, 79, 75, 73, 84, 67 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 105, 96 )
+position = Vector2( -2, -43 )
 texture = ExtResource( 1 )
