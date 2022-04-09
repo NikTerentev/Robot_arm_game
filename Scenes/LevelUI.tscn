@@ -15,7 +15,7 @@
 [ext_resource path="res://Sprites/LevelUI/card (1).png" type="Texture" id=13]
 [ext_resource path="res://Sprites/LevelUI/accept.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/LevelUI/play (1).png" type="Texture" id=15]
-[ext_resource path="res://Scenes/LevelUI.gd" type="Script" id=16]
+[ext_resource path="res://Scripts/Level_7/LevelUI.gd" type="Script" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
