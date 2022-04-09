@@ -43,7 +43,7 @@ script = ExtResource( 14 )
 [node name="small conveyor" type="AnimatedSprite" parent="."]
 position = Vector2( 490, 472 )
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="conveyor" type="StaticBody2D" parent="."]
@@ -59,10 +59,11 @@ polygon = PoolVector2Array( 460, 527, 1116, 523, 1181, 498, 1209, 509, 1223, 529
 position = Vector2( 713, 574 )
 frames = SubResource( 1 )
 animation = "animation"
+frame = 3
 playing = true
 
 [node name="Spawner" type="Position2D" parent="."]
-position = Vector2( 270, 511 )
+position = Vector2( 333, 528 )
 script = ExtResource( 16 )
 wrong_detail = ExtResource( 1 )
 wrong_detail_2 = ExtResource( 15 )

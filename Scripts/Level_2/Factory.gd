@@ -1,6 +1,6 @@
 extends Node2D
 
-export var speed = 100
+export var speed = 400
 var details = []
 var wrong_details = []
 var right_details = []
@@ -10,12 +10,12 @@ func _ready():
 	wrong_details = get_tree().get_nodes_in_group("wrong")
 	right_details = get_tree().get_nodes_in_group("right")
 	$Timer.start()
-
-func _process(delta):
-	var velocity = Vector2(1, 0)
+	
+func _physics_process(delta):
+	var velocity = Vector2(1, 0) 
 	velocity = velocity.normalized() * speed
 	for detail in get_tree().get_nodes_in_group("detail"):
-		detail.position += velocity * delta
+		detail.apply_central_impulse(velocity * delta)
 		detail.position.x = clamp(detail.position.x, 100, 800)
 		if detail.position.x == 800:
 			detail.hide()
