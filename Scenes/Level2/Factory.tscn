@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Level2/WrongDetail.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Level2/RightDetail.tscn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Sprites/second_level/c step1.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/second_level/c step2.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/second_level/c step3.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Level2/Factory.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/Level2/WrongDetail2.tscn" type="PackedScene" id=15]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -30,12 +32,16 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 48.5, 69 )
+
 [node name="Factoty" type="Node2D"]
+script = ExtResource( 14 )
 
 [node name="small conveyor" type="AnimatedSprite" parent="."]
 position = Vector2( 490, 472 )
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="conveyor" type="StaticBody2D" parent="."]
@@ -51,22 +57,38 @@ polygon = PoolVector2Array( 395, 502, 1181, 498, 1209, 509, 1223, 529, 1219, 556
 position = Vector2( 713, 574 )
 frames = SubResource( 1 )
 animation = "animation"
+frame = 3
 playing = true
 
-[node name="RightDetail" parent="." instance=ExtResource( 2 )]
-position = Vector2( 303, 383 )
+[node name="RightDetail" parent="." groups=["detail", "right"] instance=ExtResource( 2 )]
+position = Vector2( 141, 369 )
 
-[node name="WrongDetail" parent="." instance=ExtResource( 1 )]
-position = Vector2( 438, 436 )
+[node name="WrongDetail" parent="." groups=["detail", "wrong"] instance=ExtResource( 1 )]
+position = Vector2( 399, 439 )
 
-[node name="front screen" type="Sprite" parent="."]
+[node name="WrongDetail2" parent="." groups=["detail", "wrong"] instance=ExtResource( 15 )]
+position = Vector2( 639, 391 )
+
+[node name="front_screen" type="Sprite" parent="."]
 position = Vector2( 894, 553 )
 texture = ExtResource( 3 )
 
-[node name="red_glass" type="Sprite" parent="front screen"]
+[node name="Area2D" type="Area2D" parent="front_screen"]
+position = Vector2( -578, -176 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="front_screen/Area2D"]
+position = Vector2( 576.5, 57 )
+shape = SubResource( 3 )
+
+[node name="red_glass" type="Sprite" parent="front_screen"]
+visible = false
 position = Vector2( -2, -118 )
 texture = ExtResource( 4 )
 
-[node name="green_glass" type="Sprite" parent="front screen"]
+[node name="green_glass" type="Sprite" parent="front_screen"]
+visible = false
 position = Vector2( -2, -117 )
 texture = ExtResource( 5 )
+
+[connection signal="body_entered" from="front_screen/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="front_screen/Area2D" to="." method="_on_Area2D_body_exited"]
