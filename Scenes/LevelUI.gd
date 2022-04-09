@@ -1,10 +1,10 @@
 extends CanvasLayer
 
 var time = 0
+
 func _ready():
 	$Timer.start()
 	BackgroundMusic.stop()
-
 
 func _process(delta):
 	if not $Timer.is_stopped():
