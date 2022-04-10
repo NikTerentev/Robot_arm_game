@@ -16,7 +16,7 @@ func get_input():
 func _process(delta):
 	if Input.is_action_pressed("three"):
 		pos = get_global_mouse_position()
-		if pos.y < 700:
+		if pos.y < 1000:
 			get_input()
 			velocity = apply_torque_impulse(0.1)
 		else:

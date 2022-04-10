@@ -2,6 +2,7 @@ extends Node2D
 
 export var speed = 300
 var details = []
+var score = 0
 var wrong_details = []
 var right_details = []
 
@@ -10,6 +11,7 @@ func _ready():
 	wrong_details = get_tree().get_nodes_in_group("wrong")
 	right_details = get_tree().get_nodes_in_group("right")
 	$Timer.start()
+	$LevelUI.update_score(score)
 	
 func _physics_process(delta):
 	var velocity = Vector2(1.5, 0.5) 
@@ -32,8 +34,11 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_body_exited(body):
 	if body in get_tree().get_nodes_in_group("wrong"):
 		$front_screen/red_glass.hide()
+		if score > 0: score -= 1
 	elif body in get_tree().get_nodes_in_group("right"):
 		$front_screen/green_glass.hide()
+		score += 2
+	$LevelUI.update_score(score)
 
 
 func _on_Timer_timeout():

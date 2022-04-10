@@ -41,4 +41,4 @@ func _on_level7_pressed():
 
 
 func _on_level2_pressed():
-	get_tree().change_scene("res://Scenes/LevelUI.tscn")
+	get_tree().change_scene("res://Scenes/Level2/Factory.tscn")

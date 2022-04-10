@@ -40,3 +40,7 @@ func _on_Popup_popup_hide():
 	yield($ClickSound, "finished")
 	get_tree().paused = false
 	$TextureButton/pause.pressed = false
+	
+func update_score(score):
+	var new_score = str(score) + "/30"
+	$score_counter/Label2.text = new_score
