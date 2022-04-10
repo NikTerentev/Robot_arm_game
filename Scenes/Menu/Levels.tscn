@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/Menu/Levels.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/levels_sprites/Уровни.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://Sprites/levels_sprites/Group 18.png" type="Texture" id=22]
 [ext_resource path="res://Sprites/levels_sprites/8 pressed.png" type="Texture" id=23]
 [ext_resource path="res://Sounds/sci-fi-interface-robot-click.mp3" type="AudioStream" id=24]
+[ext_resource path="res://Sprites/levels_sprites/padlock.png" type="Texture" id=25]
 
 [node name="Levels" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -90,27 +91,45 @@ margin_left = 725.0
 margin_top = 437.0
 margin_right = 847.0
 margin_bottom = 559.0
+disabled = true
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 13 )
 expand = true
+
+[node name="Sprite" type="Sprite" parent="ReferenceRect/level4"]
+position = Vector2( 99, 105 )
+scale = Vector2( 0.0810547, 0.0810547 )
+texture = ExtResource( 25 )
 
 [node name="level5" type="TextureButton" parent="ReferenceRect"]
 margin_left = 473.0
 margin_top = 441.0
 margin_right = 608.0
 margin_bottom = 576.0
+disabled = true
 texture_normal = ExtResource( 14 )
 texture_pressed = ExtResource( 15 )
 expand = true
+
+[node name="Sprite2" type="Sprite" parent="ReferenceRect/level5"]
+position = Vector2( 117, 107 )
+scale = Vector2( 0.0810547, 0.0810547 )
+texture = ExtResource( 25 )
 
 [node name="level6" type="TextureButton" parent="ReferenceRect"]
 margin_left = 260.0
 margin_top = 420.0
 margin_right = 396.0
 margin_bottom = 556.0
+disabled = true
 texture_normal = ExtResource( 16 )
 texture_pressed = ExtResource( 8 )
 expand = true
+
+[node name="Sprite2" type="Sprite" parent="ReferenceRect/level6"]
+position = Vector2( 113, 119 )
+scale = Vector2( 0.0810547, 0.0810547 )
+texture = ExtResource( 25 )
 
 [node name="level7" type="TextureButton" parent="ReferenceRect"]
 margin_left = 237.0
@@ -145,5 +164,6 @@ margin_bottom = 294.0
 texture = ExtResource( 19 )
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="ReferenceRect/level1" to="." method="_on_level1_pressed"]
 [connection signal="pressed" from="ReferenceRect/level2" to="." method="_on_level2_pressed"]
 [connection signal="pressed" from="ReferenceRect/level7" to="." method="_on_level7_pressed"]

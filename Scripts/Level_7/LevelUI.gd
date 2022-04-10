@@ -42,5 +42,5 @@ func _on_Popup_popup_hide():
 	$TextureButton/pause.pressed = false
 	
 func update_score(score):
-	var new_score = str(score) + "/30"
+	var new_score = str(score) + "/20"
 	$score_counter/Label2.text = new_score

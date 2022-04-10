@@ -67,6 +67,7 @@ polygon = PoolVector2Array( 850, 186, 852, 331, 851, 332, 854, 352, 906, 351, 91
 [node name="small conveyor" type="AnimatedSprite" parent="."]
 position = Vector2( 751, 474 )
 frames = SubResource( 2 )
+frame = 2
 playing = true
 
 [node name="back_screen" type="Sprite" parent="."]
