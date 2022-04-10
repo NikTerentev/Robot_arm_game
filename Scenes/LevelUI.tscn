@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Fonts/RubikOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Sprites/LevelUI/accept.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/LevelUI/play (1).png" type="Texture" id=15]
 [ext_resource path="res://Scripts/Level_7/LevelUI.gd" type="Script" id=16]
+[ext_resource path="res://Sprites/LevelUI/score.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -35,23 +36,25 @@ stream = ExtResource( 6 )
 volume_db = -10.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 1.0
-margin_top = -48.0
-margin_right = 1702.0
-margin_bottom = 19.0
+margin_left = 4.0
+margin_top = -15.0
+margin_right = 1705.0
+margin_bottom = 52.0
 color = Color( 0.0823529, 0.145098, 0.333333, 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -7.0
-margin_top = 751.0
-margin_right = 1695.0
-margin_bottom = 871.0
+margin_left = -4.0
+margin_top = 820.0
+margin_right = 1698.0
+margin_bottom = 904.0
 texture = ExtResource( 5 )
 expand = true
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 3.0
+margin_top = 33.0
+margin_right = 278.0
+margin_bottom = 213.0
 texture_normal = ExtResource( 10 )
 texture_hover = ExtResource( 7 )
 texture_disabled = ExtResource( 7 )
@@ -77,20 +80,20 @@ texture_normal = ExtResource( 8 )
 
 [node name="task" type="TextureButton" parent="."]
 pause_mode = 2
-margin_left = 6.0
-margin_top = 127.0
-margin_right = 242.0
-margin_bottom = 413.0
+margin_left = 9.0
+margin_top = 160.0
+margin_right = 245.0
+margin_bottom = 446.0
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 9 )
 
 [node name="time_counter" type="TextureRect" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -418.0
-margin_top = 7.0
-margin_right = -45.0
-margin_bottom = 171.0
+margin_left = -415.0
+margin_top = 40.0
+margin_right = -42.0
+margin_bottom = 204.0
 texture = ExtResource( 12 )
 expand = true
 
@@ -102,6 +105,24 @@ margin_bottom = 132.0
 custom_colors/font_color = Color( 0.14902, 0.647059, 1, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "00:00
+"
+
+[node name="score_counter" type="TextureRect" parent="."]
+margin_left = 940.0
+margin_top = 43.0
+margin_right = 1319.0
+margin_bottom = 204.0
+texture = ExtResource( 17 )
+expand = true
+
+[node name="Label2" type="Label" parent="score_counter"]
+margin_left = 167.0
+margin_top = 66.0
+margin_right = 246.0
+margin_bottom = 131.0
+custom_colors/font_color = Color( 0.14902, 0.647059, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "16/30
 "
 
 [node name="Timer" type="Timer" parent="."]

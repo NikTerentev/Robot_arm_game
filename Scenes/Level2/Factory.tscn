@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scenes/Level2/WrongDetail.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Level2/RightDetail.tscn" type="PackedScene" id=2]
@@ -17,6 +17,10 @@
 [ext_resource path="res://Scenes/Level2/WrongDetail2.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scripts/Level_2/Spawner.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/Level7/RobotSprite.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Sprites/second_level/back_screen (1).png" type="Texture" id=18]
+[ext_resource path="res://Scenes/LevelUI.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Sprites/second_level/tubes.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/second_level/background (1).png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -40,37 +44,57 @@ extents = Vector2( 31, 69 )
 [node name="Factoty" type="Node2D"]
 script = ExtResource( 14 )
 
+[node name="background" type="TextureRect" parent="."]
+margin_right = 1698.0
+margin_bottom = 839.0
+texture = ExtResource( 21 )
+expand = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="tubes" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 941, 315 )
+texture = ExtResource( 20 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PoolVector2Array( 850, 186, 852, 331, 851, 332, 854, 352, 906, 351, 911, 334, 960, 335, 961, 319, 940, 320, 953, 282, 979, 280, 1004, 308, 1038, 314, 1070, 284, 1069, 251, 1057, 232, 1091, 189, 1273, 189, 1273, 257, 1169, 253, 1150, 302, 1155, 314, 1155, 363, 1194, 351, 1189, 303, 1298, 293, 1321, 260, 1317, 198, 1379, 244, 1366, 277, 1372, 310, 1396, 309, 1421, 310, 1415, 395, 1457, 396, 1461, 235, 1459, 202, 1697, 206, 1699, 166, 1458, 167, 1451, 49, 1248, 53, -18, 186 )
+
 [node name="small conveyor" type="AnimatedSprite" parent="."]
-position = Vector2( 490, 472 )
+position = Vector2( 751, 474 )
 frames = SubResource( 2 )
-frame = 2
+frame = 1
 playing = true
 
+[node name="back_screen" type="Sprite" parent="."]
+position = Vector2( 1178, 545 )
+texture = ExtResource( 18 )
+
 [node name="conveyor" type="StaticBody2D" parent="."]
+position = Vector2( 261, 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="conveyor"]
+polygon = PoolVector2Array( 460, 527, 1116, 523, 1215, 524, 1209, 509, 1223, 529, 1219, 556, 1205, 573, 1163, 598, 1163, 663, 1175, 667, 1189, 722, 1126, 719, 1138, 666, 1143, 663, 1146, 605, 1134, 618, 1084, 620, 1070, 645, 1071, 718, 1080, 719, 1092, 772, 1031, 772, 1046, 723, 1055, 720, 1055, 642, 1041, 618, 911, 617, 903, 641, 902, 720, 908, 723, 921, 773, 863, 771, 879, 720, 882, 720, 885, 640, 870, 618, 743, 617, 732, 644, 732, 720, 740, 721, 754, 775, 694, 774, 710, 721, 715, 640, 704, 617, 652, 620, 654, 665, 663, 665, 676, 721, 617, 719, 627, 667, 635, 666, 635, 621, 575, 619, 563, 640, 563, 719, 567, 721, 581, 775, 524, 772, 537, 720, 541, 636, 533, 618, 493, 619, 498, 664, 512, 718, 457, 718, 469, 664, 470, 618, 412, 618, 402, 639, 405, 720, 422, 772, 360, 774, 376, 721, 380, 636, 371, 619, 300, 617, 275, 597, 265, 566, 278, 539, 303, 529 )
 
 [node name="Sprite" type="Sprite" parent="conveyor"]
 position = Vector2( 767, 661 )
 texture = ExtResource( 6 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="conveyor"]
-polygon = PoolVector2Array( 460, 527, 1116, 523, 1181, 498, 1209, 509, 1223, 529, 1219, 556, 1205, 573, 1163, 598, 1163, 663, 1175, 667, 1189, 722, 1126, 719, 1138, 666, 1143, 663, 1146, 605, 1134, 618, 1084, 620, 1070, 645, 1071, 718, 1080, 719, 1092, 772, 1031, 772, 1046, 723, 1055, 720, 1055, 642, 1041, 618, 911, 617, 903, 641, 902, 720, 908, 723, 921, 773, 863, 771, 879, 720, 882, 720, 885, 640, 870, 618, 743, 617, 732, 644, 732, 720, 740, 721, 754, 775, 694, 774, 710, 721, 715, 640, 704, 617, 652, 620, 654, 665, 663, 665, 676, 721, 617, 719, 627, 667, 635, 666, 635, 621, 575, 619, 563, 640, 563, 719, 567, 721, 581, 775, 524, 772, 537, 720, 541, 636, 533, 618, 493, 619, 498, 664, 512, 718, 457, 718, 469, 664, 470, 618, 412, 618, 402, 639, 405, 720, 422, 772, 360, 774, 376, 721, 380, 636, 371, 619, 300, 617, 275, 597, 265, 566, 278, 539, 303, 529 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="conveyor"]
 position = Vector2( 713, 574 )
 frames = SubResource( 1 )
 animation = "animation"
-frame = 3
 playing = true
 
 [node name="Spawner" type="Position2D" parent="."]
-position = Vector2( 333, 528 )
+position = Vector2( 600, 518 )
 script = ExtResource( 16 )
 wrong_detail = ExtResource( 1 )
 wrong_detail_2 = ExtResource( 15 )
 right_detail = ExtResource( 2 )
 
 [node name="front_screen" type="Sprite" parent="."]
-position = Vector2( 894, 553 )
+position = Vector2( 1155, 555 )
 texture = ExtResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="front_screen"]
@@ -94,8 +118,10 @@ texture = ExtResource( 5 )
 wait_time = 2.0
 
 [node name="RobotSprite" parent="." instance=ExtResource( 17 )]
-position = Vector2( -877, 98 )
+position = Vector2( -601, 47 )
 scale = Vector2( 1.2, 1.2 )
+
+[node name="LevelUI" parent="." instance=ExtResource( 19 )]
 
 [connection signal="body_entered" from="front_screen/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="front_screen/Area2D" to="." method="_on_Area2D_body_exited"]
