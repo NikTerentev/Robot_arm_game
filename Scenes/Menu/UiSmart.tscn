@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Sprites/LevelUI/ground.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/LevelUI/menu.png" type="Texture" id=2]
@@ -17,6 +17,15 @@
 [ext_resource path="res://Sprites/LevelUI/accept.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/LevelUI/accept p (1).png" type="Texture" id=16]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://Scenes/Robot_control.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Sprites/robot_control_sprites/control_background.png" type="Texture" id=19]
+
+[sub_resource type="DynamicFont" id=3]
+size = 55
+font_data = ExtResource( 17 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 908, 80.625 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -51,6 +60,68 @@ margin_right = 1703.0
 margin_bottom = 912.0
 texture = ExtResource( 1 )
 expand = true
+
+[node name="Controling" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Controling"]
+position = Vector2( 2, 758 )
+scale = Vector2( 1.04007, 1.47706 )
+texture = ExtResource( 19 )
+centered = false
+
+[node name="ScreenWheel_1" parent="Controling" instance=ExtResource( 18 )]
+position = Vector2( 250, 830 )
+scale = Vector2( 1.41176, 1.41176 )
+
+[node name="1" type="Label" parent="Controling/ScreenWheel_1"]
+margin_left = -100.584
+margin_top = -32.0
+margin_right = -66.5837
+margin_bottom = 36.9999
+custom_colors/font_color = Color( 0.133333, 0.141176, 0.529412, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "1"
+
+[node name="ScreenWheel_2" parent="Controling" instance=ExtResource( 18 )]
+position = Vector2( 664, 830 )
+
+[node name="2" type="Label" parent="Controling/ScreenWheel_2"]
+margin_left = -100.584
+margin_top = -32.0
+margin_right = -66.5837
+margin_bottom = 36.9999
+custom_colors/font_color = Color( 0.133333, 0.141176, 0.529412, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "2"
+
+[node name="ScreenWheel_3" parent="Controling" instance=ExtResource( 18 )]
+position = Vector2( 1042, 830 )
+
+[node name="3" type="Label" parent="Controling/ScreenWheel_3"]
+margin_left = -100.584
+margin_top = -32.0
+margin_right = -66.5837
+margin_bottom = 36.9999
+custom_colors/font_color = Color( 0.133333, 0.141176, 0.529412, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "3"
+
+[node name="ScreenWheel_4" parent="Controling" instance=ExtResource( 18 )]
+position = Vector2( 1423, 830 )
+
+[node name="4" type="Label" parent="Controling/ScreenWheel_4"]
+margin_left = -100.584
+margin_top = -32.0
+margin_right = -66.5837
+margin_bottom = 36.9999
+custom_colors/font_color = Color( 0.133333, 0.141176, 0.529412, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Controling"]
+visible = false
+position = Vector2( 907, 838.625 )
+shape = SubResource( 4 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
 margin_right = 40.0

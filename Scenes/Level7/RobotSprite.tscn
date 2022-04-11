@@ -90,7 +90,7 @@ script = ExtResource( 15 )
 
 [node name="Shoulder_2" type="Sprite" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2"]
 position = Vector2( 0.666626, -0.666672 )
-rotation = 0.307396
+rotation = 0.307178
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 offset = Vector2( 114.718, -101.769 )
@@ -127,7 +127,6 @@ scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 5 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1"]
-visible = false
 polygon = PoolVector2Array( 0.218933, -14.6654, 12.148, -9.82043, 35.887, 7.86865, 40.6227, 3.27205, 45.9058, 6.68451, 47.9652, 2.71477, 53.9049, 6.80373, 51.1889, 10.097, 56.4719, 13.5094, 53.0594, 18.7925, 64.9389, 26.9704, 72.4403, 15.7476, 83.6631, 23.2491, 55.687, 66.1702, 44.4742, 58.0022, 50.6325, 47.4261, 40.0763, 39.9346, 36.0072, 44.5412, 30.7241, 41.1287, 28.6747, 44.4319, 24.0582, 41.0294, 25.4411, 37.7163, 20.158, 34.3038, 23.5704, 29.0208, -12.0878, 5.8201, -11.9487, -3.51219, -9.17297, -10.805 )
 
 [node name="circle_2" type="Sprite" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1"]
