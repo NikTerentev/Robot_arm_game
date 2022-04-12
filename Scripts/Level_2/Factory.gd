@@ -39,6 +39,8 @@ func _on_Area2D_body_exited(body):
 		$front_screen/green_glass.hide()
 		score += 2
 	$LevelUI.update_score(score)
+	if score >= 20:
+		get_tree().change_scene("res://Scenes/Menu/Winning.tscn")
 
 
 func _on_Timer_timeout():

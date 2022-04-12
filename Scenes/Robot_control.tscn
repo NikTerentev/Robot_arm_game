@@ -1,24 +1,25 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Sprites/robot_control_sprites/robot-control-first-bg.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/robot_control_sprites/robot-control-second_bg.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/LevelUI/Ellipse 54.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/LevelUI/Group 34 (1).png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Control/ScreenWheel.gd" type="Script" id=4]
 
 [node name="ButtonBgFirst" type="Sprite"]
-position = Vector2( 249, 181 )
-scale = Vector2( 1.41176, 1.41176 )
-texture = ExtResource( 1 )
-
-[node name="ButtonBgSecond" type="Sprite" parent="."]
-position = Vector2( -1.52588e-05, 0.708328 )
-scale = Vector2( 1.08077, 1.074 )
+position = Vector2( 208.656, 147.227 )
+scale = Vector2( 0.841833, 0.841833 )
 texture = ExtResource( 2 )
 
+[node name="ButtonBgSecond" type="Sprite" parent="."]
+modulate = Color( 0.541176, 0.752941, 0.843137, 1 )
+position = Vector2( 0.0667644, -1.07149 )
+scale = Vector2( 1.01672, 1.01672 )
+texture = ExtResource( 1 )
+
 [node name="Line2D" type="Line2D" parent="ButtonBgSecond"]
-position = Vector2( 18.8099, -182.03 )
+position = Vector2( 22.9598, -181.861 )
 rotation = 1.5708
-scale = Vector2( 0.931099, 0.343776 )
-points = PoolVector2Array( 195.5, -31.1667, 195.5, 56.6667 )
+scale = Vector2( 0.931099, 0.416151 )
+points = PoolVector2Array( 195.5, -31.1667, 195.5, 54.362 )
 width = 4.0
 default_color = Color( 0.0941176, 0.160784, 0.498039, 1 )
 

@@ -8,7 +8,7 @@ func _ready():
 
 func _on_TextureButton_pressed():
 	$ClickSound.play()
-	yield($ClickSound, "finished")
+	yield($ClickSound, "finp-ished")
 	$Popup.popup()
 
 

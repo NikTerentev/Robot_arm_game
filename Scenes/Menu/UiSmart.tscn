@@ -22,7 +22,7 @@
 
 [sub_resource type="DynamicFont" id=3]
 size = 55
-font_data = ExtResource( 17 )
+font_data = ExtResource( 11 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 908, 80.625 )
@@ -45,7 +45,7 @@ stream = ExtResource( 12 )
 volume_db = -10.0
 
 [node name="MainScene" parent="." instance=ExtResource( 9 )]
-position = Vector2( -16, -43 )
+position = Vector2( -5, -45 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -14.0
@@ -55,66 +55,67 @@ margin_bottom = 19.0
 color = Color( 0.0823529, 0.145098, 0.333333, 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_top = 792.0
-margin_right = 1703.0
-margin_bottom = 912.0
+margin_left = 2.0
+margin_top = 757.0
+margin_right = 1816.0
+margin_bottom = 899.0
 texture = ExtResource( 1 )
 expand = true
 
 [node name="Controling" type="StaticBody2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Controling"]
-position = Vector2( 2, 758 )
-scale = Vector2( 1.04007, 1.47706 )
+modulate = Color( 0.0823529, 0.145098, 0.333333, 0.784314 )
+position = Vector2( 2, 757 )
+scale = Vector2( 1.04007, 1.33028 )
 texture = ExtResource( 19 )
 centered = false
 
 [node name="ScreenWheel_1" parent="Controling" instance=ExtResource( 18 )]
-position = Vector2( 250, 830 )
-scale = Vector2( 1.41176, 1.41176 )
+position = Vector2( 286.059, 829.059 )
 
 [node name="1" type="Label" parent="Controling/ScreenWheel_1"]
-margin_left = -100.584
-margin_top = -32.0
-margin_right = -66.5837
-margin_bottom = 36.9999
-custom_colors/font_color = Color( 0.133333, 0.141176, 0.529412, 1 )
+margin_left = -126.346
+margin_top = -33.0092
+margin_right = -92.3454
+margin_bottom = 35.9908
+custom_colors/font_color = Color( 0.145098, 0.784314, 0.964706, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "1"
 
 [node name="ScreenWheel_2" parent="Controling" instance=ExtResource( 18 )]
-position = Vector2( 664, 830 )
+position = Vector2( 700.059, 829.059 )
 
 [node name="2" type="Label" parent="Controling/ScreenWheel_2"]
-margin_left = -100.584
-margin_top = -32.0
-margin_right = -66.5837
-margin_bottom = 36.9999
-custom_colors/font_color = Color( 0.133333, 0.141176, 0.529412, 1 )
+margin_left = -126.346
+margin_top = -33.0092
+margin_right = -85.3457
+margin_bottom = 35.9908
+custom_colors/font_color = Color( 0.145098, 0.784314, 0.964706, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "2"
 
 [node name="ScreenWheel_3" parent="Controling" instance=ExtResource( 18 )]
-position = Vector2( 1042, 830 )
+position = Vector2( 1078.06, 829.059 )
 
 [node name="3" type="Label" parent="Controling/ScreenWheel_3"]
-margin_left = -100.584
-margin_top = -32.0
-margin_right = -66.5837
-margin_bottom = 36.9999
-custom_colors/font_color = Color( 0.133333, 0.141176, 0.529412, 1 )
+margin_left = -126.346
+margin_top = -33.0092
+margin_right = -84.3457
+margin_bottom = 35.9908
+custom_colors/font_color = Color( 0.145098, 0.784314, 0.964706, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "3"
 
 [node name="ScreenWheel_4" parent="Controling" instance=ExtResource( 18 )]
-position = Vector2( 1423, 830 )
+position = Vector2( 1459.06, 829.059 )
 
 [node name="4" type="Label" parent="Controling/ScreenWheel_4"]
-margin_left = -100.584
-margin_top = -32.0
-margin_right = -66.5837
-margin_bottom = 36.9999
-custom_colors/font_color = Color( 0.133333, 0.141176, 0.529412, 1 )
+margin_left = -126.346
+margin_top = -33.0092
+margin_right = -83.3457
+margin_bottom = 35.9908
+custom_colors/font_color = Color( 0.145098, 0.784314, 0.964706, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "4"
 
