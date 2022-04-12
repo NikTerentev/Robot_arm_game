@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/second_level/wrong detail.png" type="Texture" id=1]
+
+[node name="WrongDetail" type="RigidBody2D"]
+mode = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -95, -81 )
+polygon = PoolVector2Array( 64, 27, 77, 33, 94, 30, 99, 34, 105, 34, 114, 25, 125, 32, 127, 41, 124, 70, 119, 76, 112, 80, 75, 80, 73, 76, 66, 71, 62, 62, 64, 53, 68, 48, 65, 45, 63, 48, 53, 36, 53, 33, 62, 25 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -14, -38 )
+texture = ExtResource( 1 )

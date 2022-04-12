@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Ignoring directories
+# Both the directory itself and its contents will be ignored.
+__pycache__/

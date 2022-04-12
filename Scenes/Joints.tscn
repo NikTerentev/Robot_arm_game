@@ -76,10 +76,6 @@ mode = 2
 mass = 3.7398
 script = ExtResource( 5 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="car"]
-position = Vector2( -4, 22 )
-polygon = PoolVector2Array( 1316, 108, 1466, 106, 1693, 120, 1706, 242, 1706, 311, 1704, 455, 1436, 457, 1070, 453, 1074, 313, 1069, 261, 1080, 135 )
-
 [node name="Sprite" type="Sprite" parent="car"]
 position = Vector2( 1403, 330 )
 scale = Vector2( 1.74765, 1.67893 )
@@ -120,3 +116,6 @@ texture = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="car/PinJoint2D2/wheel_2"]
 position = Vector2( 1172, 408 )
 shape = SubResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="car"]
+polygon = PoolVector2Array( 1115, 291, 1223, 275, 1304, 203, 1405, 157, 1506, 162, 1597, 196, 1666, 273, 1705, 329, 1705, 427, 1673, 429, 1664, 374, 1626, 351, 1579, 360, 1541, 418, 1542, 432, 1243, 430, 1241, 404, 1231, 381, 1207, 361, 1168, 358, 1137, 369, 1122, 399, 1117, 432, 1077, 431, 1071, 416, 1074, 343, 1091, 311 )

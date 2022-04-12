@@ -20,4 +20,4 @@ func _on_TextureButton_pressed():
 func _on_TextureButton2_pressed():
 	$ClickSound.play()
 	yield($ClickSound, "finished")
-	get_tree().change_scene("res://Scenes/UiSmart.tscn")
+	get_tree().change_scene("res://Scenes/Menu/UiSmart.tscn")

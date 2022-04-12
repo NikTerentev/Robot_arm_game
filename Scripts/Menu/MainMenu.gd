@@ -2,12 +2,12 @@ extends CanvasLayer
 
 
 func _ready():
-	print(StarsForLevels.size)  # выводим глобальную переменную
-	# print(Stars.a)
-
+	pass
 
 func _on_TextureButton_pressed():
-	$WindowDialog.popup()
+	$ClickSound.play()
+	yield($ClickSound, "finp-ished")
+	$Popup.popup()
 
 
 func _on_StartGame_pressed():

@@ -1,0 +1,166 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Fonts/RubikOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/LevelUI/pause.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/LevelUI/task.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/LevelUI/ground.png" type="Texture" id=5]
+[ext_resource path="res://Sounds/sci-fi-interface-robot-click.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Sprites/LevelUI/menu p.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/LevelUI/Group 26.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/LevelUI/task p.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/LevelUI/menu.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/LevelUI/accept p (1).png" type="Texture" id=11]
+[ext_resource path="res://Sprites/LevelUI/time.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/LevelUI/card (1).png" type="Texture" id=13]
+[ext_resource path="res://Sprites/LevelUI/accept.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/LevelUI/play (1).png" type="Texture" id=15]
+[ext_resource path="res://Scripts/Level_7/LevelUI.gd" type="Script" id=16]
+[ext_resource path="res://Sprites/LevelUI/score.png" type="Texture" id=17]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_color = Color( 0.14902, 0.647059, 1, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 2 )
+
+[node name="LevelUI" type="CanvasLayer"]
+script = ExtResource( 16 )
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 6 )
+volume_db = -10.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 4.0
+margin_top = -15.0
+margin_right = 1705.0
+margin_bottom = 52.0
+color = Color( 0.0823529, 0.145098, 0.333333, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -4.0
+margin_top = 820.0
+margin_right = 1698.0
+margin_bottom = 904.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 3.0
+margin_top = 33.0
+margin_right = 278.0
+margin_bottom = 213.0
+texture_normal = ExtResource( 10 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
+
+[node name="pause" type="TextureButton" parent="TextureButton"]
+pause_mode = 2
+margin_left = 155.0
+margin_top = 62.0
+margin_right = 210.0
+margin_bottom = 117.0
+toggle_mode = true
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 15 )
+expand = true
+
+[node name="Back_bt" type="TextureButton" parent="TextureButton"]
+pause_mode = 2
+margin_left = 64.0
+margin_top = 60.0
+margin_right = 126.0
+margin_bottom = 121.0
+texture_normal = ExtResource( 8 )
+
+[node name="task" type="TextureButton" parent="."]
+pause_mode = 2
+margin_left = 9.0
+margin_top = 160.0
+margin_right = 245.0
+margin_bottom = 446.0
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 9 )
+
+[node name="time_counter" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -415.0
+margin_top = 40.0
+margin_right = -42.0
+margin_bottom = 204.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Label" type="Label" parent="time_counter"]
+margin_left = 167.0
+margin_top = 67.0
+margin_right = 246.0
+margin_bottom = 132.0
+custom_colors/font_color = Color( 0.14902, 0.647059, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "00:00
+"
+
+[node name="score_counter" type="TextureRect" parent="."]
+margin_left = 940.0
+margin_top = 43.0
+margin_right = 1319.0
+margin_bottom = 204.0
+texture = ExtResource( 17 )
+expand = true
+
+[node name="Label2" type="Label" parent="score_counter"]
+margin_left = 167.0
+margin_top = 66.0
+margin_right = 246.0
+margin_bottom = 131.0
+custom_colors/font_color = Color( 0.14902, 0.647059, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "16/30
+"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+
+[node name="Popup" type="Popup" parent="."]
+margin_left = 47.0
+margin_top = -38.0
+margin_right = 1004.0
+margin_bottom = 589.0
+
+[node name="card" type="TextureRect" parent="Popup"]
+margin_left = 319.0
+margin_top = 114.0
+margin_right = 1344.0
+margin_bottom = 837.0
+texture = ExtResource( 13 )
+
+[node name="accept" type="TextureButton" parent="Popup/card"]
+margin_left = 362.0
+margin_top = 489.0
+margin_right = 689.0
+margin_bottom = 618.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 11 )
+expand = true
+
+[node name="text" type="Label" parent="Popup/card"]
+margin_left = 435.0
+margin_top = 252.0
+margin_right = 819.0
+margin_bottom = 473.0
+custom_fonts/font = SubResource( 2 )
+text = "Перемещайте в корзину детали, имеющие брак, чтобы набрать нужное количество очков предприятия. Испорченная деталь будет выделена красным, а правильная - зелёным цветом"
+align = 1
+autowrap = true
+
+[connection signal="pressed" from="TextureButton/pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="TextureButton/Back_bt" to="." method="_on_Back_bt_pressed"]
+[connection signal="pressed" from="task" to="." method="_on_task_pressed"]
+[connection signal="popup_hide" from="Popup" to="." method="_on_Popup_popup_hide"]
