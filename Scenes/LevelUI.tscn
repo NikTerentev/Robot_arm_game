@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Fonts/RubikOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://Sprites/LevelUI/play (1).png" type="Texture" id=15]
 [ext_resource path="res://Scripts/Level_7/LevelUI.gd" type="Script" id=16]
 [ext_resource path="res://Sprites/LevelUI/score.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/robot_control_sprites/control_background.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/Robot_control.tscn" type="PackedScene" id=19]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -27,6 +29,13 @@ font_data = ExtResource( 1 )
 size = 24
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 55
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 908, 80.625 )
+
 [node name="LevelUI" type="CanvasLayer"]
 script = ExtResource( 16 )
 
@@ -36,15 +45,15 @@ stream = ExtResource( 6 )
 volume_db = -10.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 4.0
+margin_left = -3.0
 margin_top = -15.0
 margin_right = 1705.0
-margin_bottom = 52.0
+margin_bottom = 56.0
 color = Color( 0.0823529, 0.145098, 0.333333, 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -4.0
-margin_top = 820.0
+margin_top = 759.0
 margin_right = 1698.0
 margin_bottom = 904.0
 texture = ExtResource( 5 )
@@ -159,6 +168,68 @@ custom_fonts/font = SubResource( 2 )
 text = "Перемещайте в корзину детали, имеющие брак, чтобы набрать нужное количество очков предприятия. Испорченная деталь будет выделена красным, а правильная - зелёным цветом"
 align = 1
 autowrap = true
+
+[node name="Controling" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Controling"]
+modulate = Color( 0.0823529, 0.145098, 0.333333, 0.784314 )
+position = Vector2( -3, 757 )
+scale = Vector2( 1.04293, 1.33028 )
+texture = ExtResource( 18 )
+centered = false
+
+[node name="ScreenWheel_1" parent="Controling" instance=ExtResource( 19 )]
+position = Vector2( 286.059, 829.059 )
+
+[node name="1" type="Label" parent="Controling/ScreenWheel_1"]
+margin_left = -126.346
+margin_top = -33.0092
+margin_right = -92.3454
+margin_bottom = 35.9908
+custom_colors/font_color = Color( 0.145098, 0.784314, 0.964706, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "1"
+
+[node name="ScreenWheel_2" parent="Controling" instance=ExtResource( 19 )]
+position = Vector2( 700.059, 829.059 )
+
+[node name="2" type="Label" parent="Controling/ScreenWheel_2"]
+margin_left = -126.346
+margin_top = -33.0092
+margin_right = -85.3457
+margin_bottom = 35.9908
+custom_colors/font_color = Color( 0.145098, 0.784314, 0.964706, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "2"
+
+[node name="ScreenWheel_3" parent="Controling" instance=ExtResource( 19 )]
+position = Vector2( 1078.06, 829.059 )
+
+[node name="3" type="Label" parent="Controling/ScreenWheel_3"]
+margin_left = -126.346
+margin_top = -33.0092
+margin_right = -84.3457
+margin_bottom = 35.9908
+custom_colors/font_color = Color( 0.145098, 0.784314, 0.964706, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "3"
+
+[node name="ScreenWheel_4" parent="Controling" instance=ExtResource( 19 )]
+position = Vector2( 1459.06, 829.059 )
+
+[node name="4" type="Label" parent="Controling/ScreenWheel_4"]
+margin_left = -126.346
+margin_top = -33.0092
+margin_right = -83.3457
+margin_bottom = 35.9908
+custom_colors/font_color = Color( 0.145098, 0.784314, 0.964706, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Controling"]
+visible = false
+position = Vector2( 907, 838.625 )
+shape = SubResource( 4 )
 
 [connection signal="pressed" from="TextureButton/pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="TextureButton/Back_bt" to="." method="_on_Back_bt_pressed"]

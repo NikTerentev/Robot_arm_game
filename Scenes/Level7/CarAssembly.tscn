@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Level7/Wheel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://arts/car 1.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://arts/tire.png" type="Texture" id=10]
 [ext_resource path="res://arts/Group 30.png" type="Texture" id=11]
 [ext_resource path="res://arts/Group 29.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/LevelUI.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 905.75, 14 )
@@ -22,9 +23,11 @@ extents = Vector2( 111, 15 )
 [sub_resource type="CircleShape2D" id=4]
 radius = 49.366
 
-[node name="MainScene" type="Node2D"]
+[node name="CarAssembly" type="Node2D"]
 position = Vector2( -2, -6 )
 script = ExtResource( 7 )
+
+[node name="LevelUI" parent="." instance=ExtResource( 13 )]
 
 [node name="bacground" type="TextureRect" parent="."]
 margin_left = 2.0
