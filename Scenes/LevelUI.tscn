@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Fonts/RubikOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Sprites/LevelUI/score.png" type="Texture" id=17]
 [ext_resource path="res://Sprites/robot_control_sprites/control_background.png" type="Texture" id=18]
 [ext_resource path="res://Scenes/Robot_control.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Sprites/LevelUI/task p pressed.png" type="Texture" id=20]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -94,6 +95,7 @@ margin_top = 160.0
 margin_right = 245.0
 margin_bottom = 446.0
 texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 20 )
 texture_hover = ExtResource( 9 )
 
 [node name="time_counter" type="TextureRect" parent="."]
