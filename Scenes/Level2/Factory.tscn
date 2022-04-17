@@ -44,7 +44,7 @@ extents = Vector2( 31, 69 )
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 90.0
 
-[node name="Factoty" type="Node2D"]
+[node name="MainScene" type="Node2D"]
 script = ExtResource( 14 )
 
 [node name="background" type="TextureRect" parent="."]
@@ -66,7 +66,7 @@ polygon = PoolVector2Array( 850, 186, 852, 331, 851, 332, 854, 352, 906, 351, 91
 [node name="small conveyor" type="AnimatedSprite" parent="."]
 position = Vector2( 751, 474 )
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="back_screen" type="Sprite" parent="."]
@@ -87,6 +87,7 @@ texture = ExtResource( 6 )
 position = Vector2( 713, 574 )
 frames = SubResource( 1 )
 animation = "animation"
+frame = 1
 playing = true
 
 [node name="Spawner" type="Position2D" parent="."]

@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-onready var joystick = get_node("/root/CarAssembly/LevelUI/Controling/ScreenWheel_2/ScreenWheel")
+onready var joystick = get_node("/root/MainScene/LevelUI/Controling/ScreenWheel_2/ScreenWheel")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # warning-ignore:unused_argument
