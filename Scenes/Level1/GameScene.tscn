@@ -1,13 +1,89 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Sprites/first_level/Игра в режиме исследователя.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/first_level/backround.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/LevelUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/first_level/Group 41.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/first_level/Group 39.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/first_level/car (3).png" type="Texture" id=5]
+[ext_resource path="res://Sprites/first_level/Group 40.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/first_level/Group 38.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Level7/RobotSprite.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/first_level/Vector 75.png" type="Texture" id=9]
 
-[node name="GameScene" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 21.5, 26 )
+
+[node name="MainScene" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 2.0
+margin_top = 26.0
+margin_right = 1699.0
+margin_bottom = 913.0
 texture = ExtResource( 1 )
+expand = true
+flip_h = true
 
 [node name="LevelUI" parent="." instance=ExtResource( 2 )]
+
+[node name="RobotSprite" parent="." instance=ExtResource( 8 )]
+position = Vector2( -167, 101 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1252, 576 )
+texture = ExtResource( 5 )
+
+[node name="box1" type="Sprite" parent="."]
+position = Vector2( 259, 624 )
+texture = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="box1"]
+position = Vector2( -259, -624 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box1/Area2D"]
+position = Vector2( 260, 532 )
+shape = SubResource( 1 )
+
+[node name="box2" type="Sprite" parent="."]
+position = Vector2( 372, 583 )
+texture = ExtResource( 4 )
+
+[node name="Area2D2" type="Area2D" parent="box2"]
+position = Vector2( -372, -583 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box2/Area2D2"]
+position = Vector2( 370, 526 )
+shape = SubResource( 1 )
+
+[node name="box3" type="Sprite" parent="."]
+position = Vector2( 467, 599 )
+texture = ExtResource( 6 )
+
+[node name="Area2D3" type="Area2D" parent="box3"]
+position = Vector2( -467, -599 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box3/Area2D3"]
+position = Vector2( 466, 526 )
+shape = SubResource( 1 )
+
+[node name="box4" type="Sprite" parent="."]
+position = Vector2( 567, 593 )
+texture = ExtResource( 3 )
+
+[node name="Area2D4" type="Area2D" parent="box4"]
+position = Vector2( -567, -593 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box4/Area2D4"]
+position = Vector2( 570, 530 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( -34, 8 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 424, 689 )
+texture = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 45, 0 )
+polygon = PoolVector2Array( 171, 703, 331, 701, 329, 621, 393, 621, 396, 653, 515, 655, 518, 644, 593, 644, 595, 721, 171, 723 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Fonts/RubikOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=2]
@@ -6,9 +6,8 @@
 [ext_resource path="res://Sprites/LevelUI/task.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/LevelUI/ground.png" type="Texture" id=5]
 [ext_resource path="res://Sounds/sci-fi-interface-robot-click.mp3" type="AudioStream" id=6]
-[ext_resource path="res://Sprites/LevelUI/menu p.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/LevelUI/Group 26.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/LevelUI/task p.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/LevelUI/back (1).png" type="Texture" id=7]
+[ext_resource path="res://Sprites/LevelUI/back (2).png" type="Texture" id=8]
 [ext_resource path="res://Sprites/LevelUI/menu.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/LevelUI/accept p (1).png" type="Texture" id=11]
 [ext_resource path="res://Sprites/LevelUI/time.png" type="Texture" id=12]
@@ -66,8 +65,6 @@ margin_top = 33.0
 margin_right = 278.0
 margin_bottom = 213.0
 texture_normal = ExtResource( 10 )
-texture_hover = ExtResource( 7 )
-texture_disabled = ExtResource( 7 )
 
 [node name="pause" type="TextureButton" parent="TextureButton"]
 pause_mode = 2
@@ -82,11 +79,12 @@ expand = true
 
 [node name="Back_bt" type="TextureButton" parent="TextureButton"]
 pause_mode = 2
-margin_left = 64.0
-margin_top = 60.0
-margin_right = 126.0
-margin_bottom = 121.0
+margin_left = 39.0
+margin_top = 39.0
+margin_right = 141.0
+margin_bottom = 141.0
 texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
 
 [node name="task" type="TextureButton" parent="."]
 pause_mode = 2
@@ -96,7 +94,6 @@ margin_right = 245.0
 margin_bottom = 446.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 20 )
-texture_hover = ExtResource( 9 )
 
 [node name="time_counter" type="TextureRect" parent="."]
 anchor_left = 1.0
