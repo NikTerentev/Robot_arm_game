@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Vector 73.png-30a52f4c2840413ec8b29cdd16c5e321.stex"
+path="res://.import/g3.png-17c9aa89a2252b7508b7e089bdd86311.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/first_level/Vector 73.png"
-dest_files=[ "res://.import/Vector 73.png-30a52f4c2840413ec8b29cdd16c5e321.stex" ]
+source_file="res://Sprites/first_level/g3.png"
+dest_files=[ "res://.import/g3.png-17c9aa89a2252b7508b7e089bdd86311.stex" ]
 
 [params]
 

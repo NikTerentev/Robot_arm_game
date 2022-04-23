@@ -6,6 +6,8 @@ var opened = []
 var closed = []
 var is_catched = 0
 var arms = []
+var gears = []
+var cur_gear = 0
 
 func _ready():
 	opened.append(preload("res://Sprites/first_level/b1.png"))
@@ -24,18 +26,19 @@ func _ready():
 	arms.append(preload("res://Sprites/first_level/catch_g2.png"))
 	arms.append(preload("res://Sprites/first_level/catch_g3.png"))
 	arms.append(preload("res://Sprites/first_level/catch_g4.png"))
-
+	$car/Axis1.add_gear(4)
 
 func catch_object(number):
 	var arm = get_node("RobotSprite/Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty/arn/arm")
 	var new_texture = arms[number - 1]
 	arm.texture = new_texture
-	is_catched = 1
+	$car/Axis1.cur_gear = number
+	print($car/Axis2.cur_gear)
 	$down.show()
 	
 	
 func open_box(numb, box):
-	if not is_catched:
+	if not cur_gear:
 		box.texture = opened[numb - 1]
 		is_open[numb - 1] = 1
 		for i in range(numb, 4):

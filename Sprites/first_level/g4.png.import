@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cogwheel 4.png-678b200f0a921ca5d365a8dc1ae2c24b.stex"
+path="res://.import/g4.png-9ce683494f0625cfadce0826351023b1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/first_level/cogwheel 4.png"
-dest_files=[ "res://.import/cogwheel 4.png-678b200f0a921ca5d365a8dc1ae2c24b.stex" ]
+source_file="res://Sprites/first_level/g4.png"
+dest_files=[ "res://.import/g4.png-9ce683494f0625cfadce0826351023b1.stex" ]
 
 [params]
 

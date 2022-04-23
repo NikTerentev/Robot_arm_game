@@ -7,18 +7,16 @@
 [ext_resource path="res://Sprites/first_level/car (3).png" type="Texture" id=5]
 [ext_resource path="res://Sprites/first_level/c3.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/first_level/c1.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Level7/RobotSprite.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Menu/Level7/RobotSprite.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Sprites/first_level/Vector 75.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/Level_1/GameScene.gd" type="Script" id=10]
 [ext_resource path="res://Sprites/down.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/down_p.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/first_level/h_axis.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Level1/Axis.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Level1/box1.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.5, 26 )
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 16.0312
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 10 )
@@ -34,9 +32,45 @@ flip_h = true
 
 [node name="LevelUI" parent="." instance=ExtResource( 2 )]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="car" type="Sprite" parent="."]
 position = Vector2( 1176, 570 )
 texture = ExtResource( 5 )
+
+[node name="Axis2" parent="car" instance=ExtResource( 13 )]
+position = Vector2( -155, -61 )
+number = 2
+
+[node name="Axis1" parent="car" instance=ExtResource( 13 )]
+position = Vector2( -149, -104 )
+empty = 0
+
+[node name="Axis3" parent="car" instance=ExtResource( 13 )]
+position = Vector2( -187, -6 )
+number = 3
+
+[node name="Axis4" parent="car" instance=ExtResource( 13 )]
+position = Vector2( -129, 23 )
+number = 5
+
+[node name="Axis5" parent="car" instance=ExtResource( 13 )]
+position = Vector2( -116, -21 )
+number = 4
+
+[node name="Axis6" parent="car" instance=ExtResource( 13 )]
+position = Vector2( -68, -13 )
+number = 6
+
+[node name="Axis7" parent="car" instance=ExtResource( 13 )]
+position = Vector2( -83, 23 )
+number = 7
+
+[node name="Axis8" parent="car" instance=ExtResource( 13 )]
+position = Vector2( -11, -1 )
+number = 8
+
+[node name="Axis9" parent="car" instance=ExtResource( 13 )]
+position = Vector2( 40, 18 )
+number = 9
 
 [node name="RobotSprite" parent="." instance=ExtResource( 8 )]
 position = Vector2( -167, 101 )
@@ -44,6 +78,7 @@ position = Vector2( -167, 101 )
 [node name="box1" type="Sprite" parent="."]
 position = Vector2( 259, 624 )
 texture = ExtResource( 7 )
+script = ExtResource( 14 )
 
 [node name="Area2D" type="Area2D" parent="box1"]
 position = Vector2( -259, -624 )
@@ -105,15 +140,6 @@ margin_bottom = 351.0
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 12 )
 expand = true
-
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 1020, 511 )
-texture = ExtResource( 13 )
-
-[node name="Area2D" type="Area2D" parent="Sprite2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/Area2D"]
-shape = SubResource( 2 )
 
 [connection signal="body_entered" from="box1/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="box1/Area2D" to="." method="_on_Area2D_body_exited"]
