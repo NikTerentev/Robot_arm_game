@@ -134,7 +134,7 @@ text = "16/30
 "
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 60.0
 
 [node name="Popup" type="Popup" parent="."]
 margin_left = 47.0

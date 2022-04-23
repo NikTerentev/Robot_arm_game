@@ -29,3 +29,4 @@ func _on_Area2D_body_entered(body):
 		empty.hide()
 		taken.show()
 		is_taken = not is_taken
+		

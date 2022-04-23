@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var time = 20
+var time = 60
 
 func _ready():
 	$Timer.start()

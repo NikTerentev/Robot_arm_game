@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://robot/плечо 2.png" type="Texture" id=1]
 [ext_resource path="res://robot/1 рука.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Scripts/Robot/arm_1.gd" type="Script" id=17]
 [ext_resource path="res://Scripts/Robot/arm_2.gd" type="Script" id=18]
 [ext_resource path="res://arts/tire.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/robot_sprites/arm.png" type="Texture" id=20]
 
 [sub_resource type="CapsuleShape2D" id=5]
 radius = 25.0972
@@ -187,44 +188,25 @@ polygon = PoolVector2Array( 72.9083, 29.0894, 92.4083, 18.0455, 119.948, 49.126,
 
 [node name="empty" type="Node2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1" groups=["empty"]]
 
-[node name="arm_2" type="RigidBody2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty"]
+[node name="arn" type="RigidBody2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty"]
 position = Vector2( 56.5425, 53.5149 )
 rotation = 3.72529e-09
 mode = 3
-script = ExtResource( 17 )
 
-[node name="arm_1" type="Sprite" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty/arm_2"]
-position = Vector2( 8.60602, 4.12874 )
-rotation = 0.417319
+[node name="arm" type="Sprite" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty/arn"]
+position = Vector2( 10.0087, -0.517548 )
+rotation = -0.201437
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
+texture = ExtResource( 20 )
 offset = Vector2( 31.9015, 6.98267 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty/arm_2"]
-position = Vector2( -54.5423, -53.4855 )
-polygon = PoolVector2Array( 55.8758, 53.505, 69.9637, 47.7143, 76.6097, 49.1468, 82.5396, 53.9024, 83.7733, 60.5882, 81.7534, 61.892, 81.694, 65.8911, 76.9584, 70.4877, 70.2725, 71.7215, 84.1518, 79.9293, 85.5148, 77.9494, 92.7877, 82.0582, 92.0912, 84.0481, 93.3748, 87.4009, 92.0118, 89.3808, 86.689, 88.6347, 52.215, 75.4528 )
-
-[node name="arm_3" type="RigidBody2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty"]
-position = Vector2( 72.2117, 31.0793 )
-rotation = 3.72529e-09
-mode = 3
-script = ExtResource( 18 )
-
-[node name="arm_2" type="Sprite" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty/arm_3"]
-position = Vector2( 5.84027, 10.7549 )
-rotation = -0.778815
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 7 )
-offset = Vector2( 17.9675, 26.7192 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty/arm_3"]
-position = Vector2( -71.5845, -28.4034 )
-polygon = PoolVector2Array( 72.9083, 29.0894, 92.4083, 18.0455, 119.948, 49.126, 118.565, 52.4391, 114.576, 51.7129, 113.213, 53.6928, 106.616, 48.9273, 107.979, 46.9474, 94.8164, 35.4166, 93.9908, 46.0722, 90.5883, 50.6886, 84.5691, 51.9324, 77.2763, 49.1567, 72.6896, 43.7545, 72.1721, 33.7456 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty/arn"]
+polygon = PoolVector2Array( 3.90002, 6.72554, -0.188965, 12.6653, 10.2082, 30.8222, 51.0294, 20.7628, 55.1481, 12.8233, 48.4117, -27.2815, 27.1006, -28.9327 )
 
 [node name="Area2D" type="Area2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty/Area2D"]
-position = Vector2( 97.0554, 64.1199 )
+position = Vector2( 93.7324, 63.4036 )
 shape = SubResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3"]
