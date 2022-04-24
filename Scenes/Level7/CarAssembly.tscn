@@ -10,8 +10,8 @@
 [ext_resource path="res://arts/robotic-arm 1.png" type="Texture" id=8]
 [ext_resource path="res://arts/Group 30.png" type="Texture" id=9]
 [ext_resource path="res://arts/tire.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/Menu/Level7/Wheel.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Menu/Level7/RobotSprite.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Level7/Wheel.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Level7/RobotSprite.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/LevelUI.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=3]

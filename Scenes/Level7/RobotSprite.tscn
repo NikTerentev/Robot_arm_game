@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://Scenes/Menu/Level7/RobotSprite.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Level7/RobotSprite.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Robot/shoulder_1.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Robot/shoulder_3.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Robot/shoulder_2.gd" type="Script" id=4]

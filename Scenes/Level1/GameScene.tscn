@@ -7,7 +7,7 @@
 [ext_resource path="res://Sprites/first_level/car (3).png" type="Texture" id=5]
 [ext_resource path="res://Sprites/first_level/c3.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/first_level/c1.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Menu/Level7/RobotSprite.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Level7/RobotSprite.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Sprites/first_level/Vector 75.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/Level_1/GameScene.gd" type="Script" id=10]
 [ext_resource path="res://Sprites/down.png" type="Texture" id=11]
