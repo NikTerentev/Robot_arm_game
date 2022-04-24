@@ -46,3 +46,7 @@ func _on_Area2D_body_exited(body):
 func _on_Timer_timeout():
 	$Spawner.spawn()
 	$Timer.start()
+
+
+func _on_down_pressed():
+	$RobotSprite.throw_object()

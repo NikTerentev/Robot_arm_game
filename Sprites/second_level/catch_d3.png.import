@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/full_bracket.png-74628bc5deea1f8b31be0d535020ddba.stex"
+path="res://.import/catch_d3.png-26d32b246752579e94cedee5706b6e92.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/second_level/full_bracket.png"
-dest_files=[ "res://.import/full_bracket.png-74628bc5deea1f8b31be0d535020ddba.stex" ]
+source_file="res://Sprites/second_level/catch_d3.png"
+dest_files=[ "res://.import/catch_d3.png-26d32b246752579e94cedee5706b6e92.stex" ]
 
 [params]
 

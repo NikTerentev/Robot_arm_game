@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/basket 1.png-f30f081f8982f4408ab474c34743630b.stex"
+path="res://.import/basket_2.png-7e66a6fc32f86bd93c39af526184742d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/second_level/basket 1.png"
-dest_files=[ "res://.import/basket 1.png-f30f081f8982f4408ab474c34743630b.stex" ]
+source_file="res://Sprites/second_level/basket_2.png"
+dest_files=[ "res://.import/basket_2.png-7e66a6fc32f86bd93c39af526184742d.stex" ]
 
 [params]
 

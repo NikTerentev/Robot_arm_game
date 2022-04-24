@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Sprites/second_level/wrong detail.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Level_2/WrongDetail.gd" type="Script" id=2]
 
 [node name="WrongDetail" type="RigidBody2D"]
 mode = 2
+script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( -95, -81 )

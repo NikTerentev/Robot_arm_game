@@ -8,12 +8,8 @@ export (PackedScene) var right_detail
 var details = []
 var rng
 
-func spawn():
-	
-	var det_number = rng.randi_range(0, 2)
-	
-	print(details, det_number)
-	var spawling = details[det_number].instance()
+func spawn(detail):
+	var spawling = detail.instance()
 	add_child(spawling)
 	spawling.add_to_group("detail")
 	if not det_number:
@@ -25,6 +21,4 @@ func spawn():
 	return spawling
 
 func _ready():
-	rng = RandomNumberGenerator.new()
 	details = [right_detail, wrong_detail, wrong_detail_2]
-	spawn()
