@@ -8,6 +8,8 @@ var is_catched = 0
 var arms = []
 var gears = []
 var cur_gear = 0
+var axes
+var cur
 
 func _ready():
 	opened.append(preload("res://Sprites/first_level/b1.png"))
@@ -26,14 +28,32 @@ func _ready():
 	arms.append(preload("res://Sprites/first_level/catch_g2.png"))
 	arms.append(preload("res://Sprites/first_level/catch_g3.png"))
 	arms.append(preload("res://Sprites/first_level/catch_g4.png"))
+	axes = get_tree().get_nodes_in_group("axis")
+	print(axes)
 	$car/Axis1.add_gear(4)
+	
+func _process(delta):
+	if is_catched:
+		cur = 0
+		for i in range(8, -1, -1):
+			if axes[i].triggered:
+				axes[i].set_highlite()
+				cur = i
+				break
+			else:
+				axes[i].set_usual()
+		if cur:
+			for i in range(8, -1, -1):
+				if cur != i:
+					axes[i].set_usual()
 
 func catch_object(number):
 	var arm = get_node("RobotSprite/Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty/arn/arm")
 	var new_texture = arms[number - 1]
 	arm.texture = new_texture
-	$car/Axis1.cur_gear = number
-	print($car/Axis2.cur_gear)
+	cur_gear = number
+	print(number)
+	is_catched = 1
 	$down.show()
 	
 	
@@ -90,4 +110,8 @@ func _on_TextureButton_pressed():
 	arm.texture = preload("res://Sprites/robot_sprites/arm.png")
 	is_catched = 0
 	$down.hide()
+	if cur:
+		print(cur_gear)
+		axes[cur].set_gear(cur_gear)
+	cur_gear = 0
 	

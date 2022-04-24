@@ -25,8 +25,8 @@ func _on_Area2D_body_entered(body):
 
 
 func throw_object():
-	var pos = spawner.position
+	var pos = spawner.global_position
 	empty.show()
 	taken.hide()
 	is_taken = 0
-	print(pos)
+	return pos

@@ -14,14 +14,14 @@
 [ext_resource path="res://Scenes/Level7/RobotSprite.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/LevelUI.tscn" type="PackedScene" id=13]
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 905.75, 14 )
-
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 111, 15 )
 
 [sub_resource type="CircleShape2D" id=4]
 radius = 49.366
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 905.75, 14 )
 
 [node name="MainScene" type="Node2D"]
 position = Vector2( -2, -6 )
@@ -36,6 +36,40 @@ margin_right = 1819.0
 margin_bottom = 924.0
 texture = ExtResource( 6 )
 expand = true
+
+[node name="car" type="StaticBody2D" parent="."]
+position = Vector2( 162, 130 )
+
+[node name="Sprite" type="Sprite" parent="car"]
+position = Vector2( 1022, 534 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="car"]
+position = Vector2( 1016, 590 )
+shape = SubResource( 2 )
+
+[node name="car" type="TextureRect" parent="car"]
+margin_left = 783.0
+margin_top = 239.0
+margin_right = 1261.0
+margin_bottom = 684.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="placeholder_1" type="Area2D" parent="car"]
+position = Vector2( -162, -130 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="car/placeholder_1"]
+position = Vector2( 1041, 652 )
+rotation = 0.499283
+shape = SubResource( 4 )
+
+[node name="placeholder2" type="Area2D" parent="car"]
+position = Vector2( -162, -130 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="car/placeholder2"]
+position = Vector2( 1317, 652 )
+shape = SubResource( 4 )
 
 [node name="wheel" parent="." groups=["wheel"] instance=ExtResource( 11 )]
 position = Vector2( 52, 140 )
@@ -82,40 +116,6 @@ polygon = PoolVector2Array( 1560, 262, 1682, 262, 1682, 354, 1820, 356, 1820, 66
 
 [node name="robot" parent="." instance=ExtResource( 12 )]
 position = Vector2( -125, 160 )
-
-[node name="car" type="StaticBody2D" parent="."]
-position = Vector2( 162, 130 )
-
-[node name="Sprite" type="Sprite" parent="car"]
-position = Vector2( 1022, 534 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="car"]
-position = Vector2( 1016, 590 )
-shape = SubResource( 2 )
-
-[node name="car" type="TextureRect" parent="car"]
-margin_left = 783.0
-margin_top = 239.0
-margin_right = 1261.0
-margin_bottom = 684.0
-texture = ExtResource( 2 )
-expand = true
-
-[node name="placeholder_1" type="Area2D" parent="car"]
-position = Vector2( -162, -130 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="car/placeholder_1"]
-position = Vector2( 1041, 652 )
-rotation = 0.499283
-shape = SubResource( 4 )
-
-[node name="placeholder2" type="Area2D" parent="car"]
-position = Vector2( -162, -130 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="car/placeholder2"]
-position = Vector2( 1317, 652 )
-shape = SubResource( 4 )
 
 [node name="wheel3" parent="." groups=["wheel"] instance=ExtResource( 11 )]
 position = Vector2( 3, 22 )

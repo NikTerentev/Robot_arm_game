@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Level7/RobotSprite.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Level2/RobotSprite.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Level2/Spawner.gd" type="Script" id=3]
 
 [node name="RobotSprite" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[node name="Spawner" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1" index="6"]
+script = ExtResource( 3 )

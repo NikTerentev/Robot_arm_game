@@ -3,13 +3,12 @@ extends Node2D
 var is_stand_1 = 0
 var is_stand_2 = 0
 var wheels = []
+var wheel
 
 func _ready():
 	GameMusic.play()
-	var wheel = load("res://Scenes/Level7/Wheel.tscn").instance()
+	wheel = preload("res://Scenes/Level7/Wheel.tscn")
 	print(wheel)
-	wheel.transform.origin = Vector2(100, 100)
-	wheel.show()
 	wheels = get_tree().get_nodes_in_group("wheel")
 
 
@@ -34,4 +33,9 @@ func _process(delta):
 		get_tree().change_scene("res://Scenes/Menu/Winning.tscn")
 
 func _on_catch_button_pressed():
-	$robot.throw_object()
+	var pos = $robot.throw_object()
+	print(pos)
+	var spawling = wheel.instance()
+	add_child(spawling)
+	spawling.add_to_group("wheel")	
+	spawling.global_position = pos
