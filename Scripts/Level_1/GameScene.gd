@@ -10,6 +10,7 @@ var gears = []
 var cur_gear = 0
 var axes
 var cur
+var some_gear = 0
 
 func _ready():
 	opened.append(preload("res://Sprites/first_level/b1.png"))
@@ -31,21 +32,33 @@ func _ready():
 	axes = get_tree().get_nodes_in_group("axis")
 	print(axes)
 	$car/Axis1.add_gear(4)
+	$car/Axis10.add_gear(1)
 	
 func _process(delta):
+	cur = 0
 	if is_catched:
-		cur = 0
 		for i in range(8, -1, -1):
-			if axes[i].triggered:
-				axes[i].set_highlite()
+			if axes[i].triggered and axes[i].empty:
+				axes[i].set_highlite(0)
 				cur = i
 				break
 			else:
 				axes[i].set_usual()
-		if cur:
+	else:
+		for i in range(8, -1, -1):
+			if not axes[i].empty and axes[i].triggered:
+				axes[i].set_highlite(1)
+				cur = i
+				$delete.show()
+				break
+			else:
+				axes[i].set_usual()
+				$delete.hide()
+	if cur:
 			for i in range(8, -1, -1):
 				if cur != i:
-					axes[i].set_usual()
+					axes[i].set_usual()	
+	
 
 func catch_object(number):
 	var arm = get_node("RobotSprite/Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1/empty/arn/arm")
@@ -112,6 +125,11 @@ func _on_TextureButton_pressed():
 	$down.hide()
 	if cur:
 		print(cur_gear)
+		some_gear += 1
 		axes[cur].set_gear(cur_gear)
 	cur_gear = 0
 	
+func _on_delete_pressed():
+	$delete.hide()
+	axes[cur].delete_gear()
+	some_gear -= 1
