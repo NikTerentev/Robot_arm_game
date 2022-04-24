@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/Level7/RobotSprite.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Robot/shoulder_1.gd" type="Script" id=2]
@@ -20,10 +20,7 @@
 [ext_resource path="res://Scripts/Robot/arm_2.gd" type="Script" id=18]
 [ext_resource path="res://Scripts/Robot/arm_1.gd" type="Script" id=19]
 [ext_resource path="res://Sprites/robot_sprites/arm.png" type="Texture" id=20]
-[ext_resource path="res://Scripts/Level_2/Spawner.gd" type="Script" id=21]
-[ext_resource path="res://Scenes/Level2/WrongDetail.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scenes/Level2/WrongDetail2.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/Level2/RightDetail.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Level7/Spawner.gd" type="Script" id=21]
 
 [sub_resource type="CapsuleShape2D" id=5]
 radius = 25.0972
@@ -195,9 +192,6 @@ position = Vector2( 93.7325, 63.4036 )
 rotation = 0.014904
 scale = Vector2( 0.666667, 0.666667 )
 script = ExtResource( 21 )
-wrong_detail = ExtResource( 22 )
-wrong_detail_2 = ExtResource( 23 )
-right_detail = ExtResource( 24 )
 
 [node name="empty" type="Node2D" parent="Ground/g_4/shoulder_4/4_3/shoulder_3/3_2/shoulder_2/2_1/shoulder_1" groups=["empty"]]
 

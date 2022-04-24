@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=2]
 
-[ext_resource path="res://Scenes/Level2/WrongDetail.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Level2/Spawner.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level2/RightDetail.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/second_level/передний экран.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/second_level/red.png" type="Texture" id=4]
@@ -15,7 +15,7 @@
 [ext_resource path="res://Sprites/second_level/c step3.png" type="Texture" id=13]
 [ext_resource path="res://Factory.gd" type="Script" id=14]
 [ext_resource path="res://Scenes/Level2/WrongDetail2.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scripts/Level_2/Spawner.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/Level2/WrongDetail.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Level2/RobotSprite.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Sprites/second_level/back_screen (1).png" type="Texture" id=18]
 [ext_resource path="res://Scenes/LevelUI.tscn" type="PackedScene" id=19]
@@ -64,13 +64,12 @@ position = Vector2( 941, 315 )
 texture = ExtResource( 20 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
-polygon = PoolVector2Array( 850, 186, 852, 331, 851, 332, 854, 352, 906, 351, 911, 334, 960, 335, 961, 319, 940, 320, 953, 282, 979, 280, 1004, 308, 1038, 314, 1070, 284, 1069, 251, 1057, 232, 1091, 189, 1273, 189, 1273, 257, 1169, 253, 1150, 302, 1155, 314, 1155, 363, 1194, 351, 1189, 303, 1298, 293, 1321, 260, 1317, 198, 1379, 244, 1366, 277, 1372, 310, 1396, 309, 1421, 310, 1415, 395, 1457, 396, 1461, 235, 1459, 202, 1697, 206, 1699, 166, 1458, 167, 1451, 49, 1248, 53, -18, 186 )
+polygon = PoolVector2Array( 850, 186, 855, 195, 858, 189, 904, 248, 936, 251, 954, 280, 963, 275, 975, 279, 979, 280, 1004, 308, 1038, 314, 1070, 284, 1069, 251, 1057, 232, 1091, 189, 1273, 189, 1273, 257, 1169, 253, 1150, 302, 1189, 303, 1298, 293, 1321, 260, 1317, 198, 1379, 244, 1366, 277, 1372, 310, 1396, 309, 1421, 310, 1415, 395, 1457, 396, 1461, 235, 1459, 202, 1697, 206, 1699, 166, 1458, 167, 1451, 49, 1248, 53, -18, 186 )
 
 [node name="small conveyor" type="AnimatedSprite" parent="."]
 position = Vector2( 751, 474 )
 frames = SubResource( 2 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="back_screen" type="Sprite" parent="."]
@@ -99,8 +98,8 @@ position = Vector2( -417, 127 )
 
 [node name="Spawner" type="Position2D" parent="."]
 position = Vector2( 600, 518 )
-script = ExtResource( 16 )
-wrong_detail = ExtResource( 1 )
+script = ExtResource( 1 )
+wrong_detail = ExtResource( 16 )
 wrong_detail_2 = ExtResource( 15 )
 right_detail = ExtResource( 2 )
 

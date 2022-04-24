@@ -15,7 +15,7 @@ func _ready():
 	
 func _physics_process(delta):
 	var velocity = Vector2(1.5, 0.5) 
-	var max_x = 750
+	var max_x = 700
 	velocity = velocity.normalized() * speed
 	for detail in get_tree().get_nodes_in_group("detail"):
 		detail.apply_central_impulse(velocity * delta)

@@ -34,4 +34,4 @@ func _process(delta):
 		get_tree().change_scene("res://Scenes/Menu/Winning.tscn")
 
 func _on_catch_button_pressed():
-	$robot.take_something()
+	$robot.throw_object()

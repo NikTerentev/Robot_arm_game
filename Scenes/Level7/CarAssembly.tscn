@@ -3,12 +3,12 @@
 [ext_resource path="res://Scripts/Level_7/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://arts/car 1.png" type="Texture" id=2]
 [ext_resource path="res://arts/подъёмник.png" type="Texture" id=3]
-[ext_resource path="res://arts/Group 29.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/first_level/down.png" type="Texture" id=4]
 [ext_resource path="res://arts/пульт управления (1).png" type="Texture" id=5]
 [ext_resource path="res://arts/Игра в режиме управления.png" type="Texture" id=6]
 [ext_resource path="res://arts/packages 2.png" type="Texture" id=7]
 [ext_resource path="res://arts/robotic-arm 1.png" type="Texture" id=8]
-[ext_resource path="res://arts/Group 30.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/first_level/down_p.png" type="Texture" id=9]
 [ext_resource path="res://arts/tire.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Level7/Wheel.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Level7/RobotSprite.tscn" type="PackedScene" id=12]
@@ -137,15 +137,6 @@ margin_bottom = 774.0
 texture = ExtResource( 5 )
 expand = true
 
-[node name="catch_button" type="TextureButton" parent="."]
-margin_left = -16.0
-margin_top = 555.0
-margin_right = 134.0
-margin_bottom = 705.0
-toggle_mode = true
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 4 )
-
 [node name="boxes" type="StaticBody2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="boxes"]
@@ -168,6 +159,16 @@ position = Vector2( 1317, 652 )
 scale = Vector2( 0.202759, 0.202759 )
 texture = ExtResource( 10 )
 
+[node name="down" type="TextureButton" parent="."]
+visible = false
+margin_left = 1463.0
+margin_top = 218.0
+margin_right = 1623.0
+margin_bottom = 378.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 9 )
+expand = true
+
 [connection signal="body_entered" from="car/placeholder_1" to="." method="_on_placeholder_1_body_entered"]
 [connection signal="body_entered" from="car/placeholder2" to="." method="_on_placeholder2_body_entered"]
-[connection signal="pressed" from="catch_button" to="." method="_on_catch_button_pressed"]
+[connection signal="pressed" from="down" to="." method="_on_catch_button_pressed"]

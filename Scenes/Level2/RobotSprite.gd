@@ -4,7 +4,7 @@ var arm
 var basket
 var is_empty = 1
 var empty_text = preload("res://Sprites/robot_sprites/arm.png")
-var curr_detail = null
+var curr_detail = 0
 var spawner
 
 func _ready():
@@ -18,7 +18,7 @@ func _on_Area2D_body_entered(body):
 		var texture = body.arm
 		arm.texture = texture
 		is_empty = 0
-		curr_detail = body
+		curr_detail = body.detail
 		body.queue_free()
 		get_node("../down").show()
 	if body == basket and not is_empty:
@@ -30,6 +30,9 @@ func _on_Area2D_body_entered(body):
 func throw_object():
 	arm.texture = empty_text
 	is_empty = 1
+	print(curr_detail)
 	if curr_detail:
+		
 		spawner.spawn(curr_detail)
+		curr_detail = 0
 	
