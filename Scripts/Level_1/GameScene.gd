@@ -11,10 +11,11 @@ var cur_gear = 0
 var axes
 var cur
 var some_gear = 0
+var correct_nums = 1
 
 func _ready():
 	GameMusic.play()
-	
+	$car/gears.hide()
 	opened.append(preload("res://Sprites/first_level/b1.png"))
 	opened.append(preload("res://Sprites/first_level/b2.png"))
 	opened.append(preload("res://Sprites/first_level/b3.png"))
@@ -33,15 +34,13 @@ func _ready():
 	arms.append(preload("res://Sprites/first_level/catch_g4.png"))
 	axes = get_tree().get_nodes_in_group("axis")
 	print(axes)
-	$car/Axis1.add_gear(4)
-	$car/Axis10.add_gear(1)
-	
+	$car/Axis1.set_gear(3)
+	$car/Axis10.set_gear(1)
 	PathToScene.pathToScene = "res://Scenes/Level1/GameScene.tscn"
 	$LevelUI.time = 90
 	
 	
 func _process(delta):
-	
 	if is_catched:
 		for i in range(8, -1, -1):
 			if axes[i].triggered and axes[i].empty:
@@ -134,11 +133,16 @@ func _on_TextureButton_pressed():
 	if cur:
 		print(cur_gear)
 		some_gear += 1
-		axes[cur].set_gear(cur_gear)
+		var num = axes[cur].set_gear(cur_gear)
+		correct_nums += num
 	cur_gear = 0
 	
 func _on_delete_pressed():
 	$delete.hide()
 	print(cur)
-	axes[cur].delete_gear()
+	var num = axes[cur].delete_gear()
+	correct_nums -= num
 	some_gear -= 1
+	
+func winning():
+	pass

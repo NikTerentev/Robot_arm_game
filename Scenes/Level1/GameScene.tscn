@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Sprites/first_level/backround.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/LevelUI.tscn" type="PackedScene" id=2]
@@ -16,6 +16,18 @@
 [ext_resource path="res://Scenes/Level1/box1.gd" type="Script" id=14]
 [ext_resource path="res://Sprites/first_level/delete.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/first_level/delete_h.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/first_level/step1.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/first_level/step3.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/first_level/step4.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/first_level/step2.png" type="Texture" id=20]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.5, 26 )
@@ -37,45 +49,51 @@ flip_h = true
 position = Vector2( 1176, 570 )
 texture = ExtResource( 5 )
 
+[node name="gears" type="AnimatedSprite" parent="car"]
+position = Vector2( -80, -34 )
+frames = SubResource( 2 )
+frame = 3
+playing = true
+
 [node name="Axis1" parent="car" groups=["axis"] instance=ExtResource( 13 )]
 position = Vector2( -149, -104 )
+correct = 3
 empty = 0
 
 [node name="Axis2" parent="car" groups=["axis"] instance=ExtResource( 13 )]
 position = Vector2( -155, -61 )
-number = 2
+correct = 4
 
 [node name="Axis3" parent="car" groups=["axis"] instance=ExtResource( 13 )]
 position = Vector2( -187, -6 )
-number = 3
+correct = 1
 
 [node name="Axis4" parent="car" groups=["axis"] instance=ExtResource( 13 )]
 position = Vector2( -129, 23 )
-number = 5
+correct = 3
 
 [node name="Axis5" parent="car" groups=["axis"] instance=ExtResource( 13 )]
 position = Vector2( -116, -21 )
-number = 4
 
 [node name="Axis6" parent="car" groups=["axis"] instance=ExtResource( 13 )]
 position = Vector2( -68, -13 )
-number = 6
+correct = 4
 
 [node name="Axis7" parent="car" groups=["axis"] instance=ExtResource( 13 )]
 position = Vector2( -83, 23 )
-number = 7
+correct = 2
 
 [node name="Axis8" parent="car" groups=["axis"] instance=ExtResource( 13 )]
 position = Vector2( -11, -1 )
-number = 8
+correct = 1
 
 [node name="Axis9" parent="car" groups=["axis"] instance=ExtResource( 13 )]
 position = Vector2( 40, 18 )
-number = 9
+correct = 2
 
 [node name="Axis10" parent="car" groups=["axis"] instance=ExtResource( 13 )]
 position = Vector2( 88, 49 )
-number = 9
+correct = 1
 
 [node name="RobotSprite" parent="." instance=ExtResource( 8 )]
 position = Vector2( -75, 97 )

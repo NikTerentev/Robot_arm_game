@@ -2,28 +2,47 @@ extends Node2D
 
 var highlited = []
 var usual
-var gears = []
+var right = []
+var wrong = []
 export var correct = 0
 export var empty = 1
 var triggered = 0
-# cur_gear = 0
+var is_correct
 
 func _ready():
-	gears.append(preload("res://Sprites/first_level/g1.png"))
-	gears.append(preload("res://Sprites/first_level/g2.png"))
-	gears.append(preload("res://Sprites/first_level/g3.png"))
-	gears.append(preload("res://Sprites/first_level/g4.png"))
 	highlited.append(preload("res://Sprites/first_level/h_axis.png"))
 	highlited.append(preload("res://Sprites/first_level/r_axis.png"))
 	usual = preload("res://Sprites/first_level/axis.png")
-
+	right.append(preload("res://Sprites/first_level/green_1.png"))
+	right.append(preload("res://Sprites/first_level/green_2.png"))
+	right.append(preload("res://Sprites/first_level/green_3.png"))
+	right.append(preload("res://Sprites/first_level/green_4.png"))
+	wrong.append(preload("res://Sprites/first_level/red_1.png"))
+	wrong.append(preload("res://Sprites/first_level/red_2.png"))
+	wrong.append(preload("res://Sprites/first_level/red_3.png"))
+	wrong.append(preload("res://Sprites/first_level/red_4.png"))
+	if correct == 0:
+		is_correct = 1
+	
 func delete_gear():
 	$gear.texture = null
 	empty = 1
+	var change = is_correct
+	if correct == 0:
+		is_correct = 1
+	else:
+		is_correct = 0
+	return change
 	
 func set_gear(gear):
-	$gear.texture = gears[gear - 1]
+	if gear == correct:
+		$gear.texture = right[gear - 1]
+		is_correct = 1
+	else:
+		$gear.texture = wrong[gear - 1]
+		is_correct = 0
 	empty = 0
+	return is_correct
 
 func set_highlite(is_red):
 	$axis.texture = highlited[is_red]
@@ -38,6 +57,3 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_body_exited(body):
 	triggered = 0
 		
-func add_gear(number):
-	$gear.texture = gears[number - 1]
-	empty = 0
