@@ -18,6 +18,7 @@ config/icon="res://icon_game.png"
 
 BackgroundMusic="*res://Scenes/Menu/BackgroundMusic.tscn"
 GameMusic="*res://Scenes/Menu/GameMusic.tscn"
+PathToScene="*res://Scripts/pathToScene.gd"
 
 [display]
 

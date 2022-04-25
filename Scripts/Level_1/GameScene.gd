@@ -13,6 +13,8 @@ var cur
 var some_gear = 0
 
 func _ready():
+	GameMusic.play()
+	
 	opened.append(preload("res://Sprites/first_level/b1.png"))
 	opened.append(preload("res://Sprites/first_level/b2.png"))
 	opened.append(preload("res://Sprites/first_level/b3.png"))
@@ -34,6 +36,7 @@ func _ready():
 	$car/Axis1.add_gear(4)
 	$car/Axis10.add_gear(1)
 	
+	PathToScene.pathToScene = "res://Scenes/Level1/GameScene.tscn"
 	$LevelUI.time = 90
 	
 	

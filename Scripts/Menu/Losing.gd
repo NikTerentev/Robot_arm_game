@@ -7,7 +7,7 @@ func _ready():
 func _on_go_on_pressed():
 	$ClickSound.play()
 	yield($ClickSound, "finished")
-	get_tree().change_scene("res://Scenes/Level1/GameScene.tscn")
+	get_tree().change_scene(PathToScene.pathToScene)
 
 
 func _on_back_pressed():
