@@ -1,6 +1,6 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=30 format=2]
 
-[ext_resource path="res://Scenes/Level2/WrongDetail.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Level2/Spawner.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level2/RightDetail.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/second_level/передний экран.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/second_level/red.png" type="Texture" id=4]
@@ -13,14 +13,18 @@
 [ext_resource path="res://Sprites/second_level/c step1.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/second_level/c step2.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/second_level/c step3.png" type="Texture" id=13]
-[ext_resource path="res://Scripts/Level_2/Factory.gd" type="Script" id=14]
+[ext_resource path="res://Factory.gd" type="Script" id=14]
 [ext_resource path="res://Scenes/Level2/WrongDetail2.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scripts/Level_2/Spawner.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/Level2/WrongDetail.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Level2/RobotSprite.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Sprites/second_level/back_screen (1).png" type="Texture" id=18]
 [ext_resource path="res://Scenes/LevelUI.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Sprites/second_level/tubes.png" type="Texture" id=20]
 [ext_resource path="res://Sprites/second_level/background (1).png" type="Texture" id=21]
-[ext_resource path="res://Sprites/second_level/full_bracket.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/Level2/bracket.gd" type="Script" id=22]
+[ext_resource path="res://Sprites/down.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/down_p.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/second_level/basket.png" type="Texture" id=25]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -42,9 +46,9 @@ animations = [ {
 extents = Vector2( 31, 69 )
 
 [sub_resource type="CapsuleShape2D" id=4]
-radius = 90.0
+radius = 69.0
 
-[node name="Factoty" type="Node2D"]
+[node name="MainScene" type="Node2D"]
 script = ExtResource( 14 )
 
 [node name="background" type="TextureRect" parent="."]
@@ -60,13 +64,12 @@ position = Vector2( 941, 315 )
 texture = ExtResource( 20 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
-polygon = PoolVector2Array( 850, 186, 852, 331, 851, 332, 854, 352, 906, 351, 911, 334, 960, 335, 961, 319, 940, 320, 953, 282, 979, 280, 1004, 308, 1038, 314, 1070, 284, 1069, 251, 1057, 232, 1091, 189, 1273, 189, 1273, 257, 1169, 253, 1150, 302, 1155, 314, 1155, 363, 1194, 351, 1189, 303, 1298, 293, 1321, 260, 1317, 198, 1379, 244, 1366, 277, 1372, 310, 1396, 309, 1421, 310, 1415, 395, 1457, 396, 1461, 235, 1459, 202, 1697, 206, 1699, 166, 1458, 167, 1451, 49, 1248, 53, -18, 186 )
+polygon = PoolVector2Array( 850, 186, 855, 195, 858, 189, 904, 248, 936, 251, 954, 280, 963, 275, 975, 279, 979, 280, 1004, 308, 1038, 314, 1070, 284, 1069, 251, 1057, 232, 1091, 189, 1273, 189, 1273, 257, 1169, 253, 1150, 302, 1189, 303, 1298, 293, 1321, 260, 1317, 198, 1379, 244, 1366, 277, 1372, 310, 1396, 309, 1421, 310, 1415, 395, 1457, 396, 1461, 235, 1459, 202, 1697, 206, 1699, 166, 1458, 167, 1451, 49, 1248, 53, -18, 186 )
 
 [node name="small conveyor" type="AnimatedSprite" parent="."]
 position = Vector2( 751, 474 )
 frames = SubResource( 2 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="back_screen" type="Sprite" parent="."]
@@ -90,10 +93,13 @@ animation = "animation"
 frame = 3
 playing = true
 
+[node name="RobotSprite" parent="." instance=ExtResource( 17 )]
+position = Vector2( -417, 127 )
+
 [node name="Spawner" type="Position2D" parent="."]
 position = Vector2( 600, 518 )
-script = ExtResource( 16 )
-wrong_detail = ExtResource( 1 )
+script = ExtResource( 1 )
+wrong_detail = ExtResource( 16 )
 wrong_detail_2 = ExtResource( 15 )
 right_detail = ExtResource( 2 )
 
@@ -123,16 +129,28 @@ wait_time = 2.0
 
 [node name="LevelUI" parent="." instance=ExtResource( 19 )]
 
-[node name="bracket" type="Area2D" parent="."]
+[node name="down" type="TextureButton" parent="."]
+margin_left = 1453.0
+margin_top = 226.0
+margin_right = 1578.0
+margin_bottom = 351.0
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 24 )
+expand = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bracket"]
-position = Vector2( 469, 667 )
+[node name="basket" type="StaticBody2D" parent="."]
+script = ExtResource( 22 )
+
+[node name="Sprite" type="Sprite" parent="basket"]
+position = Vector2( 479, 678 )
+scale = Vector2( 0.776836, 0.804545 )
+texture = ExtResource( 25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="basket"]
+position = Vector2( 481, 677 )
 shape = SubResource( 4 )
-
-[node name="Sprite" type="Sprite" parent="bracket"]
-position = Vector2( 482, 689 )
-texture = ExtResource( 22 )
 
 [connection signal="body_entered" from="front_screen/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="front_screen/Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="down" to="." method="_on_down_pressed"]

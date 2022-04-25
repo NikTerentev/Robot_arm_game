@@ -28,4 +28,4 @@ func _on_Exit_pressed():
 # warning-ignore:return_value_discarded
 	$ClickSound.play()
 	yield($ClickSound, "finished")
-	get_tree().exit()
+	get_tree().quit()

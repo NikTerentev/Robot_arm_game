@@ -20,6 +20,7 @@ StarsForLevels="res://Scripts/Menu/stars_for_levels.gd"
 Stars="res://Stars.py"
 BackgroundMusic="*res://Scenes/Menu/BackgroundMusic.tscn"
 GameMusic="*res://Scenes/Menu/GameMusic.tscn"
+PathToScene="*res://Scripts/pathToScene.gd"
 
 [display]
 

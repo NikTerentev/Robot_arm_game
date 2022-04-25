@@ -1,6 +1,6 @@
 extends RigidBody2D
 	
-onready var joystick = get_node("/root/UiSmart/Controling/ScreenWheel_3/ScreenWheel")
+onready var joystick = get_node("/root/MainScene/LevelUI/Controling/ScreenWheel_3/ScreenWheel")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

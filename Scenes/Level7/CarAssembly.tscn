@@ -1,0 +1,174 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scripts/Level_7/MainScene.gd" type="Script" id=1]
+[ext_resource path="res://arts/car 1.png" type="Texture" id=2]
+[ext_resource path="res://arts/подъёмник.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/first_level/down.png" type="Texture" id=4]
+[ext_resource path="res://arts/пульт управления (1).png" type="Texture" id=5]
+[ext_resource path="res://arts/Игра в режиме управления.png" type="Texture" id=6]
+[ext_resource path="res://arts/packages 2.png" type="Texture" id=7]
+[ext_resource path="res://arts/robotic-arm 1.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/first_level/down_p.png" type="Texture" id=9]
+[ext_resource path="res://arts/tire.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Level7/Wheel.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Level7/RobotSprite.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/LevelUI.tscn" type="PackedScene" id=13]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 111, 15 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 49.366
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 905.75, 14 )
+
+[node name="MainScene" type="Node2D"]
+position = Vector2( -2, -6 )
+script = ExtResource( 1 )
+
+[node name="LevelUI" parent="." instance=ExtResource( 13 )]
+
+[node name="bacground" type="TextureRect" parent="."]
+margin_left = 2.0
+margin_top = -40.0
+margin_right = 1819.0
+margin_bottom = 924.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="car" type="StaticBody2D" parent="."]
+position = Vector2( 162, 130 )
+
+[node name="Sprite" type="Sprite" parent="car"]
+position = Vector2( 1022, 534 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="car"]
+position = Vector2( 1016, 590 )
+shape = SubResource( 2 )
+
+[node name="car" type="TextureRect" parent="car"]
+margin_left = 783.0
+margin_top = 239.0
+margin_right = 1261.0
+margin_bottom = 684.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="placeholder_1" type="Area2D" parent="car"]
+position = Vector2( -162, -130 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="car/placeholder_1"]
+position = Vector2( 1041, 652 )
+rotation = 0.499283
+shape = SubResource( 4 )
+
+[node name="placeholder2" type="Area2D" parent="car"]
+position = Vector2( -162, -130 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="car/placeholder2"]
+position = Vector2( 1317, 652 )
+shape = SubResource( 4 )
+
+[node name="wheel" parent="." groups=["wheel"] instance=ExtResource( 11 )]
+position = Vector2( 52, 140 )
+
+[node name="wheel2" parent="." groups=["wheel"] instance=ExtResource( 11 )]
+position = Vector2( 352, 171 )
+
+[node name="ceiling" type="StaticBody2D" parent="."]
+position = Vector2( -1474, 63 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ceiling"]
+position = Vector2( 2389, -19 )
+shape = SubResource( 3 )
+
+[node name="robot" type="StaticBody2D" parent="ceiling"]
+position = Vector2( 1474, -63 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ceiling/robot"]
+polygon = PoolVector2Array( 1051, 36, 1528, 36, 1527, 59, 1506, 61, 1509, 101, 1530, 104, 1527, 137, 1320, 132, 1319, 152, 1249, 152, 1243, 274, 1390, 218, 1390, 204, 1436, 198, 1451, 275, 1425, 280, 1435, 374, 1460, 366, 1470, 469, 1443, 483, 1443, 520, 1420, 523, 1422, 491, 1401, 488, 1400, 472, 1392, 398, 1412, 383, 1406, 280, 1390, 277, 1385, 258, 1230, 353, 1190, 345, 1174, 310, 1190, 275, 1185, 150, 1112, 152, 1117, 132, 1047, 132, 1047, 105, 1070, 105, 1076, 63, 1047, 64 )
+
+[node name="Sprite" type="Sprite" parent="ceiling/robot"]
+position = Vector2( 1288.75, 291.183 )
+scale = Vector2( 1.03008, 1.04397 )
+texture = ExtResource( 8 )
+
+[node name="ColorRect" type="ColorRect" parent="ceiling"]
+margin_left = 1477.0
+margin_top = -33.0
+margin_right = 3295.0
+margin_bottom = -3.0
+color = Color( 0.819608, 0.819608, 0.819608, 1 )
+
+[node name="boxes2" type="StaticBody2D" parent="."]
+position = Vector2( -1474, 63 )
+
+[node name="Sprite" type="Sprite" parent="boxes2"]
+position = Vector2( 1648, 463 )
+scale = Vector2( 1.04128, 1.0188 )
+texture = ExtResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="boxes2"]
+position = Vector2( -3, -2 )
+polygon = PoolVector2Array( 1560, 262, 1682, 262, 1682, 354, 1820, 356, 1820, 668, 1477, 670, 1476, 516, 1513, 513, 1510, 417, 1559, 415 )
+
+[node name="robot" parent="." instance=ExtResource( 12 )]
+position = Vector2( -125, 160 )
+
+[node name="wheel3" parent="." groups=["wheel"] instance=ExtResource( 11 )]
+position = Vector2( 3, 22 )
+
+[node name="wheel4" parent="." groups=["wheel"] instance=ExtResource( 11 )]
+position = Vector2( -73, 164 )
+
+[node name="wheel5" parent="." groups=["wheel"] instance=ExtResource( 11 )]
+position = Vector2( 4, -138 )
+
+[node name="wheel6" parent="." groups=["wheel"] instance=ExtResource( 11 )]
+position = Vector2( 409, 56 )
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = -11.0
+margin_top = 433.0
+margin_right = 310.0
+margin_bottom = 774.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="boxes" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="boxes"]
+position = Vector2( 1648, 463 )
+scale = Vector2( 1.04128, 1.0188 )
+texture = ExtResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="boxes"]
+polygon = PoolVector2Array( 1560, 262, 1682, 262, 1682, 354, 1820, 356, 1820, 668, 1477, 670, 1476, 516, 1513, 513, 1510, 417, 1559, 415 )
+
+[node name="picture" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1040, 653 )
+scale = Vector2( 0.202759, 0.202759 )
+texture = ExtResource( 10 )
+
+[node name="picture2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1317, 652 )
+scale = Vector2( 0.202759, 0.202759 )
+texture = ExtResource( 10 )
+
+[node name="down" type="TextureButton" parent="."]
+visible = false
+margin_left = 1463.0
+margin_top = 218.0
+margin_right = 1623.0
+margin_bottom = 378.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 9 )
+expand = true
+
+[connection signal="body_entered" from="car/placeholder_1" to="." method="_on_placeholder_1_body_entered"]
+[connection signal="body_entered" from="car/placeholder2" to="." method="_on_placeholder2_body_entered"]
+[connection signal="pressed" from="down" to="." method="_on_catch_button_pressed"]
