@@ -1,18 +1,19 @@
 extends CanvasLayer
 
-var time = 60
+var time = 0
 
 func _ready():
 	$Timer.start()
 	BackgroundMusic.stop()
 
 func _process(delta):
-	if not $Timer.is_stopped():
-		time -= delta
-		var sec = fmod(time, 60)
-		var mins = fmod(time, 3600) / 60
-		var time_str = "%02d:%02d" % [mins, sec]
-		$time_counter/Label.text = time_str
+	time -= delta
+	var sec = fmod(time, 60)
+	var mins = fmod(time, 3600) / 60
+	var time_str = "%02d:%02d" % [mins, sec]
+	$time_counter/Label.text = time_str
+	if time_str == "00:00":
+		_on_Timer_timeout()
 	
 func _on_Back_bt_pressed():
 	$ClickSound.play()

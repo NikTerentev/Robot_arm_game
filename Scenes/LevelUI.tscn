@@ -233,5 +233,4 @@ shape = SubResource( 4 )
 [connection signal="pressed" from="TextureButton/pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="TextureButton/Back_bt" to="." method="_on_Back_bt_pressed"]
 [connection signal="pressed" from="task" to="." method="_on_task_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="popup_hide" from="Popup" to="." method="_on_Popup_popup_hide"]

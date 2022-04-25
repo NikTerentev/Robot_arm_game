@@ -10,6 +10,7 @@ func _ready():
 	wheel = preload("res://Scenes/Level7/Wheel.tscn")
 	print(wheel)
 	wheels = get_tree().get_nodes_in_group("wheel")
+	$LevelUI.time = 20
 
 
 func _on_placeholder_1_body_entered(body):

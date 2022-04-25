@@ -34,6 +34,9 @@ func _ready():
 	$car/Axis1.add_gear(4)
 	$car/Axis10.add_gear(1)
 	
+	$LevelUI.time = 90
+	
+	
 func _process(delta):
 	cur = 0
 	if is_catched:
