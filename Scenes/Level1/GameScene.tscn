@@ -50,7 +50,7 @@ position = Vector2( 1176, 570 )
 texture = ExtResource( 5 )
 
 [node name="gears" type="AnimatedSprite" parent="car"]
-position = Vector2( -80, -34 )
+position = Vector2( -81, -33 )
 frames = SubResource( 2 )
 frame = 3
 playing = true
@@ -61,7 +61,7 @@ correct = 3
 empty = 0
 
 [node name="Axis2" parent="car" groups=["axis"] instance=ExtResource( 13 )]
-position = Vector2( -155, -61 )
+position = Vector2( -159, -60 )
 correct = 4
 
 [node name="Axis3" parent="car" groups=["axis"] instance=ExtResource( 13 )]

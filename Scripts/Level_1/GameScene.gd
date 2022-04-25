@@ -145,4 +145,4 @@ func _on_delete_pressed():
 	some_gear -= 1
 	
 func winning():
-	pass
+	$car/gears.show()
