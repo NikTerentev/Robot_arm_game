@@ -35,7 +35,7 @@ func _ready():
 	$car/Axis10.add_gear(1)
 	
 func _process(delta):
-	cur = 0
+	
 	if is_catched:
 		for i in range(8, -1, -1):
 			if axes[i].triggered and axes[i].empty:
@@ -44,6 +44,7 @@ func _process(delta):
 				break
 			else:
 				axes[i].set_usual()
+				cur = 0
 	else:
 		for i in range(8, -1, -1):
 			if not axes[i].empty and axes[i].triggered:
@@ -54,6 +55,7 @@ func _process(delta):
 			else:
 				axes[i].set_usual()
 				$delete.hide()
+				cur = 0
 	if cur:
 			for i in range(8, -1, -1):
 				if cur != i:
@@ -131,5 +133,6 @@ func _on_TextureButton_pressed():
 	
 func _on_delete_pressed():
 	$delete.hide()
+	print(cur)
 	axes[cur].delete_gear()
 	some_gear -= 1

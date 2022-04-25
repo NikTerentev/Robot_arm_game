@@ -37,5 +37,6 @@ func _on_catch_button_pressed():
 	print(pos)
 	var spawling = wheel.instance()
 	add_child(spawling)
-	spawling.add_to_group("wheel")	
+	spawling.show()
+	spawling.add_to_group("wheel")
 	spawling.global_position = pos

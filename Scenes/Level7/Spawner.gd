@@ -7,8 +7,10 @@ var rng
 
 func spawn(detail):
 	var spawling = details[detail - 1].instance()
+	#get_node("../../../../../../../../..").
 	add_child(spawling)
 	spawling.add_to_group("detail")
+	spawling.show()
 	if detail == 1:
 		spawling.add_to_group("right")
 	else:

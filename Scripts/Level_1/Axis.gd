@@ -3,7 +3,7 @@ extends Node2D
 var highlited = []
 var usual
 var gears = []
-export var number = 1
+export var correct = 0
 export var empty = 1
 var triggered = 0
 # cur_gear = 0
