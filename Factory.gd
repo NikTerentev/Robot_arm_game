@@ -7,11 +7,16 @@ var wrong_details = []
 var right_details = []
 
 func _ready():
+	GameMusic.play()
+	
 	details = get_tree().get_nodes_in_group("detail")
 	wrong_details = get_tree().get_nodes_in_group("wrong")
 	right_details = get_tree().get_nodes_in_group("right")
 	$Timer.start()
 	$LevelUI.update_score(score)
+	
+	PathToScene.pathToScene = "res://Scenes/Level2/Factory.tscn"
+	$LevelUI.time = 40
 	
 func _physics_process(delta):
 	var velocity = Vector2(1.5, 0.5) 
