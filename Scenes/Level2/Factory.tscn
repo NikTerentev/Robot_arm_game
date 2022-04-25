@@ -90,6 +90,7 @@ position = Vector2( 713, 574 )
 frames = SubResource( 1 )
 animation = "animation"
 frame = 1
+
 playing = true
 
 [node name="RobotSprite" parent="." instance=ExtResource( 17 )]
