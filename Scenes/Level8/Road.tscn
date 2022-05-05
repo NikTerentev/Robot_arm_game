@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Level_8/Road.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/eighth_level/background-1.png" type="Texture" id=2]
+
+[node name="Road" type="Node2D"]
+
+[node name="Background-1" type="Sprite" parent="."]
+position = Vector2( 850, 450 )
+scale = Vector2( 0.985714, 1.39077 )
+z_index = 1
+texture = ExtResource( 2 )
+script = ExtResource( 1 )

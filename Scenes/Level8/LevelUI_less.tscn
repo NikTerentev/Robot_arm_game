@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Fonts/RubikOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/LevelUI/pause.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/LevelUI/task.png" type="Texture" id=4]
+[ext_resource path="res://Sounds/sci-fi-interface-robot-click.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Sprites/LevelUI/back (1).png" type="Texture" id=7]
+[ext_resource path="res://Sprites/LevelUI/back (2).png" type="Texture" id=8]
+[ext_resource path="res://Sprites/LevelUI/menu.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/LevelUI/time.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/LevelUI/play (1).png" type="Texture" id=15]
+[ext_resource path="res://Sprites/LevelUI/task p pressed.png" type="Texture" id=20]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_color = Color( 0.14902, 0.647059, 1, 1 )
+font_data = ExtResource( 1 )
+
+[node name="LevelUI" type="CanvasLayer"]
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 6 )
+volume_db = -10.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 3.0
+margin_top = 33.0
+margin_right = 278.0
+margin_bottom = 213.0
+texture_normal = ExtResource( 10 )
+
+[node name="pause" type="TextureButton" parent="TextureButton"]
+pause_mode = 2
+margin_left = 155.0
+margin_top = 62.0
+margin_right = 210.0
+margin_bottom = 117.0
+toggle_mode = true
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 15 )
+expand = true
+
+[node name="Back_bt" type="TextureButton" parent="TextureButton"]
+pause_mode = 2
+margin_left = 39.0
+margin_top = 39.0
+margin_right = 141.0
+margin_bottom = 141.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
+
+[node name="task" type="TextureButton" parent="."]
+pause_mode = 2
+margin_left = 9.0
+margin_top = 160.0
+margin_right = 245.0
+margin_bottom = 446.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 20 )
+
+[node name="time_counter" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -415.0
+margin_top = 40.0
+margin_right = -42.0
+margin_bottom = 204.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Label" type="Label" parent="time_counter"]
+margin_left = 167.0
+margin_top = 67.0
+margin_right = 246.0
+margin_bottom = 132.0
+custom_colors/font_color = Color( 0.14902, 0.647059, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "00:00
+"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+
+[connection signal="pressed" from="TextureButton/pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="TextureButton/Back_bt" to="." method="_on_Back_bt_pressed"]
+[connection signal="pressed" from="task" to="." method="_on_task_pressed"]
