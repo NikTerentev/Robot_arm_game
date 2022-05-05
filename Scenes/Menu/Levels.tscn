@@ -167,3 +167,4 @@ texture = ExtResource( 19 )
 [connection signal="pressed" from="ReferenceRect/level1" to="." method="_on_level1_pressed"]
 [connection signal="pressed" from="ReferenceRect/level2" to="." method="_on_level2_pressed"]
 [connection signal="pressed" from="ReferenceRect/level7" to="." method="_on_level7_pressed"]
+[connection signal="pressed" from="ReferenceRect/level8" to="." method="_on_level8_pressed"]
