@@ -1,22 +1,75 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Fonts/RubikOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Sprites/LevelUI/pause.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/LevelUI/task.png" type="Texture" id=4]
 [ext_resource path="res://Sounds/sci-fi-interface-robot-click.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Sprites/LevelUI/back (1).png" type="Texture" id=7]
 [ext_resource path="res://Sprites/LevelUI/back (2).png" type="Texture" id=8]
 [ext_resource path="res://Sprites/LevelUI/menu.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/LevelUI/accept p (1).png" type="Texture" id=11]
 [ext_resource path="res://Sprites/LevelUI/time.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/LevelUI/card (1).png" type="Texture" id=13]
+[ext_resource path="res://Sprites/LevelUI/accept.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/LevelUI/play (1).png" type="Texture" id=15]
 [ext_resource path="res://Sprites/LevelUI/task p pressed.png" type="Texture" id=20]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends CanvasLayer
+
+var time = 0
+
+func _ready():
+	$Timer.start()
+	BackgroundMusic.stop()
+
+func _process(delta):
+	time -= delta
+	var sec = fmod(time, 60)
+	var mins = fmod(time, 3600) / 60
+	var time_str = \"%02d:%02d\" % [mins, sec]
+	$time_counter/Label.text = time_str
+	if time_str == \"00:00\":
+		_on_Timer_timeout()
+	
+func _on_Back_bt_pressed():
+	GameMusic.stop()
+	BackgroundMusic.play()
+	get_tree().change_scene(\"res://Scenes/Menu/MainMenu.tscn\")
+
+func _on_Timer_timeout():
+	GameMusic.stop()
+	BackgroundMusic.play()
+	get_tree().change_scene(\"res://Scenes/Menu/Winning.tscn\")
+
+func _on_pause_pressed():
+	get_tree().paused = not get_tree().paused
+	
+func _on_task_pressed():
+	$Popup.popup()
+	$TextureButton/pause.pressed = true
+	get_tree().paused = true
+
+func _on_Popup_popup_hide():
+	$ClickSound.play()
+	yield($ClickSound, \"finished\")
+	get_tree().paused = false
+	$TextureButton/pause.pressed = false
+
+"
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
 outline_color = Color( 0.14902, 0.647059, 1, 1 )
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 2 )
+
 [node name="LevelUI" type="CanvasLayer"]
+script = SubResource( 3 )
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
@@ -81,6 +134,38 @@ text = "00:00
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 60.0
+
+[node name="Popup" type="Popup" parent="."]
+margin_left = 47.0
+margin_top = -38.0
+margin_right = 1004.0
+margin_bottom = 589.0
+
+[node name="card" type="TextureRect" parent="Popup"]
+margin_left = 319.0
+margin_top = 114.0
+margin_right = 1344.0
+margin_bottom = 837.0
+texture = ExtResource( 13 )
+
+[node name="accept" type="TextureButton" parent="Popup/card"]
+margin_left = 362.0
+margin_top = 489.0
+margin_right = 689.0
+margin_bottom = 618.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 11 )
+expand = true
+
+[node name="text" type="Label" parent="Popup/card"]
+margin_left = 435.0
+margin_top = 252.0
+margin_right = 819.0
+margin_bottom = 473.0
+custom_fonts/font = SubResource( 2 )
+text = "Перемещайте в корзину детали, имеющие брак, чтобы набрать нужное количество очков предприятия. Испорченная деталь будет выделена красным, а правильная - зелёным цветом"
+align = 1
+autowrap = true
 
 [connection signal="pressed" from="TextureButton/pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="TextureButton/Back_bt" to="." method="_on_Back_bt_pressed"]

@@ -25,3 +25,5 @@ position = Vector2( 847, 786 )
 [node name="Road_start" parent="." instance=ExtResource( 3 )]
 
 [node name="LevelUI" parent="." instance=ExtResource( 2 )]
+
+[connection signal="area_entered" from="player" to="." method="_on_player_area_entered"]
