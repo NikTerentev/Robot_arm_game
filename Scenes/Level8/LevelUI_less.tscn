@@ -4,13 +4,13 @@
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Sprites/LevelUI/pause.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/LevelUI/task.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/eighth_level/task.png" type="Texture" id=5]
 [ext_resource path="res://Sounds/sci-fi-interface-robot-click.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Sprites/LevelUI/back (1).png" type="Texture" id=7]
 [ext_resource path="res://Sprites/LevelUI/back (2).png" type="Texture" id=8]
 [ext_resource path="res://Sprites/LevelUI/menu.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/LevelUI/accept p (1).png" type="Texture" id=11]
 [ext_resource path="res://Sprites/LevelUI/time.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/LevelUI/card (1).png" type="Texture" id=13]
 [ext_resource path="res://Sprites/LevelUI/accept.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/LevelUI/play (1).png" type="Texture" id=15]
 [ext_resource path="res://Sprites/LevelUI/task p pressed.png" type="Texture" id=20]
@@ -146,7 +146,7 @@ margin_left = 319.0
 margin_top = 114.0
 margin_right = 1344.0
 margin_bottom = 837.0
-texture = ExtResource( 13 )
+texture = ExtResource( 5 )
 
 [node name="accept" type="TextureButton" parent="Popup/card"]
 margin_left = 362.0
@@ -163,10 +163,11 @@ margin_top = 252.0
 margin_right = 819.0
 margin_bottom = 473.0
 custom_fonts/font = SubResource( 2 )
-text = "Перемещайте в корзину детали, имеющие брак, чтобы набрать нужное количество очков предприятия. Испорченная деталь будет выделена красным, а правильная - зелёным цветом"
+text = "Управляйте собранной вами машиной, используя стрелки на клавиатуре, и уклоняйтесь от машин, которые едут вам навстречу. Необходимо продержаться одну минуту, чтобы завершить уровень."
 align = 1
 autowrap = true
 
 [connection signal="pressed" from="TextureButton/pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="TextureButton/Back_bt" to="." method="_on_Back_bt_pressed"]
 [connection signal="pressed" from="task" to="." method="_on_task_pressed"]
+[connection signal="popup_hide" from="Popup" to="." method="_on_Popup_popup_hide"]
