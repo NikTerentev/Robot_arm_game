@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var road = preload("res://Scenes/Level8/Road.tscn")
-onready var truck = preload("res://Scenes/Level8/Enemy_car.tscn")
+
 var timer = 0
 var timer_truck = 30
 
@@ -15,6 +15,9 @@ func _process(delta):
 	timer_truck -= 1
 	timer -= 1
 	if timer_truck < 0:
+		randomize()
+		var number = int(rand_range(1, 3))
+		var truck = load("res://Scenes/Level8/Enemy_car_%s.tscn" % str(number))
 		var truck_ins = truck.instance()
 		timer_truck = 40
 		add_child(truck_ins)
