@@ -6,4 +6,4 @@ func _ready():
 	position.x = rand_range(662, 1044)
 
 func _process(delta):
-	position.y += 16
+	position.y += 11
