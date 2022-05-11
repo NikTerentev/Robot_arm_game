@@ -16,7 +16,7 @@ func _process(delta):
 	timer -= 1
 	if timer_truck < 0:
 		randomize()
-		var number = int(rand_range(1, 4))
+		var number = int(rand_range(1, 5))
 		var truck = load("res://Scenes/Level8/Enemy_car_%s.tscn" % str(number))
 		var truck_ins = truck.instance()
 		timer_truck = 80
