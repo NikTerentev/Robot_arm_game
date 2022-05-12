@@ -6,7 +6,7 @@ func _ready():
 
 
 func _on_go_on_pressed():
-	get_tree().change_scene("res://Scenes/Menu/UiSmart.tscn")
+	get_tree().change_scene("res://Scenes/Menu/Levels.tscn")
 
 
 func _on_back_pressed():

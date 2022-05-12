@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/preview_carspritespack.jpg-4ea0607dd117cfa5be192582de9d97c8.stex"
+path="res://.import/Card_2.png-bf3a81adcc24b7fc3c92f70a9bbefbb3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/eighth_level/preview_carspritespack.jpg"
-dest_files=[ "res://.import/preview_carspritespack.jpg-4ea0607dd117cfa5be192582de9d97c8.stex" ]
+source_file="res://Scenes/Menu/Card_2.png"
+dest_files=[ "res://.import/Card_2.png-bf3a81adcc24b7fc3c92f70a9bbefbb3.stex" ]
 
 [params]
 
