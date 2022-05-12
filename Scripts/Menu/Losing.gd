@@ -2,6 +2,9 @@ extends CanvasLayer
 
 func _ready():
 	$AnimationPlayer.play("rise up")
+	if PathToScene.pathToScene == "res://Scenes/Level8/CarRacing.tscn":
+		$CrashSound.play()
+		yield($CrashSound, "finished")
 
 
 func _on_go_on_pressed():
