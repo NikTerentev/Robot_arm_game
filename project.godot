@@ -22,6 +22,10 @@ BackgroundMusic="*res://Scenes/Menu/BackgroundMusic.tscn"
 GameMusic="*res://Scenes/Menu/GameMusic.tscn"
 PathToScene="*res://Scripts/pathToScene.gd"
 
+[debug]
+
+settings/fps/force_fps=60
+
 [display]
 
 window/size/width=1700
@@ -36,6 +40,7 @@ singletons=[  ]
 [global]
 
 font=false
+vsync=false
 
 [input]
 
