@@ -52,7 +52,7 @@ texture = ExtResource( 5 )
 [node name="gears" type="AnimatedSprite" parent="car"]
 position = Vector2( -81, -33 )
 frames = SubResource( 2 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Axis1" parent="car" groups=["axis"] instance=ExtResource( 13 )]
