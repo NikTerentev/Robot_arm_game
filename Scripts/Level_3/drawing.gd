@@ -26,7 +26,7 @@ func _draw():
 	var angle_from = 75
 	var angle_to = 195
 	var color = Color(1.0, 0.0, 0.0)
-	draw_circle_arc(center, radius, angle_from, angle_to, color)
+	#draw_circle_arc(center, radius, angle_from, angle_to, color)
 
 func _input(event):
 	# Mouse in viewport coordinates.

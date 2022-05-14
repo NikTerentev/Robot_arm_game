@@ -6,7 +6,7 @@ var is_usual = 1
 var triggered = 0
 
 func _ready():
-	pass
+	$Area2D.set_pickable(true)
 
 func set_usual():
 	$Sprite.texture = usual
@@ -16,9 +16,9 @@ func set_highlite():
 	$Sprite.texture = highlited
 	
 
-func _on_Area2D_body_entered(body):
+func _on_Area2D_mouse_entered():
+	print(1)
 	triggered = 1
 
-
-func _on_Area2D_body_exited(body):
+func _on_Area2D_mouse_exited():
 	triggered = 0

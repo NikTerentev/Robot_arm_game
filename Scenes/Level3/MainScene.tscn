@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Sprites/third_level/3.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/third_level/1.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Sprites/third_level/delete_h.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/third_level/delete.png" type="Texture" id=16]
 [ext_resource path="res://Sprites/third_level/4.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/Level3/drawing.tscn" type="PackedScene" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -53,54 +54,6 @@ position = Vector2( 858, 254 )
 frames = SubResource( 1 )
 centered = false
 
-[node name="Bracing" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 181, 197 )
-
-[node name="Bracing2" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 329, 202 )
-
-[node name="Bracing7" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 357, 202 )
-
-[node name="Bracing8" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 382, 202 )
-
-[node name="Bracing9" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 422, 84 )
-
-[node name="Bracing10" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 396, 84 )
-
-[node name="Bracing11" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 369, 85 )
-
-[node name="Bracing12" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 343, 85 )
-
-[node name="Bracing13" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 235, 101 )
-
-[node name="Bracing14" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 210, 101 )
-
-[node name="Bracing15" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 182, 101 )
-
-[node name="Bracing1" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 156, 101 )
-
-[node name="Bracing3" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 304, 202 )
-
-[node name="Bracing4" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 101, 197 )
-
-[node name="Bracing5" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 127, 198 )
-
-[node name="Bracing6" parent="Stand" groups=["brac"] instance=ExtResource( 14 )]
-position = Vector2( 155, 197 )
-
 [node name="Arm" type="AnimatedSprite" parent="."]
 position = Vector2( 380, 618 )
 frames = SubResource( 2 )
@@ -119,8 +72,75 @@ position = Vector2( -165, 118 )
 
 [node name="panel" type="Sprite" parent="."]
 visible = false
-position = Vector2( 932, 453 )
+position = Vector2( 892, 473 )
 texture = ExtResource( 3 )
+
+[node name="Bracing" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( -212, -76 )
+scale = Vector2( 2, 2 )
+
+[node name="Bracing2" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( -128, -77 )
+scale = Vector2( 2, 2 )
+
+[node name="Bracing7" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( -174, 80 )
+scale = Vector2( 2, 2 )
+
+[node name="Bracing8" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( 30, 89 )
+scale = Vector2( 2, 2 )
+
+[node name="Bracing9" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( 92, -104 )
+scale = Vector2( 2, 2 )
+
+[node name="Bracing10" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( 137, -105 )
+scale = Vector2( 2, 2 )
+
+[node name="Bracing11" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( 70, 90 )
+scale = Vector2( 2, 2 )
+
+[node name="Bracing12" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( 180, -106 )
+scale = Vector2( 2, 2 )
+
+[node name="Bracing13" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( 226, -104 )
+scale = Vector2( 2, 2 )
+
+[node name="Bracing14" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( 115, 89 )
+scale = Vector2( 2, 2 )
+
+[node name="Bracing15" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( 158, 88 )
+scale = Vector2( 2, 2 )
+
+[node name="Bracing1" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( -171, -76 )
+scale = Vector2( 2, 2 )
+
+[node name="Bracing3" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( -83, -76 )
+scale = Vector2( 2, 2 )
+
+[node name="Bracing4" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( -305, 82 )
+scale = Vector2( 2, 2 )
+
+[node name="Bracing5" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( -259, 80 )
+scale = Vector2( 2, 2 )
+
+[node name="Bracing6" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
+position = Vector2( -218, 80 )
+scale = Vector2( 2, 2 )
+
+[node name="CanvasLayer" parent="panel" instance=ExtResource( 18 )]
+position = Vector2( -892, -469 )
 
 [node name="loop" type="TextureButton" parent="."]
 margin_left = 1393.0
