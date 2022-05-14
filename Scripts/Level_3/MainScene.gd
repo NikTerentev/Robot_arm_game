@@ -8,6 +8,7 @@ func _ready():
 	bracings = get_tree().get_nodes_in_group("brac")
 	for br in bracings:
 		br.hide()
+	$loop.hide()
 	$LevelUI.time = 90
 	$Stand.stop()
 	$Arm.frame = 0
@@ -27,6 +28,7 @@ func _on_AnimatedSprite_animation_finished():
 	is_closed = 0
 	for br in bracings:
 		br.show()
+	$loop.show()
 
 
 func _on_Arm_animation_finished():
@@ -38,3 +40,10 @@ func _on_Arm_animation_finished():
 func _on_Area2D_body_entered(body):
 	if is_closed:
 		$Arm.play("default")
+
+
+func _on_loop_toggled(button_pressed):
+	if button_pressed:
+		$panel.show()
+	else:
+		$panel.hide()
