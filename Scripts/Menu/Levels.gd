@@ -56,3 +56,9 @@ func _on_level8_pressed():
 	$ClickSound.play()
 	yield($ClickSound, "finished")
 	get_tree().change_scene("res://Scenes/Level8/CarRacing.tscn")
+
+
+func _on_level3_pressed():
+	$ClickSound.play()
+	yield($ClickSound, "finished")
+	get_tree().change_scene("res://Scenes/Level3/MainScene.tscn")

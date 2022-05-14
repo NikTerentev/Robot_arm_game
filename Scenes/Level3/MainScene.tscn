@@ -71,7 +71,6 @@ shape = SubResource( 3 )
 position = Vector2( -165, 118 )
 
 [node name="panel" type="Sprite" parent="."]
-visible = false
 position = Vector2( 892, 473 )
 texture = ExtResource( 3 )
 
@@ -140,7 +139,7 @@ position = Vector2( -218, 80 )
 scale = Vector2( 2, 2 )
 
 [node name="CanvasLayer" parent="panel" instance=ExtResource( 18 )]
-position = Vector2( -892, -469 )
+position = Vector2( -891, -472 )
 
 [node name="loop" type="TextureButton" parent="."]
 margin_left = 1393.0

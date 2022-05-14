@@ -11,6 +11,7 @@ func _ready():
 	$loop.hide()
 	$LevelUI.time = 90
 	$Stand.stop()
+	$panel.hide()
 	$Arm.frame = 0
 	$Stand.frame = 0
 	
