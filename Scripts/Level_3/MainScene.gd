@@ -48,3 +48,4 @@ func _on_loop_toggled(button_pressed):
 		$panel.show()
 	else:
 		$panel.hide()
+

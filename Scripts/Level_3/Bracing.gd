@@ -22,3 +22,8 @@ func _on_Area2D_mouse_entered():
 
 func _on_Area2D_mouse_exited():
 	triggered = 0
+
+
+func _on_Area2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		print($Area2D.global_position)

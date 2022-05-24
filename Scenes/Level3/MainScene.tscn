@@ -47,6 +47,7 @@ margin_left = -34.0
 margin_top = -44.0
 margin_right = 1709.0
 margin_bottom = 895.0
+mouse_filter = 2
 texture = ExtResource( 13 )
 
 [node name="Stand" type="AnimatedSprite" parent="."]
