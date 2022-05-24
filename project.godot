@@ -21,6 +21,7 @@ Stars="res://Stars.py"
 BackgroundMusic="*res://Scenes/Menu/BackgroundMusic.tscn"
 GameMusic="*res://Scenes/Menu/GameMusic.tscn"
 PathToScene="*res://Scripts/pathToScene.gd"
+WinningLogic="*res://Scripts/winningLogic.gd"
 
 [debug]
 

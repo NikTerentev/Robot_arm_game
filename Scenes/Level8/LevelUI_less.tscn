@@ -36,7 +36,7 @@ func _process(delta):
 func _on_Back_bt_pressed():
 	GameMusic.stop()
 	BackgroundMusic.play()
-	get_tree().change_scene(\"res://Scenes/Menu/MainMenu.tscn\")
+	get_tree().change_scene(\"res://Scenes/Menu/Levels.tscn\")
 
 func _on_Timer_timeout():
 	GameMusic.stop()

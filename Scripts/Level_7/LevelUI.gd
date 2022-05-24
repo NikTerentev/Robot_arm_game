@@ -20,7 +20,7 @@ func _on_Back_bt_pressed():
 	yield($ClickSound, "finished")
 	GameMusic.stop()
 	BackgroundMusic.play()
-	get_tree().change_scene("res://Scenes/Menu/MainMenu.tscn")
+	get_tree().change_scene("res://Scenes/Menu/Levels.tscn")
 
 func _on_Timer_timeout():
 	GameMusic.stop()

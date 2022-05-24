@@ -14,6 +14,10 @@ func set_star(level, num):
 
 
 func _ready():
+	if WinningLogic.winLvl2 == true:
+		WinningLogic.adress3 = "res://Scenes/Level3/MainScene.tscn"
+		$ReferenceRect/level3.set_normal_texture(load("res://Sprites/levels_sprites/Group 17.png"))
+		$ReferenceRect/level3.set_pressed_texture(load("res://Sprites/levels_sprites/3 pressed.png"))
 	#set_star($group/stars_1, StarsForLevels.stars[0])
 	#set_star($group/stars_2, StarsForLevels.stars[1])
 	#set_star($group/stars_3, StarsForLevels.stars[2])
@@ -21,7 +25,6 @@ func _ready():
 	#set_star($group/stars_5, StarsForLevels.stars[4])
 	#set_star($group/stars_6, StarsForLevels.stars[5])
 	#set_star($group/stars_7, StarsForLevels.stars[6])
-	pass
 
 
 func _process(delta):
@@ -43,13 +46,13 @@ func _on_level7_pressed():
 func _on_level2_pressed():
 	$ClickSound.play()
 	yield($ClickSound, "finished")
-	get_tree().change_scene("res://Scenes/Level2/Factory.tscn")
+	get_tree().change_scene(WinningLogic.adress2)
 
 
 func _on_level1_pressed():
 	$ClickSound.play()
 	yield($ClickSound, "finished")
-	get_tree().change_scene("res://Scenes/Level1/GameScene.tscn")
+	get_tree().change_scene(WinningLogic.adress1)
 
 
 func _on_level8_pressed():
@@ -61,4 +64,4 @@ func _on_level8_pressed():
 func _on_level3_pressed():
 	$ClickSound.play()
 	yield($ClickSound, "finished")
-	get_tree().change_scene("res://Scenes/Level3/MainScene.tscn")
+	get_tree().change_scene(WinningLogic.adress3)

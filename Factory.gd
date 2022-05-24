@@ -8,7 +8,7 @@ var right_details = []
 
 func _ready():
 	GameMusic.play()
-	
+
 	details = get_tree().get_nodes_in_group("detail")
 	wrong_details = get_tree().get_nodes_in_group("wrong")
 	right_details = get_tree().get_nodes_in_group("right")
@@ -45,6 +45,7 @@ func _on_Area2D_body_exited(body):
 		score += 2
 	$LevelUI.update_score(score)
 	if score >= 20:
+		WinningLogic.winLvl2 = true
 		get_tree().change_scene("res://Scenes/Menu/Winning.tscn")
 
 
