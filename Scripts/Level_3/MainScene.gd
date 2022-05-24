@@ -17,8 +17,7 @@ func _ready():
 	$Stand.frame = 0
 	
 func _process(delta):
-	print("s", corrects)
-	if corrects == 7:
+	if corrects > 7:
 		get_tree().change_scene("res://Scenes/Menu/Winning.tscn")
 	for i in range(15, -1, -1):
 		if bracings[i].triggered:
