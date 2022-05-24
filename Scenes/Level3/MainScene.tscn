@@ -78,66 +78,82 @@ texture = ExtResource( 3 )
 [node name="Bracing" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( -212, -76 )
 scale = Vector2( 2, 2 )
+number = 1
 
 [node name="Bracing2" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( -128, -77 )
 scale = Vector2( 2, 2 )
+number = 3
 
 [node name="Bracing7" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( -174, 80 )
 scale = Vector2( 2, 2 )
+number = 12
 
 [node name="Bracing8" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( 30, 89 )
 scale = Vector2( 2, 2 )
+number = 13
 
 [node name="Bracing9" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( 92, -104 )
 scale = Vector2( 2, 2 )
+number = 5
 
 [node name="Bracing10" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( 137, -105 )
 scale = Vector2( 2, 2 )
+number = 6
 
 [node name="Bracing11" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( 70, 90 )
 scale = Vector2( 2, 2 )
+number = 14
 
 [node name="Bracing12" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( 180, -106 )
 scale = Vector2( 2, 2 )
+number = 7
 
 [node name="Bracing13" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( 226, -104 )
 scale = Vector2( 2, 2 )
+number = 8
 
 [node name="Bracing14" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( 115, 89 )
 scale = Vector2( 2, 2 )
+number = 15
 
 [node name="Bracing15" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( 158, 88 )
 scale = Vector2( 2, 2 )
+number = 16
 
 [node name="Bracing1" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( -171, -76 )
 scale = Vector2( 2, 2 )
+number = 2
 
 [node name="Bracing3" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( -83, -76 )
 scale = Vector2( 2, 2 )
+number = 4
 
 [node name="Bracing4" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( -305, 82 )
 scale = Vector2( 2, 2 )
+number = 9
 
 [node name="Bracing5" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( -259, 80 )
 scale = Vector2( 2, 2 )
+number = 10
 
 [node name="Bracing6" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
 position = Vector2( -218, 80 )
 scale = Vector2( 2, 2 )
+number = 11
 
 [node name="CanvasLayer" parent="panel" instance=ExtResource( 18 )]
 position = Vector2( -891, -472 )

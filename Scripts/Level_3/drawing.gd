@@ -1,8 +1,12 @@
 extends Node2D
 
-var start = Vector2()
-var end = Vector2()
+var start = 0
+var end = 0
 var lines = []
+var correct = [
+	[1, 13], [2, 7], [3, 5], [4, 9], [6, 10], [8, 15], 
+	[11, 16], [12, 14]
+]
 
 func _ready():
 	pass
@@ -20,7 +24,12 @@ func draw_circle_arc(center, radius, angle_from, angle_to, color):
 
 func _draw():
 	for line in lines:
-		draw_line(line[0], line[1], Color(255, 0, 0))
+		for caple in correct:
+			if caple[0] == line[0].number:
+				if caple[1] == line[1].number:
+					draw_line(line[0].global_position, line[1].global_position, Color(0, 255, 0), 5)
+				else:
+					draw_line(line[0].global_position, line[1].global_position, Color(255, 0, 0), 5)
 	var center = Vector2(200, 200)
 	var radius = 80
 	var angle_from = 75
@@ -29,6 +38,7 @@ func _draw():
 	#draw_circle_arc(center, radius, angle_from, angle_to, color)
 
 func _process(delta):
+	
 	if end and start:
 		lines.append([start, end])
 		update()
