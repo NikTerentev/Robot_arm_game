@@ -2,6 +2,7 @@ extends Node2D
 
 var is_closed = 1
 var bracings = []
+var corrects = 0
 
 func _ready():
 	PathToScene.pathToScene = "res://Scenes/Level3/MainScene.tscn"
@@ -16,6 +17,9 @@ func _ready():
 	$Stand.frame = 0
 	
 func _process(delta):
+	print("s", corrects)
+	if corrects == 7:
+		get_tree().change_scene("res://Scenes/Menu/Winning.tscn")
 	for i in range(15, -1, -1):
 		if bracings[i].triggered:
 			bracings[i].set_highlite()
@@ -48,3 +52,4 @@ func _on_loop_toggled(button_pressed):
 		$panel.show()
 	else:
 		$panel.hide()
+
