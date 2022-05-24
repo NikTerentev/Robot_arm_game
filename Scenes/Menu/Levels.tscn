@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Menu/Levels.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/levels_sprites/Уровни.png" type="Texture" id=2]
@@ -10,11 +10,12 @@
 [ext_resource path="res://Sprites/levels_locked_sprites/Group 17.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/levels_sprites/car.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/levels_locked_sprites/Group 24.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/levels_locked_sprites/Group 23.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/levels_locked_sprites/Group 20(1).png" type="Texture" id=12]
+[ext_resource path="res://Sprites/levels_sprites/Group 20.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/levels_locked_sprites/Group 23.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/levels_locked_sprites/Group 18.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/levels_locked_sprites/Group 22.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/levels_sprites/line.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/levels_sprites/2 pressed.png" type="Texture" id=18]
 [ext_resource path="res://Sprites/levels_sprites/progress.png" type="Texture" id=19]
 [ext_resource path="res://Sounds/sci-fi-interface-robot-click.mp3" type="AudioStream" id=24]
 [ext_resource path="res://Sprites/levels_sprites/padlock.png" type="Texture" id=25]
@@ -66,7 +67,8 @@ margin_left = 535.0
 margin_top = 249.0
 margin_right = 649.0
 margin_bottom = 363.0
-texture_normal = ExtResource( 12 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 18 )
 expand = true
 
 [node name="level3" type="TextureButton" parent="ReferenceRect"]
@@ -111,7 +113,7 @@ margin_top = 420.0
 margin_right = 396.0
 margin_bottom = 556.0
 disabled = true
-texture_normal = ExtResource( 11 )
+texture_normal = ExtResource( 12 )
 expand = true
 
 [node name="Sprite2" type="Sprite" parent="ReferenceRect/level6"]
