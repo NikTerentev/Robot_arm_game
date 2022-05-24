@@ -2,8 +2,7 @@ extends Node2D
 
 var is_closed = 1
 var bracings = []
-var start = Vector2()
-var end = Vector2()
+var corrects = 0
 
 func _ready():
 	PathToScene.pathToScene = "res://Scenes/Level3/MainScene.tscn"
@@ -18,8 +17,9 @@ func _ready():
 	$Stand.frame = 0
 	
 func _process(delta):
-	if end and start:
-		print(start, end)
+	print("s", corrects)
+	if corrects == 7:
+		get_tree().change_scene("res://Scenes/Menu/Winning.tscn")
 	for i in range(15, -1, -1):
 		if bracings[i].triggered:
 			bracings[i].set_highlite()
