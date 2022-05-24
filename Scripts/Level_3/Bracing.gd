@@ -25,5 +25,10 @@ func _on_Area2D_mouse_exited():
 
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
+	var draw = get_node("../CanvasLayer")
 	if event is InputEventMouseButton:
-		print($Area2D.global_position)
+		if (not event.pressed) and (draw.start != event.global_position):
+			draw.end = event.global_position
+		else:
+			draw.start = event.global_position
+	

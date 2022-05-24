@@ -28,19 +28,9 @@ func _draw():
 	var color = Color(1.0, 0.0, 0.0)
 	#draw_circle_arc(center, radius, angle_from, angle_to, color)
 
-func _input(event):
-	# Mouse in viewport coordinates.
-	if event is InputEventMouseButton:
-		if not event.pressed:
-			end = event.position
-		else:
-			start = event.position
-		
-			
 func _process(delta):
 	if end and start:
 		lines.append([start, end])
-		print(end, start)
 		update()
 		start = Vector2()
 		end = Vector2()
