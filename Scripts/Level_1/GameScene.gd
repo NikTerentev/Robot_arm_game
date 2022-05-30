@@ -138,6 +138,7 @@ func _on_TextureButton_pressed():
 		correct_nums += num
 		$LevelUI.update_score(correct_nums)
 		if correct_nums == 8:
+			WinningLogic.winLvl1 = true
 			get_tree().change_scene("res://Scenes/Menu/Winning.tscn")
 	cur_gear = 0
 	
