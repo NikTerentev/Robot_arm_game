@@ -5,6 +5,7 @@ var bracings = []
 var corrects = 0
 
 func _ready():
+	$LevelUI.update_score(0)
 	PathToScene.pathToScene = "res://Scenes/Level3/MainScene.tscn"
 	bracings = get_tree().get_nodes_in_group("brac")
 	for br in bracings:
@@ -17,8 +18,6 @@ func _ready():
 	$Stand.frame = 0
 	
 func _process(delta):
-	if corrects > 7:
-		get_tree().change_scene("res://Scenes/Menu/Winning.tscn")
 	for i in range(15, -1, -1):
 		if bracings[i].triggered:
 			bracings[i].set_highlite()
@@ -52,3 +51,8 @@ func _on_loop_toggled(button_pressed):
 	else:
 		$panel.hide()
 
+func count_corrects():
+	corrects =corrects + 1
+	$LevelUI.update_score(corrects)
+	if corrects > 14:
+		get_tree().change_scene("res://Scenes/Menu/Winning.tscn")

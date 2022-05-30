@@ -34,6 +34,7 @@ func _draw():
 				is_correct = 1
 		if is_correct:		
 			draw_line(first_p, sec_p, Color(0, 255, 0), 5)
+			get_node("../..").count_corrects()
 		else:
 			draw_line(first_p, sec_p, Color(255, 0, 0), 5)
 	var center = Vector2(200, 200)

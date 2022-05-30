@@ -11,7 +11,7 @@
 [ext_resource path="res://Sprites/third_level/r4.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/third_level/r1.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Level2/RobotSprite.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/LevelUI.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Level3/LevelUI.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Sprites/first_level/backround.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Level3/Bracing.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Sprites/third_level/delete_h.png" type="Texture" id=15]
@@ -66,13 +66,11 @@ position = Vector2( -36, -68 )
 position = Vector2( -2, 0 )
 shape = SubResource( 3 )
 
-[node name="LevelUI" parent="." instance=ExtResource( 12 )]
-
 [node name="RobotSprite" parent="." groups=["robot"] instance=ExtResource( 11 )]
 position = Vector2( -165, 118 )
 
 [node name="panel" type="Sprite" parent="."]
-position = Vector2( 892, 473 )
+position = Vector2( 899, 467 )
 texture = ExtResource( 3 )
 
 [node name="Bracing" parent="panel" groups=["brac"] instance=ExtResource( 14 )]
@@ -156,7 +154,7 @@ scale = Vector2( 2, 2 )
 number = 11
 
 [node name="CanvasLayer" parent="panel" instance=ExtResource( 18 )]
-position = Vector2( -891, -472 )
+position = Vector2( -893, -464 )
 
 [node name="loop" type="TextureButton" parent="."]
 margin_left = 1393.0
@@ -166,6 +164,8 @@ margin_bottom = 379.0
 toggle_mode = true
 texture_normal = ExtResource( 15 )
 texture_pressed = ExtResource( 16 )
+
+[node name="LevelUI" parent="." instance=ExtResource( 12 )]
 
 [connection signal="animation_finished" from="Stand" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="animation_finished" from="Arm" to="." method="_on_Arm_animation_finished"]
