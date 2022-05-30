@@ -54,6 +54,7 @@ func _process(delta):
 			lines.append([start, end])
 			get_node("../..").corrects = len(lines)
 			print(len(lines))
+			get_node("../../LevelUI").update_score(len(lines))
 			update()
 		start = 0
 		end = 0

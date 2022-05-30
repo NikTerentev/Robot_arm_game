@@ -136,6 +136,7 @@ text = "00:00
 wait_time = 60.0
 
 [node name="Popup" type="Popup" parent="."]
+visible = true
 margin_left = 47.0
 margin_top = -38.0
 margin_right = 1004.0

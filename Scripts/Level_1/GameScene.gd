@@ -16,6 +16,7 @@ var correct_nums = 1
 func _ready():
 	GameMusic.play()
 	$car/gears.hide()
+	$LevelUI.update_score(0)
 	opened.append(preload("res://Sprites/first_level/b1.png"))
 	opened.append(preload("res://Sprites/first_level/b2.png"))
 	opened.append(preload("res://Sprites/first_level/b3.png"))
@@ -135,6 +136,9 @@ func _on_TextureButton_pressed():
 		some_gear += 1
 		var num = axes[cur].set_gear(cur_gear)
 		correct_nums += num
+		$LevelUI.update_score(correct_nums)
+		if correct_nums == 8:
+			get_tree().change_scene("res://Scenes/Menu/Winning.tscn")
 	cur_gear = 0
 	
 func _on_delete_pressed():
