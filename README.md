@@ -22,7 +22,7 @@
 
 <div align="center">
   
-![GitHub release (latest by date)](https://img.shields.io/github/downloads/Nitrolacs/Robot_arm_game/v0.1.0/total?color=%230000ff&logo=Windows&style=for-the-badge)
+  <a href="https://github.com/Nitrolacs/Robot_arm_game/releases/download/v0.1.0/Setup_robot_arm_game.exe" target="_blank"><img alt="undefined" src="https://img.shields.io/github/downloads/Nitrolacs/Robot_arm_game/v0.1.0/total?color=%2300f&logo=Windows&style=for-the-badge"></a>
   
 </div>
 
