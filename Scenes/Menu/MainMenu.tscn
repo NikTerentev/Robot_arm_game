@@ -1,15 +1,13 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Menu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/main_menu_sprites/exit.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/main_menu_sprites/question p.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/main_menu_sprites/robot.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/main_menu_sprites/my_ach.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/main_menu_sprites/question.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/main_menu_sprites/start_gm_p.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/main_menu_sprites/list.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/main_menu_sprites/bakground.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/main_menu_sprites/my_ach_p.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/main_menu_sprites/start_gm.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/main_menu_sprites/exit_p.png" type="Texture" id=12]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=13]
@@ -75,10 +73,10 @@ anchor_left = 0.56
 anchor_top = 0.202
 anchor_right = 0.606
 anchor_bottom = 0.239
-margin_left = 4.12
-margin_top = -53.876
-margin_right = 344.712
-margin_bottom = 226.518
+margin_left = -6.88
+margin_top = 1.12399
+margin_right = 333.712
+margin_bottom = 281.518
 
 [node name="StartGame" type="TextureButton" parent="Card/VBoxContainer"]
 margin_right = 398.0
@@ -86,17 +84,10 @@ margin_bottom = 104.0
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 7 )
 
-[node name="MyAchievs" type="TextureButton" parent="Card/VBoxContainer"]
+[node name="Exit" type="TextureButton" parent="Card/VBoxContainer"]
 margin_top = 108.0
 margin_right = 398.0
 margin_bottom = 204.0
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 10 )
-
-[node name="Exit" type="TextureButton" parent="Card/VBoxContainer"]
-margin_top = 208.0
-margin_right = 398.0
-margin_bottom = 304.0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 12 )
 
@@ -147,6 +138,5 @@ text = "Игра разработана группой студентов СФУ
 autowrap = true
 
 [connection signal="pressed" from="Card/VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
-[connection signal="pressed" from="Card/VBoxContainer/MyAchievs" to="." method="_on_MyAchievs_pressed"]
 [connection signal="pressed" from="Card/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

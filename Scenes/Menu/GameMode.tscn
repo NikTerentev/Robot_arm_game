@@ -1,11 +1,5 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Sprites/game_mode_sprites/Component 10.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/game_mode_sprites/card 2.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/game_mode_sprites/Component 13.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/game_mode_sprites/control.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/game_mode_sprites/explore.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/game_mode_sprites/card 1.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/Menu/GameMode.gd" type="Script" id=7]
 [ext_resource path="res://Sprites/main_menu_sprites/bakground.png" type="Texture" id=8]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=9]
@@ -13,9 +7,33 @@
 [ext_resource path="res://Sprites/game_mode_sprites/Group 23.png" type="Texture" id=11]
 [ext_resource path="res://Sounds/sci-fi-interface-robot-click.mp3" type="AudioStream" id=12]
 
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/card 1.png-db5f08ccd5130e01985e6c783bc08c75.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/control.png-a9e0f694ac82f7ab99de821071f3bbb8.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/Component 13.png-c6f8dc600dcaad0e1c5574b1d492f552.stex"
+
 [sub_resource type="DynamicFont" id=1]
 size = 24
 font_data = ExtResource( 9 )
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/card 2.png-3748368ecd8fb228386e1bdf28fcab3a.stex"
+
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+load_path = "res://.import/explore.png-a5b869d23d1af33189c4e7b8c2ca0a54.stex"
+
+[sub_resource type="StreamTexture" id=7]
+flags = 4
+load_path = "res://.import/Component 10.png-4884481e3912c4b3c574be5abd117e94.stex"
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 7 )
@@ -39,7 +57,7 @@ margin_left = -593.0
 margin_top = -237.0
 margin_right = 52.0
 margin_bottom = 503.0
-texture = ExtResource( 6 )
+texture = SubResource( 2 )
 
 [node name="TextureButton" type="TextureButton" parent="rect1"]
 anchor_left = 0.5
@@ -50,8 +68,8 @@ margin_left = -186.5
 margin_top = -104.0
 margin_right = 103.5
 margin_bottom = -9.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 3 )
+texture_normal = SubResource( 3 )
+texture_pressed = SubResource( 4 )
 
 [node name="Label" type="Label" parent="rect1"]
 anchor_left = 0.5
@@ -76,7 +94,7 @@ margin_left = 54.0
 margin_top = -239.0
 margin_right = 681.0
 margin_bottom = 505.0
-texture = ExtResource( 2 )
+texture = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -91,8 +109,8 @@ margin_top = -98.0
 margin_right = 108.5
 margin_bottom = -3.0
 keep_pressed_outside = true
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 1 )
+texture_normal = SubResource( 6 )
+texture_pressed = SubResource( 7 )
 
 [node name="Label2" type="Label" parent="rect2"]
 anchor_left = 0.5
